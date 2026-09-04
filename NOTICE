@@ -1,0 +1,44 @@
+Licence, scope, and whose work is whose
+=======================================
+
+This repository is licensed GPL-3.0-or-later. See LICENSE.
+
+The GPL covers this project's own work: the scripts in tools/, the
+translations in translations/, and the modifications they make to the game's
+files. The CIA and NCCH writers in tools/ are taken from the TGAA 3DS patch
+(Akoi89/tgaa-3ds-english-patch), itself GPL-3.0-or-later, so the same terms
+carry forward.
+
+It does not and cannot cover Sega's content, which is not ours to license.
+
+Nothing here grants any rights to:
+
+  * Puyo Puyo Tetris (Nintendo 3DS, 2014) or its downloadable content
+  * Puyo Puyo Tetris (Steam / consoles, 2017)
+  * any text, graphics, audio or data from any of them
+
+All of which remain (c) SEGA. Tetris is a trademark of The Tetris Company.
+
+What the releases contain
+
+  * PuyoPuyoTetris-DLC-patched.cia: the 3DS DLC with English text, voices
+    and icons substituted. Installable only alongside a copy of the game you
+    already own.
+  * PuyoPuyoTetris-LayeredFS.zip: only the files that changed, for Luma3DS
+    game patching. Useless without the game.
+
+What the releases do not contain
+
+  * The Japanese base game, in any form. Not the CCI, not the CIA, not a
+    patched copy. The patched base game is a full copy of Sega's game and is
+    built locally from your own dump with tools/build_cia.py.
+  * The Steam release or any file from it. The English text and voices were
+    read from a legitimately purchased Steam copy on the author's machine and
+    are present in the releases only as they were carried into the 3DS files.
+
+The earlier fan translation this builds on is the work of its own authors;
+the Adventure story text and the character-select textures in these builds
+are theirs, unchanged.
+
+Character names, mode names and other terminology follow Sega's official
+English localisation wherever it exists.
