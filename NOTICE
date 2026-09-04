@@ -21,6 +21,10 @@ All of which remain (c) SEGA. Tetris is a trademark of The Tetris Company.
 
 What the releases contain
 
+  * PuyoPuyoTetris-Update-patched.cia: the game's update title (0004000E).
+    Sega's own v1.2.0 update executable with the patched game data (the
+    romfs) appended. It has the same shape as an official title update and,
+    like one, launches only through a copy of the game you already own.
   * PuyoPuyoTetris-DLC-patched.cia: the 3DS DLC with English text, voices
     and icons substituted. Installable only alongside a copy of the game you
     already own.
@@ -29,9 +33,10 @@ What the releases contain
 
 What the releases do not contain
 
-  * The Japanese base game, in any form. Not the CCI, not the CIA, not a
-    patched copy. The patched base game is a full copy of Sega's game and is
-    built locally from your own dump with tools/build_cia.py.
+  * The Japanese base game (title 00040000), in any form. Not the CCI, not
+    the CIA, not a patched copy, not its executable. A full patched base CIA
+    can be built locally from your own dump with tools/build_cia.py, but it
+    is not needed and is not distributed.
   * The Steam release or any file from it. The English text and voices were
     read from a legitimately purchased Steam copy on the author's machine and
     are present in the releases only as they were carried into the 3DS files.
