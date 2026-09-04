@@ -1,6 +1,6 @@
 """Build a patched Puyo Puyo Tetris CIA.
 
-    python build_cia.py <shell.cia> <decrypted.cci> <new.romfs> <out.cia>
+    python build_cia.py <shell.cia> <decrypted.cci> <new.romfs> <out.cia> [major.minor.micro]
 
 The shipped .cia carries NCCH-encrypted contents, so a plaintext romfs cannot be
 spliced into it. The matching -decrypted.cci holds the same three partitions with
@@ -17,6 +17,7 @@ import ncch
 from cia import Cia
 
 shell, cci_path, romfs_path, out = sys.argv[1:5]
+VERSION = tuple(int(x) for x in sys.argv[5].split('.')) if len(sys.argv) > 5 else (1, 0, 0)
 
 # --- NCSD partition table ---------------------------------------------------
 MU = 0x200
@@ -61,5 +62,5 @@ print('patched partition 0 superblock hash reproduces:', ok2)
 assert ok2, 'splice produced an NCCH that fails its own hash - stop'
 
 print('writing %s ...' % out)
-chk = Cia(shell).write(out, replace=dict(enumerate(blobs)), version=(1, 0, 0))
+chk = Cia(shell).write(out, replace=dict(enumerate(blobs)), version=VERSION)
 print('done: %d contents, %.1f MB' % (chk.count, sum(len(b) for b in chk.contents) / 1048576))

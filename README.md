@@ -40,8 +40,8 @@ and the DLC shop icons.
 | `PuyoPuyoTetris-LayeredFS.zip` | in the release assets: the changed files alone, for Luma3DS `luma/titles/0004000000101200/romfs/` — the alternative to the update CIA, used together with the official update |
 
 Install order: base → update CIA → DLC CIA. The console shows the update as
-version 1.3.0 (the official one is 1.2.0) and the title screen reads
-**ENG 1.0.0**.
+version 1.3.1 (the official one is 1.2.0) and the title screen reads
+**ENG 1.0.1**.
 
 The base game itself is never modified and never published. A full patched
 base CIA can still be built locally with `tools/build_cia.py` from your own
