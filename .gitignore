@@ -1,0 +1,9 @@
+*.cia
+*.cci
+*.zip
+*.narc
+*.mtx
+*.bcstm
+*.bcsar
+__pycache__/
+reddit_post*.md
