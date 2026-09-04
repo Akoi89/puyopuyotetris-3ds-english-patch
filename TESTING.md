@@ -13,8 +13,8 @@ For anyone playing these builds and reporting back. Spoiler-free.
 3. **`PuyoPuyoTetris-DLC-patched.cia`** — the translated DLC.
 
 If the official Japanese v1.2.0 update is already installed, the update CIA
-replaces it (the console then shows 1.3.0 instead of 1.2.0). If the earlier
-full-base build (`PuyoPuyoTetris-EN-voices-patched.cia`, 1.0.0) is installed it
+replaces it (the console then shows 1.3.1 instead of 1.2.0). If the earlier
+full-base build (`PuyoPuyoTetris-EN-voices-patched.cia`, 1.0.x) is installed it
 can stay; the update's data takes precedence. Luma3DS users can instead unpack
 `PuyoPuyoTetris-LayeredFS.zip` into `luma/titles/0004000000101200/` and keep
 the official update.
@@ -27,10 +27,10 @@ worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.0** at its right end.
-- The console lists the update as version **1.3.0** (the official update is
+- The title screen logo's pink subtitle strip reads **ENG 1.0.1** at its right end.
+- The console lists the update as version **1.3.1** (the official update is
   1.2.0) and the DLC as **0.2.0** (the shipped DLC was 0.1.0). The earlier
-  full-base build shows the base game itself as 1.0.0.
+  full-base build shows the base game itself as 1.0.1.
 
 If the stamp is missing, the install did not take.
 

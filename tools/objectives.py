@@ -19,8 +19,13 @@ T = json.load(open('tiers.json', encoding='utf-8'))
 W = lambda s: unicodedata.normalize('NFKC', s)
 
 
-def wrap(s, limit=30):
-    """One line break at a space so neither half exceeds the limit."""
+def wrap(s, limit=35):
+    """One line break at a space so neither half exceeds the limit.
+
+    Sega keeps its own objective lines whole up to 35 characters ("Clear 16
+    lines within 1 min 30 sec!") and breaks only the "before ..." forms, so
+    the limit is 35 and the "before" templates carry their own break.
+    """
     if len(s) <= limit:
         return s
     cut = s.rfind(' ', 0, limit + 1)
@@ -80,13 +85,15 @@ def gen(jp):
         return wrap('Score %s pts within %s!' % (format(int(m.group(2)), ','), tm(m.group(1))))
     m = re.match(r'^(\d+)LINES消すまでに(\d+)点いじょうでクリア[!！]$', x)
     if m:
-        return wrap('Score %s pts before clearing %d lines!' % (format(int(m.group(2)), ','), int(m.group(1))))
+        # Sega: 'Score 3,000 pts before' / 'clearing 20 lines!'
+        return 'Score %s pts before' % format(int(m.group(2)), ',') + BR + 'clearing %d lines!' % int(m.group(1))
     m = re.match(r'^レベル(\d+)までに(\d+)点いじょうでクリア[!！]$', x)
     if m:
-        return wrap('Score %s pts before level %d!' % (format(int(m.group(2)), ','), int(m.group(1))))
+        # Sega: 'Score 50,000 pts before reaching' / 'Level 10!'
+        return 'Score %s pts before reaching' % format(int(m.group(2)), ',') + BR + 'Level %d!' % int(m.group(1))
     m = re.match(r'^(\d+分\d*秒?|\d+秒)いないにレベル(\d+)いじょうでクリア[!！]$', x)
     if m:
-        return wrap('Reach level %d within %s!' % (int(m.group(2)), tm(m.group(1))))
+        return wrap('Reach Level %d within %s!' % (int(m.group(2)), tm(m.group(1))))
     return None
 
 
