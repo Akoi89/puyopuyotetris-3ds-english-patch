@@ -107,6 +107,9 @@ SOURCES = [
     ('tr_envoice', 'puyo/menu/puyo_menu.narc', 'COMP:15', 'strict'),
     ('tr_envoice', 'puyo/menu/puyo_menu.narc', 'COMP:16', 'strict'),
     ('tr_envoice', 'system/system.narc', 'COMP:5', 'strict'),
+    # Endless-mode record card (found in-engine 2026-09-04)
+    ('tr_envoice', 'toko/toko.narc', 'pla_tournament_d4444'),
+    ('tr_envoice', 'toko/toko.narc', 'num_tournament_d4444'),
 ]
 
 
@@ -143,6 +146,11 @@ def detect():
                 crops.append((crop, root, rel, sel))
             out.append(dict(id=len(out), root=root, narc=rel, member=mi, tex=sel, fmt=fmt, box=list(b), group=g))
         print('%-60s %-22s %3d boxes' % (rel, sel, len(bx)))
+    # keep the manual boxes (ids >= 1000) added by labels2_manual.py
+    try:
+        out += [l for l in json.load(open('labels2.json', encoding='utf-8')) if l['id'] >= 1000]
+    except Exception:
+        pass
     json.dump(out, open('labels2.json', 'w', encoding='utf-8'), indent=0)
     # review sheets: one crop per group, numbered, 3x, 40 per sheet
     font = ImageFont.truetype('C:/Windows/Fonts/arial.ttf', 12)

@@ -30,9 +30,9 @@ console, that alone is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.2** at its right end.
-- The console lists the base game as version **1.0.2** (a locally built CIA)
-  and the DLC as **0.2.1** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
+- The title screen logo's pink subtitle strip reads **ENG 1.0.3** at its right end.
+- The console lists the base game as version **1.0.3** (a locally built CIA)
+  and the DLC as **0.2.2** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
 
@@ -87,6 +87,26 @@ If the stamp is missing, the install did not take.
 5. Any **character-select shout**: re-encoded battle voice.
 6. **DLC chapter 8**: text, atlases, voices and shop icons all at once.
 
+## What changed in 1.0.3
+
+Found by the user playing 1.0.2 in Azahar on 2026-09-04, fixed the same day:
+
+- **Character-select pick lines**: the fan patch had replaced only 15 of the
+  24. All 24 are now from Steam's English pick bank, verified by duration
+  match 24 of 24 (`work/import_select_voices.py`).
+- **The title-screen announcer at boot** (sound bank 143, four takes) was a
+  3DS-only bank; Steam's title_set_bank matched all four takes by duration,
+  so the English takes are in (`work/import_title_set.py`).
+- **The boot notice screen** was cut off on screen because the game shows
+  only the left part of the texture; it is re-wrapped into the 290 px column
+  the Japanese occupied (`work/notice.py`).
+- **The DLC map plates** were cut off for the same reason; the English is now
+  fitted into the measured Japanese ink window (`work/dlc_plates.py`); the
+  long names are small (8 to 9 px).
+- **The Endless-mode record card** ("Best Record", "This Run", "beaten" after
+  the count) is redrawn by a dedicated script (`work/record_card.py`) that
+  inpaints the gradient plates.
+
 ## Testing status, honestly
 
 | | |
@@ -94,7 +114,9 @@ If the stamp is missing, the install did not take.
 | Text, base and DLC | verified per font atlas section; **seen in the engine 2026-09-04** on the Options screen, Adventure map, and DLC chapters |
 | Font atlas swaps | verified by rendering the shipped text through the shipped atlas; confirmed on-screen where the boot above reached |
 | Battle and DLC voices | decoded back and compared to source (27 to 37 dB); never heard |
+| Character-select pick lines and title-screen announcer | verified by duration against Steam and confirmed by the user by ear from the decoded clip |
 | Online UI textures | rendered and reviewed as images; not yet confirmed in the engine beyond the screens above |
+| Boot notice, DLC plates and Endless-mode record card | rendered and reviewed, not yet seen in the engine after the fix |
 | Title version stamp | rendered; never seen in the engine |
 | Update-title packaging | structurally correct, booted in Azahar, **ignored by the game**: withdrawn |
 | Emulator | **booted 2026-09-04**: Options screen, Adventure map, DLC chapters, all in English |

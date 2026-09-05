@@ -41,7 +41,7 @@ and the DLC shop icons.
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
 
 Install order: base → Japanese update → DLC. The title screen reads
-**ENG 1.0.2**; a locally built base CIA reports version 1.0.2.
+**ENG 1.0.3**; a locally built base CIA reports version 1.0.3.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same
@@ -59,6 +59,10 @@ English data is ignored (details in TESTING.md).
 | Online UI textures | about 550 labels across the Club, Puzzle League, standby, replay and shop screens, redrawn in place |
 | DLC shop icons | 33 redrawn |
 | Font atlases | the game pre-renders only the glyphs each screen uses; every screen that gained English got a matching atlas, verified per section |
+| Character-select pick lines | all 24 (the fan patch had only 15), matched to Steam's English pick bank by duration |
+| Title-screen announcer | the boot call, matched to Steam's title_set_bank by duration across all four takes |
+| Boot notice and DLC map plates | re-wrapped/re-fitted into the Japanese texture's own ink window after a first pass cut them off |
+| Endless-mode record card | "Best Record", "This Run" and the "beaten" count redrawn with the gradient plates inpainted |
 
 What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 
@@ -73,8 +77,17 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
   rebuilding the game's files.
 - `atlas_fix2.py`, `check_glyphs.py`: the per-section font-atlas rule, the one
   thing everything else depends on.
-- `labels.py`: finds text labels on texture atlases, groups identical ones,
-  and redraws them from `labels_en_*.json`.
+- `labels.py`, `labels2.py`: find text labels on texture atlases, group
+  identical ones, and redraw them from `labels_en_*.json` / `labels2_en.json`.
+- `survey2.py`, `tex.py`: a full-archive texture survey and a codec for every
+  CTPK format plus Sega's COMP container; `comp.py` is the COMP (LZ11 +
+  header) codec on its own.
+- `record_card.py`, `notice.py`, `prefectures.py`, `dlc_plates.py`: dedicated
+  redraw scripts for the Endless-mode record card, the boot notice screen,
+  the Options prefecture list, and the DLC map plates.
+- `import_extra_voices.py`, `import_select_voices.py`, `import_title_set.py`:
+  import the launch title calls, the character-select confirm and pick
+  lines, and the title-screen announcer from Steam's voice banks.
 - `build_cia.py`, `build_dlc_cia.py`: the packages. (`build_update_cia.py`
   builds a structurally valid update-title CIA and is kept for reference; this
   game never reads an update's RomFS, so it is not a delivery route.)
