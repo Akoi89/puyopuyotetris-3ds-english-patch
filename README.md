@@ -117,7 +117,7 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
   banner's shared RGB565 texture for Steam's high-resolution English logo,
   downscaled with Lanczos, keeping Sega's TETRIS art and the rest of the
   texture untouched, then rebuilds the CBMD.
-- `exefs_banner.py`: splices the new banner into the ExeFS in place (only
+- `banner_cwav.py` (English title call into the banner audio), `exefs_banner.py`: splices the new banner into the ExeFS in place (only
   1,170 bytes of slack), recomputing the file hash and the ExeFS superblock
   hash, instead of rebuilding the CXI.
 - `build_cia.py`, `build_dlc_cia.py`: the packages. (`build_update_cia.py`
