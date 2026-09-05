@@ -41,7 +41,7 @@ and the DLC shop icons.
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
 
 Install order: base → Japanese update → DLC. The title screen reads
-**ENG 1.0.4**; a locally built base CIA reports version 1.0.4.
+**ENG 1.0.5**; a locally built base CIA reports version 1.0.5.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same
@@ -77,6 +77,9 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
   rebuilding the game's files.
 - `atlas_fix2.py`, `check_glyphs.py`: the per-section font-atlas rule, the one
   thing everything else depends on.
+- `atlas_compact.py`: subsets a swapped-in donor atlas back down to the
+  glyphs its section actually uses, so a font fix does not quadruple the
+  memory a screen needs to load.
 - `labels.py`, `labels2.py`: find text labels on texture atlases, group
   identical ones, and redraw them from `labels_en_*.json` / `labels2_en.json`.
 - `survey2.py`, `tex.py`: a full-archive texture survey and a codec for every

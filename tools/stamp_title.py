@@ -41,6 +41,10 @@ if not xs:
     raise SystemExit('no stamp found in %s' % prev)
 box = (min(xs), min(ys), max(xs) + 1, max(ys) + 1)
 print('previous stamp box', box, 'in', prev)
+# 1.0.5: the strip is 16 px tall and empty right of the title text; use its full
+# height so the stamp is legible (the 7 px box from 1.0.0 was too small on screen)
+box = (194, 56, 248, 72)
+print('using enlarged box', box)
 
 img = orig.copy()
 d = ImageDraw.Draw(img)

@@ -14,7 +14,7 @@ import narc, tex
 
 SRC = 'tr_envoice/logo/Attention.narc'
 OUT = 'patch/romfs/logo/Attention.narc'
-COLUMNS = [(205, 290), (190, 236)]      # (centre, max width) per member: top screen shows x ~60..350, bottom screen x ~70..315
+COLUMNS = [(205, 290), (187, 236)]      # (centre, max width) per member: top screen shows x ~60..350, bottom screen x ~70..315
 FONT = ImageFont.truetype('C:/Windows/Fonts/arial.ttf', 13)
 FONT_B = ImageFont.truetype('C:/Windows/Fonts/arialbd.ttf', 15)
 
