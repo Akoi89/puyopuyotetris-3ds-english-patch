@@ -41,7 +41,7 @@ and the DLC shop icons.
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
 
 Install order: base → Japanese update → DLC. The title screen reads
-**ENG 1.0.5**; a locally built base CIA reports version 1.0.5.
+**ENG 1.0.6**; a locally built base CIA reports version 1.0.6.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same

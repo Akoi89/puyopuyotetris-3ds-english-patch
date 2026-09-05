@@ -30,8 +30,8 @@ console, that alone is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.5** at its right end.
-- The console lists the base game as version **1.0.5** (a locally built CIA)
+- The title screen logo's pink subtitle strip reads **ENG 1.0.6** at its right end.
+- The console lists the base game as version **1.0.6** (a locally built CIA)
   and the DLC as **0.2.4** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
@@ -58,7 +58,6 @@ If the stamp is missing, the install did not take.
   the vertical "you lose" / "congratulations" art doesn't split cleanly from
   the artwork around it.
 - **The replay-speed hint strip stays Japanese.**
-- **The Swap-mode Puyo/Tetris logos are Japanese.** Decorative logotype, not text.
 - **Decorative screenshot thumbnails and the small "New Record" ornament are
   Japanese**, deliberately left as artwork.
 - **The Broadcast Station category badge rows on the Replay Report stay
@@ -138,6 +137,27 @@ Found by the user playing Versus matches in Azahar on 2026-09-04, bisected and f
 - **The version stamp on the title logo** is now 11 px tall in the strip's full height instead of 7 px (`work/stamp_title.py`).
 - **The bottom-screen notice** moved 3 px left.
 - **The Swap-mode "Puyo Puyo"/"Tetris" call banners** were tried again in English and reverted: the game layers that banner from two textures and the redraw looked wrong, so it stays Sega's art. Still Japanese, as noted above.
+
+## What changed in 1.0.6
+
+- **The Swap-mode "Puyo"/"Tetris" call logos are now Sega's official English
+  logo art**, not a hand redraw. Steam's `data/tenp/swap/swap2p/swap2p_e.narc`
+  (member 3, a `tppk` container of DDS/DXT5 textures) carries a 1024x1024
+  texture that is the same layout as the 3DS's `pla_swap_notice_d4444` at four
+  times the size, with "Puyo" and "Tetris" where the 3DS has the Japanese
+  marks. `work/swap_logos.py` scales Sega's two logos down 4x into the 3DS
+  texture, touching only the logo cells (rows 102..132); the curved "PUYO
+  PUYO / TET RIS" lettering and everything else is unchanged, still Sega's
+  art. The earlier note that this banner stays Japanese no longer applies.
+- **The bottom-screen boot notice text** moved a further 8 px left (column centre 187 to 179, in two steps at the user's request)
+  (`work/notice.py`, bottom column centre 179).
+- **The mixed-mode (Tetris side) HOLD/NEXT labels** were checked because they
+  looked clipped in the emulator. The texture (`tenp/mix/mix2p/mix2P.narc`) is
+  byte-identical in the Japanese original, the fan build, and this patch, and
+  the user confirmed the PC version shows the same clipping, so this is
+  Sega's own design and was left as shipped; a redraw was made and discarded.
+- New rule: Steam's `*_e.narc` archives carry the official English textures
+  (DDS/DXT5 inside `tppk` containers); check them before hand-drawing any logo.
 
 ## Testing status, honestly
 
