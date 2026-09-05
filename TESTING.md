@@ -31,9 +31,9 @@ console, that alone is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.7** at its right end.
-- The console lists the base game as version **1.0.7** (a locally built CIA)
-  and the DLC as **0.2.4** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
+- The title screen logo's pink subtitle strip reads **ENG 1.0.8** at its right end.
+- The console lists the base game as version **1.0.8** (a locally built CIA)
+  and the DLC as **0.2.5** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
 
@@ -48,6 +48,8 @@ If the stamp is missing, the install did not take.
 - **Voices are a little duller than the story voices.** Every in-battle and
   DLC voice is re-encoded from Steam's PCM with a home-grown encoder whose
   coefficient search is weaker than Sega's. Pitch and timing are correct.
+  As of 1.0.8 the levels are matched to within about 1 dB of Sega's own
+  Japanese takes (measured RMS, look-ahead limited so nothing clips).
 - **Stylised mode names in the online menus (Fusion, Swap, Party, Big Bang)
   are plain white** where the Japanese had a thick two-tone outline.
 - **Prefecture buttons in the online rankings are tiny.** Nine-letter names in
@@ -184,6 +186,30 @@ out differently from both the 3DS atlases and Steam's own Japanese atlases:
   Steam data), the three DLC voice lines with no English take, the
   name-entry keyboards by design, the vertical league result art, decorative
   screenshot thumbnails, and the "New Record" ornament.
+
+## What changed in 1.0.8
+
+The user reported the in-battle and DLC voices sounded quiet next to the
+story voices. Measured with `work/voice_levels.py` (peak and RMS in dBFS,
+decoded straight from the CSAR/CSTM): Sega's Japanese 3DS takes run about
+-11 dBFS RMS with peaks near 0 dBFS (heavily limited); the clips imported
+from Steam's PCM sat 5 to 11 dB below that in RMS, at about -18 dBFS RMS,
+with peaks already close to full scale, so a flat gain would have clipped.
+The DLC story clips were about 7 dB low the same way.
+
+Fix: `work/voice_gain.py` (base CSAR banks) and `work/voice_gain_dlc.py`
+(DLC CSTM stream clips) gain each clip to the RMS of Sega's Japanese take of
+the same line, through a look-ahead peak limiter (ceiling -0.5 dBFS, 1.5 ms
+look-ahead, 60 ms release), then re-encode DSP-ADPCM. Three passes each,
+since the limiter gives some loudness back on every pass.
+
+- Base battle/select/title voices: 62 of 63 banks re-levelled, now averaging
+  1.2 dB below Sega's takes (range -3.1 to +2.4 dB); the title announcer bank
+  was already louder than Sega's and was left alone.
+- DLC story clips: 734 clips re-levelled, now about 1.3 dB below Sega's takes.
+- Pitch and timing untouched. The remaining gap is the limiter: our takes
+  are less compressed than Sega's.
+- Nothing else changed: text, textures and atlases are as in 1.0.7.
 
 ## Testing status, honestly
 
