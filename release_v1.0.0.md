@@ -1,16 +1,16 @@
-The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.8** (see below). **Nothing has been booted on real hardware**: every file is verified byte-for-byte; base and DLC have been booted in Azahar and the English shows in the engine. See TESTING.md, and report problems in [issue #1](../../issues/1).
+The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.9** (see below). **Nothing has been booted on real hardware**: every file is verified byte-for-byte; base and DLC have been booted in Azahar and the English shows in the engine. See TESTING.md, and report problems in [issue #1](../../issues/1).
 
-- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.8**; the built CIA reports 1.0.8.
-- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.5.
-- Install order: Japanese base → patched base (or LayeredFS) → Japanese v1.2.0 update (code only) → this DLC.
+- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.9**; the built CIA reports 1.0.9.
+- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.6.
+- Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
 
 **Withdrawn the same day: an "update title" CIA.** It packaged the English data inside Sega's v1.2.0 update. Puyo Puyo Tetris's code only ever opens the base game's RomFS (path type 0) and never asks for an update RomFS (type 5), so the console and Azahar keep reading Sega's Japanese files no matter what the update carries. It did nothing. If you downloaded it, delete it and install the official update instead.
 
-The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.8 (below) is the current build.
+The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.9 (below) is the current build.
 
 ---
 
-## Current build: 1.0.8
+## Current build: 1.0.9
 
 The build has moved on from 1.0.1 through 1.0.6 above. **Booted in the
 Azahar emulator**: base and DLC both run, and the text pipeline works in the
@@ -82,3 +82,21 @@ to the story voices:
 - Install order is unchanged: Japanese base, then patched base (or
   LayeredFS), then the Japanese v1.2.0 update (code only), then this DLC.
   The withdrawn update-title CIA note above still applies: do not use it.
+
+1.0.9 redid the voice loudness fix, within hours of 1.0.8:
+
+- **The 1.0.8 fix should be replaced.** It matched levels by running gain,
+  a limiter, and a DSP-ADPCM re-encode three times per clip, which stacked
+  four generations of encoder error. Both the 1.0.8 base voices and the DLC
+  0.2.5 voices came out sounding muffled and gritty next to Sega's takes.
+- **Fix: a single clean encode.** Gain and limiting are now done in
+  floating point on the decoded audio, iterated until the level matches
+  Sega's Japanese take, and DSP-ADPCM is encoded exactly once. Base
+  battle/select/title voices now average about 1 dB below Sega's takes (62
+  of 63 banks re-levelled); DLC story clips about 1.1 dB below (760 clips
+  re-levelled). Pitch and timing untouched.
+- **Base game**: title screen now reads **ENG 1.0.9**; the built CIA
+  reports 1.0.9.
+- **`PuyoPuyoTetris-DLC-patched.cia`** is now **TMD 0.2.6**.
+- Nothing else changed since 1.0.8.
+- If you installed 1.0.8 or DLC 0.2.5, replace them with 1.0.9 and 0.2.6.

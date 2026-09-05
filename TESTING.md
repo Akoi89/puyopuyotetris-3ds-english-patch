@@ -31,9 +31,9 @@ console, that alone is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.8** at its right end.
-- The console lists the base game as version **1.0.8** (a locally built CIA)
-  and the DLC as **0.2.5** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
+- The title screen logo's pink subtitle strip reads **ENG 1.0.9** at its right end.
+- The console lists the base game as version **1.0.9** (a locally built CIA)
+  and the DLC as **0.2.6** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
 
@@ -48,8 +48,9 @@ If the stamp is missing, the install did not take.
 - **Voices are a little duller than the story voices.** Every in-battle and
   DLC voice is re-encoded from Steam's PCM with a home-grown encoder whose
   coefficient search is weaker than Sega's. Pitch and timing are correct.
-  As of 1.0.8 the levels are matched to within about 1 dB of Sega's own
-  Japanese takes (measured RMS, look-ahead limited so nothing clips).
+  As of 1.0.9 the levels are matched to within about 1 dB of Sega's own
+  Japanese takes (measured RMS, look-ahead limited so nothing clips). The
+  1.0.8 encode had a noise problem from stacked re-encoding, fixed in 1.0.9.
 - **Stylised mode names in the online menus (Fusion, Swap, Party, Big Bang)
   are plain white** where the Japanese had a thick two-tone outline.
 - **Prefecture buttons in the online rankings are tiny.** Nine-letter names in
@@ -210,6 +211,29 @@ since the limiter gives some loudness back on every pass.
 - Pitch and timing untouched. The remaining gap is the limiter: our takes
   are less compressed than Sega's.
 - Nothing else changed: text, textures and atlases are as in 1.0.7.
+
+## What changed in 1.0.9
+
+The 1.0.8 loudness fix ran gain, limiter, and DSP-ADPCM re-encode three
+times per clip to match Sega's levels, since the limiter gave some loudness
+back on every pass. That stacked four generations of encoder error, and the
+user heard the result as muffled and gritty next to Sega's takes.
+
+Fix: `work/voice_gain_clean.py` decodes the once-encoded import audio,
+iterates gain and look-ahead limiting in floating point until the RMS meets
+Sega's Japanese take, and encodes DSP-ADPCM exactly once. Measured with
+`work/voice_gain_clean.py snr`: the 1.0.8 waves ran 18 to 25 dB
+signal-to-noise against the intended audio; a single clean encode runs 31
+to 36 dB.
+
+- Base battle/select/title voices: 62 of 63 banks re-levelled, now averaging
+  1.0 dB below Sega's takes (range -4.5 to +2.4 dB); the title announcer
+  bank was left alone, as before.
+- DLC story clips: 760 clips re-levelled, now about 1.1 dB below Sega's
+  takes.
+- `voice_gain.py` and `voice_gain_dlc.py` (the old three-pass tools) are
+  kept only as a record and are not used anymore.
+- Nothing else changed since 1.0.8.
 
 ## Testing status, honestly
 
