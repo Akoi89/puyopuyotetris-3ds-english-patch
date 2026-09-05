@@ -20,10 +20,11 @@ RomFS (type 5), so an update title carrying the English files is ignored,
 Azahar's log shows it loading the update's romfs and the game then reading
 Sega's. Uninstall it and install the official update instead.
 
-**Booted in Azahar, not yet on real hardware.** The user booted 1.0.1 in the
-Azahar emulator on 2026-09-04: it runs, and the text pipeline works in the
-engine: checked on the Options screen, the Adventure map, and DLC chapters,
-all in English. Every file was also verified byte-for-byte on the way in and
+**Booted in Azahar, not yet on real hardware.** Every build from 1.0.1 to
+1.0.6 has been booted in the Azahar emulator on 2026-09-04: it runs, and the
+text pipeline works in the engine: checked on the Options screen, the
+Adventure map, the DLC chapters, the Versus result screen, the boot notice
+and the Swap-mode call banners, all in English. Every file was also verified byte-for-byte on the way in and
 back out of the CIA, and all the writers reproduce the game's own files
 byte-identically. Real hardware is still untested: if you boot it on a
 console, that alone is worth reporting.
@@ -149,7 +150,7 @@ Found by the user playing Versus matches in Azahar on 2026-09-04, bisected and f
   texture, touching only the logo cells (rows 102..132); the curved "PUYO
   PUYO / TET RIS" lettering and everything else is unchanged, still Sega's
   art. The earlier note that this banner stays Japanese no longer applies.
-- **The bottom-screen boot notice text** moved a further 21 px left (column centre 187 to 166, in three steps at the user's request, to sit under the top-screen text)
+- **The bottom-screen boot notice text** moved a further 21 px left in three steps while testing, so it sits under the top-screen text
   (`work/notice.py`, bottom column centre 166).
 - **The mixed-mode (Tetris side) HOLD/NEXT labels** were checked because they
   looked clipped in the emulator. The texture (`tenp/mix/mix2p/mix2P.narc`) is

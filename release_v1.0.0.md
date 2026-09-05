@@ -1,4 +1,4 @@
-First build of the completed English patch. **Nothing has been booted on hardware**: every file is verified byte-for-byte; base and DLC have been booted in Azahar and the English shows in the engine. See TESTING.md.
+The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.6** (see below). **Nothing has been booted on real hardware**: every file is verified byte-for-byte; base and DLC have been booted in Azahar and the English shows in the engine. See TESTING.md, and report problems in [issue #1](../../issues/1).
 
 - **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.6**; the built CIA reports 1.0.6.
 - **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.4.
@@ -34,7 +34,7 @@ font atlases. 1.0.6:
   scaled down 4x into the 3DS texture; only those two logo cells changed,
   everything else in that banner is still Sega's art. The earlier note in
   this release that this banner stays Japanese no longer applies.
-- **The bottom-screen boot notice text** moved a further 21 px left (column centre 187 to 166, in three steps at the user's request, to sit under the top-screen text).
+- **The bottom-screen boot notice text** moved a further 21 px left in three steps while testing, so it sits under the top-screen text.
 - **The mixed-mode HOLD/NEXT labels** looked clipped in the emulator; I
   checked and the texture is byte-identical between the Japanese original,
   the fan build, and this patch, and the PC version shows the same clipping,
