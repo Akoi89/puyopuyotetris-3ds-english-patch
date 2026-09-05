@@ -17,13 +17,14 @@ and the DLC shop icons.
 >
 > **Booted in the Azahar emulator, not yet on real hardware.** Base and DLC
 > both run and the text pipeline works in the engine: checked on the Options
-> screen, the Adventure map, and the DLC chapters, all in English. Every file
+> screen, the Adventure map, the DLC chapters, the Versus result screen, the
+> boot notice and the Swap-mode call banners, all in English. Every file
 > was also verified byte-for-byte on the way in and back out of the packages,
 > and every writer reproduces the game's own files byte-identically. If you
 > boot it on a console, that alone is worth reporting.
 >
 > **[Report anything wrong in issue #1](../../issues/1)** (which screen, and a
-> photo beats a description. See **[TESTING.md](TESTING.md)** for what to
+> photo beats a description). See **[TESTING.md](TESTING.md)** for what to
 > install, how to identify the build, and what is known.
 
 > **You need the Japanese base game.** It is not distributed here or anywhere
@@ -63,6 +64,7 @@ English data is ignored (details in TESTING.md).
 | Title-screen announcer | the boot call, matched to Steam's title_set_bank by duration across all four takes |
 | Boot notice and DLC map plates | re-wrapped/re-fitted into the Japanese texture's own ink window after a first pass cut them off |
 | Endless-mode record card | "Best Record", "This Run" and the "beaten" count redrawn with the gradient plates inpainted |
+| Swap-mode call logos | Sega's official English "Puyo" / "Tetris" logo art, taken from the Steam release's English swap texture (the 3DS texture at 4x) and scaled down into place |
 
 What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 
@@ -85,9 +87,12 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 - `survey2.py`, `tex.py`: a full-archive texture survey and a codec for every
   CTPK format plus Sega's COMP container; `comp.py` is the COMP (LZ11 +
   header) codec on its own.
-- `record_card.py`, `notice.py`, `prefectures.py`, `dlc_plates.py`: dedicated
-  redraw scripts for the Endless-mode record card, the boot notice screen,
-  the Options prefecture list, and the DLC map plates.
+- `record_card.py`, `notice.py`, `prefectures.py`, `dlc_plates.py`,
+  `swap_logos.py`: dedicated redraw scripts for the Endless-mode record card,
+  the boot notice screen, the Options prefecture list, the DLC map plates,
+  and the Swap-mode call logos (those come from Steam's English textures;
+  Steam's `*_e.narc` archives hold official English art worth checking before
+  drawing anything by hand).
 - `import_extra_voices.py`, `import_select_voices.py`, `import_title_set.py`:
   import the launch title calls, the character-select confirm and pick
   lines, and the title-screen announcer from Steam's voice banks.
