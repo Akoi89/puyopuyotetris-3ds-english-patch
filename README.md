@@ -13,7 +13,7 @@ This finishes it: about 99% of displayed text, all 37 characters' in-battle
 voices, all three DLC story chapters (text and voices), the online UI textures,
 and the DLC shop icons.
 
-**[Download the current build from Releases](../../releases/latest)** (build 1.0.10, DLC 0.2.6). What changed in each build is in **[RELEASE_NOTES.md](RELEASE_NOTES.md)**. Also listed on [romhacking.net](https://www.romhacking.net/translations/7714/).
+**[Download the current build from Releases](../../releases/latest)** (build 1.0.10, DLC 0.2.6). What changed in each build is in **[RELEASE_NOTES.md](RELEASE_NOTES.md)**. Also listed on [romhacking.net](https://www.romhacking.net/translations/7714/), and the xdelta patches (base and DLC, with xdelta3.exe) are mirrored as one zip on [archive.org](https://archive.org/details/puyopuyotetris-3ds-english-patch).
 
 > ### Playtesters wanted
 >
