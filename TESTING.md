@@ -20,17 +20,19 @@ RomFS (type 5), so an update title carrying the English files is ignored —
 Azahar's log shows it loading the update's romfs and the game then reading
 Sega's. Uninstall it and install the official update instead.
 
-**None of this has ever been booted** — not on hardware, not in an emulator.
-Every file was verified byte-for-byte on the way in and back out of the CIA,
-and all the writers reproduce the game's own files byte-identically, but that
-is verification, not testing. If you are the first to boot it, that alone is
-worth reporting.
+**Booted in Azahar, not yet on real hardware.** The user booted 1.0.1 in the
+Azahar emulator on 2026-09-04: it runs, and the text pipeline works in the
+engine — checked on the Options screen, the Adventure map, and DLC chapters,
+all in English. Every file was also verified byte-for-byte on the way in and
+back out of the CIA, and all the writers reproduce the game's own files
+byte-identically. Real hardware is still untested — if you boot it on a
+console, that alone is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.1** at its right end.
-- The console lists the base game as version **1.0.1** (a locally built CIA)
-  and the DLC as **0.2.0** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
+- The title screen logo's pink subtitle strip reads **ENG 1.0.2** at its right end.
+- The console lists the base game as version **1.0.2** (a locally built CIA)
+  and the DLC as **0.2.1** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
 
@@ -52,6 +54,15 @@ If the stamp is missing, the install did not take.
 - **The animated "Replay TV" logo in the Broadcast Station is Japanese.** It is
   artwork, not a label.
 - **Score digits, 1P/2P/COM badges, You/New!/VS/ON/OFF** were already Latin.
+- **A few merged/rotated strings on the league result screen are Japanese** —
+  the vertical "you lose" / "congratulations" art doesn't split cleanly from
+  the artwork around it.
+- **The replay-speed hint strip stays Japanese.**
+- **The Swap-mode Puyo/Tetris logos are Japanese.** Decorative logotype, not text.
+- **Decorative screenshot thumbnails and the small "New Record" ornament are
+  Japanese**, deliberately left as artwork.
+- **The Broadcast Station category badge rows on the Replay Report stay
+  Japanese**, not yet redrawn.
 
 ## What is worth reporting
 
@@ -80,10 +91,11 @@ If the stamp is missing, the install did not take.
 
 | | |
 |---|---|
-| Text, base and DLC | verified per font atlas section, never seen on screen |
-| Font atlas swaps | verified by rendering the shipped text through the shipped atlas |
+| Text, base and DLC | verified per font atlas section; **seen in the engine 2026-09-04** on the Options screen, Adventure map, and DLC chapters |
+| Font atlas swaps | verified by rendering the shipped text through the shipped atlas; confirmed on-screen where the boot above reached |
 | Battle and DLC voices | decoded back and compared to source (27–37 dB); never heard |
-| Online UI textures | rendered and reviewed as images; never seen in the engine |
+| Online UI textures | rendered and reviewed as images; not yet confirmed in the engine beyond the screens above |
 | Title version stamp | rendered; never seen in the engine |
 | Update-title packaging | structurally correct, booted in Azahar, **ignored by the game** — withdrawn |
-| Emulator / hardware | **never** |
+| Emulator | **booted 2026-09-04** — Options screen, Adventure map, DLC chapters, all in English |
+| Real hardware | **never** |

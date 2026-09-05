@@ -15,11 +15,12 @@ and the DLC shop icons.
 
 > ### Playtesters wanted
 >
-> **Nothing here has been booted yet** — not on hardware, not in an emulator.
-> Every file was verified byte-for-byte on the way in and back out of the
-> packages, and every writer reproduces the game's own files byte-identically,
-> but that is verification, not testing. If you are the first to boot it, that
-> alone is worth reporting.
+> **Booted in the Azahar emulator, not yet on real hardware.** Base and DLC
+> both run and the text pipeline works in the engine — checked on the Options
+> screen, the Adventure map, and the DLC chapters, all in English. Every file
+> was also verified byte-for-byte on the way in and back out of the packages,
+> and every writer reproduces the game's own files byte-identically. If you
+> boot it on a console, that alone is worth reporting.
 >
 > **[Report anything wrong in issue #1](../../issues/1)** — which screen, and a
 > photo beats a description. See **[TESTING.md](TESTING.md)** for what to
@@ -40,7 +41,7 @@ and the DLC shop icons.
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
 
 Install order: base → Japanese update → DLC. The title screen reads
-**ENG 1.0.1**; a locally built base CIA reports version 1.0.1.
+**ENG 1.0.2**; a locally built base CIA reports version 1.0.2.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same
