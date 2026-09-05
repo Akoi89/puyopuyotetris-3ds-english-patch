@@ -2,7 +2,11 @@
 
 DLC contents 0010/0011/0012 each hold adv_DL1_0N.narc (64x16, "EXn 章") and
 adv_DL2_0N.narc (128x16, the chapter title), one COMP ETC1A4 member each,
-white text with alpha. Writes into patch_dlc2/<content>/data/ and a preview.
+white text with alpha. The game shows only the part of the texture the
+Japanese ink occupied (measured: x 5..52 on the small plate, x 3..87 on the
+title plate; wider English was cut off on screen), so the English is fitted
+into exactly that window, left-aligned at the Japanese ink's own left edge.
+Writes into patch_dlc2/<content>/data/ and dlc_plates_preview.png.
 """
 import os
 from PIL import Image, ImageDraw, ImageFont
@@ -13,33 +17,40 @@ PLATES = {
     '0011': ('EX Act 9', 'A Primp Dream'),
     '0012': ('EX Act 10', 'An Interstellar Dream'),
 }
-FONT = 'C:/Windows/Fonts/arialbd.ttf'
+WINDOW = {'adv_DL1': (5, 52), 'adv_DL2': (3, 87)}          # x0..x1 of the Japanese ink, measured
+FONTS = [f for f in ('C:/Windows/Fonts/ARIALNB.TTF', 'C:/Windows/Fonts/arialnb.ttf', 'C:/Windows/Fonts/arialbd.ttf') if os.path.exists(f)]
+FONT = FONTS[0]
+print('font:', FONT)
 tiles = []
 for content, (small, title) in PLATES.items():
-    n = str(int(content, 16) - 0x10 + 1)          # 0010 -> _01, 0011 -> _02, 0012 -> _03
+    n = str(int(content, 16) - 0x10 + 1)
     for kind, text in (('adv_DL1_0%s' % n, small), ('adv_DL2_0%s' % n, title)):
         src = 'dlc_r/%s/data/%s.narc' % (content, kind)
         arc = narc.read(src); ms = list(arc['members'])
         img, fmt, hdr = tex.comp_decode(ms[0])
         w, h = img.size
+        x0, x1 = WINDOW[kind[:7]]
         new = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(new)
-        size = 14
-        while size > 7:
+        size = 15
+        while size > 6:
             f = ImageFont.truetype(FONT, size)
-            if d.textlength(text, font=f) <= w - 4:
+            l, t, r, b = d.textbbox((0, 0), text, font=f)
+            if r - l <= x1 - x0 and b - t <= h - 2:
                 break
             size -= 1
-        tw = d.textlength(text, font=f)
-        d.text(((w - tw) / 2, (h - size) / 2 - 2), text, font=f, fill=(255, 255, 255, 255))
+        d.text((x0 - l, (h - (b - t)) // 2 - t), text, font=f, fill=(255, 255, 255, 255))
         ms[0] = tex.comp_encode(new, fmt, hdr, ms[0])
         out = 'patch_dlc2/%s/data/%s.narc' % (content, kind)
         os.makedirs(os.path.dirname(out), exist_ok=True)
         open(out, 'wb').write(narc.build(arc, ms))
         back, _, _ = tex.comp_decode(ms[0])
-        bg = Image.new('RGBA', (w, h), (30, 30, 60, 255)); bg.alpha_composite(back); tiles.append(bg)
-        print('wrote', out, text, 'size', size)
-sheet = Image.new('RGB', (128 * 3, 16 * len(tiles) + 4 * len(tiles)))
+        bg = Image.new('RGBA', (w, h), (30, 60, 30, 255)); bg.alpha_composite(back)
+        dd = ImageDraw.Draw(bg); dd.line([(x1, 0), (x1, h)], fill=(255, 0, 0, 255))
+        tiles.append(bg)
+        print('wrote', out, repr(text), 'size', size, 'ink width', r - l, 'of', x1 - x0)
+sheet = Image.new('RGB', (128, (16 + 4) * len(tiles)))
 y = 0
 for t in tiles:
-    sheet.paste(t, (0, y)); y += t.height + 4
-sheet.resize((sheet.width * 3, sheet.height * 3), Image.NEAREST).save('dlc_plates_preview.png')
+    sheet.paste(t, (0, y)); y += 20
+sheet.resize((sheet.width * 4, sheet.height * 4), Image.NEAREST).save('dlc_plates_preview.png')
+print('preview: red line = right edge of the window the game shows')
