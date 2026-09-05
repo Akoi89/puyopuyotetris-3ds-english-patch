@@ -31,8 +31,8 @@ console, that alone is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.6** at its right end.
-- The console lists the base game as version **1.0.6** (a locally built CIA)
+- The title screen logo's pink subtitle strip reads **ENG 1.0.7** at its right end.
+- The console lists the base game as version **1.0.7** (a locally built CIA)
   and the DLC as **0.2.4** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
@@ -52,8 +52,6 @@ If the stamp is missing, the install did not take.
   are plain white** where the Japanese had a thick two-tone outline.
 - **Prefecture buttons in the online rankings are tiny.** Nine-letter names in
   boxes drawn for two kanji.
-- **The animated "Replay TV" logo in the Broadcast Station is Japanese.** It is
-  artwork, not a label.
 - **Score digits, 1P/2P/COM badges, You/New!/VS/ON/OFF** were already Latin.
 - **A few merged/rotated strings on the league result screen are Japanese**:
   the vertical "you lose" / "congratulations" art doesn't split cleanly from
@@ -61,8 +59,6 @@ If the stamp is missing, the install did not take.
 - **The replay-speed hint strip stays Japanese.**
 - **Decorative screenshot thumbnails and the small "New Record" ornament are
   Japanese**, deliberately left as artwork.
-- **The Broadcast Station category badge rows on the Replay Report stay
-  Japanese**, not yet redrawn.
 - **Starting a local Multiplayer host and backing out crashed the emulator.**
   The Azahar log ends on an assertion in its local-wireless service
   (nwm_uds.cpp line 864); that is the emulator, not the patch. On real
@@ -159,6 +155,35 @@ Found by the user playing Versus matches in Azahar on 2026-09-04, bisected and f
   Sega's own design and was left as shipped; a redraw was made and discarded.
 - New rule: Steam's `*_e.narc` archives carry the official English textures
   (DDS/DXT5 inside `tppk` containers); check them before hand-drawing any logo.
+
+## What changed in 1.0.7
+
+A sweep of the Steam release's English textures for Sega's official art,
+matching by text instead of position since Steam's English atlases are laid
+out differently from both the 3DS atlases and Steam's own Japanese atlases:
+
+- **222 hand-redrawn labels replaced with Sega's official English sprites**,
+  including the Broadcast Station and Club mode pills (Fusion, Swap, Party,
+  Big Bang, Marathon, Sprint, Ultra, Endless Puyo, Endless Fever, Tiny Puyo)
+  with their proper two-tone outlines, coloured category rows, Yes/No
+  buttons, and Puzzle League headers. Labels where the Steam sprite would be
+  unreadable or clash in style keep the hand redraw.
+- **The Replay Report badge rows (all 11)** are now Sega's official English
+  art: Epic Showdown!, Master Battle!, Regional Battle!, Must Watch!, Major
+  Upset!, Amazing Match!, Huge Comeback!, Back-n-Forth!, Surprise Win!, Great
+  Match!, Rank Up!
+- **The 15 Puzzle League rank pills** (Grand Master, Platinum, Golden,
+  Legend, Superstar, Star, Virtuoso, Elite, Professional, Wizard, Ace,
+  Amateur, Rookie, Beginner, Student) are now Sega's official English art;
+  these were still Japanese and had not previously been listed as a known
+  leftover.
+- **The Broadcast Station TV logo** is now Sega's official "World Broadcast"
+  mark. Earlier notes called this the "Replay TV" logo and said it was
+  artwork left Japanese; that is no longer true.
+- Still Japanese: the replay-speed hint strip (not found anywhere in the
+  Steam data), the three DLC voice lines with no English take, the
+  name-entry keyboards by design, the vertical league result art, decorative
+  screenshot thumbnails, and the "New Record" ornament.
 
 ## Testing status, honestly
 
