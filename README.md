@@ -34,19 +34,19 @@ and the DLC shop icons.
 
 | | |
 |---|---|
-| Japanese *Puyo Puyo Tetris* (3DS) | your own copy, left exactly as it is |
-| **`PuyoPuyoTetris-Update-patched.cia`** | in the release assets: the translation packaged as the game's **update title**. Sega's v1.2.0 update code with the English game data appended; installs over the official update |
+| Japanese *Puyo Puyo Tetris* (3DS) | your own copy |
+| **Patched base game** | built from your dump with `tools/build_cia.py` — or **`PuyoPuyoTetris-LayeredFS.zip`** from the release assets, unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
+| The Japanese v1.2.0 update | code only; installs over the patched base safely |
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
-| `PuyoPuyoTetris-LayeredFS.zip` | in the release assets: the changed files alone, for Luma3DS `luma/titles/0004000000101200/romfs/` — the alternative to the update CIA, used together with the official update |
 
-Install order: base → update CIA → DLC CIA. The console shows the update as
-version 1.3.1 (the official one is 1.2.0) and the title screen reads
-**ENG 1.0.1**.
+Install order: base → Japanese update → DLC. The title screen reads
+**ENG 1.0.1**; a locally built base CIA reports version 1.0.1.
 
-The base game itself is never modified and never published. A full patched
-base CIA can still be built locally with `tools/build_cia.py` from your own
-dump, but the update CIA makes that unnecessary — the same shape the TGAA
-patch ships.
+The patched base game is a full copy of the game with English inside it and
+is **not published**; the LayeredFS zip is the published form of the same
+files. An "update title" CIA was tried and withdrawn: this game's code only
+ever opens the base RomFS, never an update RomFS, so an update carrying the
+English data is ignored (details in TESTING.md).
 
 ## What was done
 
@@ -74,10 +74,9 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
   thing everything else depends on.
 - `labels.py` — finds text labels on texture atlases, groups identical ones,
   and redraws them from `labels_en_*.json`.
-- `build_update_cia.py`, `build_dlc_cia.py`, `build_cia.py` — the packages.
-  The update builder appends the romfs to Sega's code-only update CXI and
-  repairs the header; its null test strips the base game's own romfs off and
-  puts it back, and requires a byte-identical result.
+- `build_cia.py`, `build_dlc_cia.py` — the packages. (`build_update_cia.py`
+  builds a structurally valid update-title CIA and is kept for reference; this
+  game never reads an update's RomFS, so it is not a delivery route.)
 
 `translations/` holds the hand-written English (`tr_batch*.json`,
 `tr_extra.json`, `labels_en_p*.json`). Fix a line there and rebuild.

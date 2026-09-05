@@ -21,10 +21,6 @@ All of which remain (c) SEGA. Tetris is a trademark of The Tetris Company.
 
 What the releases contain
 
-  * PuyoPuyoTetris-Update-patched.cia: the game's update title (0004000E).
-    Sega's own v1.2.0 update executable with the patched game data (the
-    romfs) appended. It has the same shape as an official title update and,
-    like one, launches only through a copy of the game you already own.
   * PuyoPuyoTetris-DLC-patched.cia: the 3DS DLC with English text, voices
     and icons substituted. Installable only alongside a copy of the game you
     already own.
