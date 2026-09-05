@@ -16,13 +16,13 @@ and the DLC shop icons.
 > ### Playtesters wanted
 >
 > **Booted in the Azahar emulator, not yet on real hardware.** Base and DLC
-> both run and the text pipeline works in the engine — checked on the Options
+> both run and the text pipeline works in the engine: checked on the Options
 > screen, the Adventure map, and the DLC chapters, all in English. Every file
 > was also verified byte-for-byte on the way in and back out of the packages,
 > and every writer reproduces the game's own files byte-identically. If you
 > boot it on a console, that alone is worth reporting.
 >
-> **[Report anything wrong in issue #1](../../issues/1)** — which screen, and a
+> **[Report anything wrong in issue #1](../../issues/1)** (which screen, and a
 > photo beats a description. See **[TESTING.md](TESTING.md)** for what to
 > install, how to identify the build, and what is known.
 
@@ -36,7 +36,7 @@ and the DLC shop icons.
 | | |
 |---|---|
 | Japanese *Puyo Puyo Tetris* (3DS) | your own copy |
-| **Patched base game** | built from your dump with `tools/build_cia.py` — or **`PuyoPuyoTetris-LayeredFS.zip`** from the release assets, unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
+| **Patched base game** | built from your dump with `tools/build_cia.py`, or **`PuyoPuyoTetris-LayeredFS.zip`** from the release assets, unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
 | The Japanese v1.2.0 update | code only; installs over the patched base safely |
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
 
@@ -66,16 +66,16 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 
 `tools/` holds everything, GPL-3.0-or-later. The parts worth knowing about:
 
-- `mtx.py`, `narc.py` — the text and archive formats; byte-exact on the
+- `mtx.py`, `narc.py`: the text and archive formats; byte-exact on the
   untouched ROM.
-- `dsp.py`, `csar.py` — a DSP-ADPCM encoder (3,944 of 3,950 frames identical
+- `dsp.py`, `csar.py`: a DSP-ADPCM encoder (3,944 of 3,950 frames identical
   to Sega's own) and CSTM / CWAV / CWAR / CSAR writers, each byte-identical
   rebuilding the game's files.
-- `atlas_fix2.py`, `check_glyphs.py` — the per-section font-atlas rule, the one
+- `atlas_fix2.py`, `check_glyphs.py`: the per-section font-atlas rule, the one
   thing everything else depends on.
-- `labels.py` — finds text labels on texture atlases, groups identical ones,
+- `labels.py`: finds text labels on texture atlases, groups identical ones,
   and redraws them from `labels_en_*.json`.
-- `build_cia.py`, `build_dlc_cia.py` — the packages. (`build_update_cia.py`
+- `build_cia.py`, `build_dlc_cia.py`: the packages. (`build_update_cia.py`
   builds a structurally valid update-title CIA and is kept for reference; this
   game never reads an update's RomFS, so it is not a delivery route.)
 
