@@ -48,7 +48,7 @@ def decode(data, w, h, fmt):
         rgb, a = etc1a4.decode(data, w, h, alpha=(fmt == ETC1A4))
         return Image.fromarray(np.dstack([rgb, a]), 'RGBA')
     img = Image.new('RGBA', (w, h)); px = img.load()
-    bpp = BPP[fmt]
+    bpp = BPP.get(fmt)
     if fmt in (L4, A4):
         for k, (x, y) in enumerate(_order(w, h)):
             v = (data[k >> 1] >> (4 * (k & 1))) & 0xF

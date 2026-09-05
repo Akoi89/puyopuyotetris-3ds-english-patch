@@ -30,9 +30,9 @@ console, that alone is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.4** at its right end.
-- The console lists the base game as version **1.0.4** (a locally built CIA)
-  and the DLC as **0.2.3** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
+- The title screen logo's pink subtitle strip reads **ENG 1.0.5** at its right end.
+- The console lists the base game as version **1.0.5** (a locally built CIA)
+  and the DLC as **0.2.4** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
 
@@ -67,6 +67,7 @@ If the stamp is missing, the install did not take.
   The Azahar log ends on an assertion in its local-wireless service
   (nwm_uds.cpp line 864); that is the emulator, not the patch. On real
   hardware this path is untested.
+- **The match-end hang is fixed in 1.0.5.** See below.
 
 ## What is worth reporting
 
@@ -79,9 +80,6 @@ If the stamp is missing, the install did not take.
   which DLC scene.
 - **Anything that fails to load**: a scene, the DLC shop, a Club screen.
 - **Anything at all on real hardware**, good or bad.
-- **A hang at match end.** The game hung once at the end of a solo match in
-  Azahar; nothing was logged and the cause is unknown. Worth reporting: say
-  which mode and whether it repeats.
 
 ## Where to look first
 
@@ -132,6 +130,15 @@ Found by the user playing 1.0.3 in Azahar on 2026-09-04, fixed the same day:
   Sega's rate (`work/import_fan_banks.py`), so all 37 battle banks are now
   this project's own encode: 1,517 waves, all 32000 Hz, verified.
 
+## What changed in 1.0.5
+
+Found by the user playing Versus matches in Azahar on 2026-09-04, bisected and fixed the same day:
+
+- **The match-end hang is fixed.** Versus matches hung at the win/lose screen (the emulator sat at 0 FPS); Marathon never hung. The cause was the per-section font atlas fix, which had replaced any incomplete atlas member with a whole donor atlas: a 32 KB, about 130 glyph, 512x128 member could become a 131 KB, 820 glyph, 512x512 one. 60 of 101 members in the base overlay had more than doubled this way, 126 in the DLC. The Versus result screen loads three such members at once (tenp/text/win_dialogue) and stopped there. The fix is a new tool, `work/atlas_compact.py`, which subsets every swapped member down to the glyphs its section actually uses plus printable ASCII, in the donor's own cell geometry, on the smallest power of two bitmap that fits and never smaller than Sega's original. Its self test subsets Sega's own atlas to its full glyph set and reproduces it byte for byte. Result: base atlas bitmaps went from 7.4 MB to 2.0 MB across 80 members, DLC from 16.5 MB to 2.7 MB across 126 members. The user played Versus matches on the compacted build with no hang, and the winner dialogue rendered in English. One thing learned along the way: a donor can declare more glyphs than its bitmap has cells (one donor claimed 820 glyphs on a 720 cell bitmap), so indices past the last cell point outside the bitmap; the compactor drops those (one fullwidth question mark was affected).
+- **The version stamp on the title logo** is now 11 px tall in the strip's full height instead of 7 px (`work/stamp_title.py`).
+- **The bottom-screen notice** moved 3 px left.
+- **The Swap-mode "Puyo Puyo"/"Tetris" call banners** were tried again in English and reverted: the game layers that banner from two textures and the redraw looked wrong, so it stays Sega's art. Still Japanese, as noted above.
+
 ## Testing status, honestly
 
 | | |
@@ -144,5 +151,6 @@ Found by the user playing 1.0.3 in Azahar on 2026-09-04, fixed the same day:
 | Boot notice, DLC plates and Endless-mode record card | rendered and reviewed, not yet seen in the engine after the fix |
 | Title version stamp | rendered; never seen in the engine |
 | Update-title packaging | structurally correct, booted in Azahar, **ignored by the game**: withdrawn |
-| Emulator | **booted 2026-09-04**: Options screen, Adventure map, DLC chapters, all in English |
+| Versus result screen | **confirmed in the engine by the user 2026-09-04**: no hang, winner dialogue in English after the atlas-compact fix |
+| Emulator | **booted 2026-09-04**: Options screen, Adventure map, DLC chapters, Versus result screen, all in English |
 | Real hardware | **never** |
