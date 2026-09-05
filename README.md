@@ -41,8 +41,8 @@ and the DLC shop icons.
 | The Japanese v1.2.0 update | code only; installs over the patched base safely |
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
 
-Install order: base → Japanese update → DLC. The title screen reads
-**ENG 1.0.8**; a locally built base CIA reports version 1.0.8.
+Install order: base to Japanese update to DLC. The title screen reads
+**ENG 1.0.9**; a locally built base CIA reports version 1.0.9.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same
@@ -55,8 +55,8 @@ English data is ignored (details in TESTING.md).
 | area | |
 |---|---|
 | Text | 1,411 base strings and 875 DLC strings. Sega's Steam text where it exists; 392 lines written for the 3DS-only screens (Chapter 0 prologue, Club, SpotPass, errors, shop) |
-| In-battle voices | 24 Japanese character banks replaced from Steam's English recordings, matched by the Japanese takes' durations (zero error); the other 13 banks, already English from the earlier fan translation, are now re-imported from Steam too, so all 37 battle banks are this project's own encode at Sega's sample rate (`import_fan_banks.py`). Levels matched to Sega's own Japanese takes with `voice_gain.py`: 62 of 63 banks re-levelled, averaging 1.2 dB below Sega's takes |
-| DLC story voices | 760 of 763 clips; the other three were re-recorded for 3DS and have no English take. Levels matched to Sega's own Japanese takes with `voice_gain_dlc.py`: 734 clips re-levelled, about 1.3 dB below Sega's takes |
+| In-battle voices | 24 Japanese character banks replaced from Steam's English recordings, matched by the Japanese takes' durations (zero error); the other 13 banks, already English from the earlier fan translation, are now re-imported from Steam too, so all 37 battle banks are this project's own encode at Sega's sample rate (`import_fan_banks.py`). Levels matched to Sega's own Japanese takes with `voice_gain_clean.py`, gain and limiting done in float with a single encode: 62 of 63 banks re-levelled, averaging about 1 dB below Sega's takes |
+| DLC story voices | 760 of 763 clips; the other three were re-recorded for 3DS and have no English take. Levels matched to Sega's own Japanese takes with `voice_gain_clean.py`, a single clean encode: about 1.1 dB below Sega's takes |
 | Online UI textures | about 550 labels across the Club, Puzzle League, standby, replay and shop screens, redrawn in place |
 | DLC shop icons | 33 redrawn |
 | Font atlases | the game pre-renders only the glyphs each screen uses; every screen that gained English got a matching atlas, verified per section |
@@ -102,9 +102,13 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 - `import_extra_voices.py`, `import_select_voices.py`, `import_title_set.py`:
   import the launch title calls, the character-select confirm and pick
   lines, and the title-screen announcer from Steam's voice banks.
-- `voice_levels.py`, `voice_gain.py`, `voice_gain_dlc.py`: measure peak and
-  RMS in dBFS against Sega's Japanese takes, then gain and look-ahead limit
-  every base and DLC voice clip to match, re-encoding DSP-ADPCM.
+- `voice_levels.py`: measures peak and RMS in dBFS against Sega's Japanese
+  takes.
+- `voice_gain_clean.py`: decodes the once-encoded import audio, iterates
+  gain and look-ahead limiting in floating point until every base and DLC
+  voice clip matches Sega's Japanese take, then encodes DSP-ADPCM a single
+  time (`voice_gain.py` and `voice_gain_dlc.py`, an earlier multi-pass
+  version, are kept only for reference and are not used anymore).
 - `import_fan_banks.py`: re-imports the 13 battle banks the earlier fan
   translation had already made English, at Sega's sample rate, so all 37
   battle banks are this project's own encode.
