@@ -18,9 +18,15 @@ PLATES = {
     '0012': ('EX Act 10', 'An Interstellar Dream'),
 }
 WINDOW = {'adv_DL1': (5, 52), 'adv_DL2': (3, 87)}          # x0..x1 of the Japanese ink, measured
-FONTS = [f for f in ('C:/Windows/Fonts/ARIALNB.TTF', 'C:/Windows/Fonts/arialnb.ttf', 'C:/Windows/Fonts/arialbd.ttf') if os.path.exists(f)]
-FONT = FONTS[0]
-print('font:', FONT)
+FONT = 'C:/Windows/Fonts/bahnschrift.ttf'      # variable font: Bold SemiCondensed / Bold Condensed give tall letters at plate width
+OUTLINE = (12, 52, 28, 255)                        # the dark green Sega's Act plates use around white text
+
+
+def load(size, variation):
+    f = ImageFont.truetype(FONT, size)
+    f.set_variation_by_name(variation)
+    return f
+
 tiles = []
 for content, (small, title) in PLATES.items():
     n = str(int(content, 16) - 0x10 + 1)
@@ -31,14 +37,19 @@ for content, (small, title) in PLATES.items():
         w, h = img.size
         x0, x1 = WINDOW[kind[:7]]
         new = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(new)
-        size = 15
-        while size > 6:
-            f = ImageFont.truetype(FONT, size)
-            l, t, r, b = d.textbbox((0, 0), text, font=f)
-            if r - l <= x1 - x0 and b - t <= h - 2:
-                break
-            size -= 1
-        d.text((x0 - l, (h - (b - t)) // 2 - t), text, font=f, fill=(255, 255, 255, 255))
+        best = None
+        for variation in ('Bold SemiCondensed', 'Bold Condensed'):
+            size = 16
+            while size > 6:
+                f = load(size, variation)
+                l, t, r, b = d.textbbox((0, 0), text, font=f, stroke_width=1)
+                if r - l <= x1 - x0 and b - t <= h:
+                    break
+                size -= 1
+            if best is None or size > best[0]:
+                best = (size, variation, f, (l, t, r, b))
+        size, variation, f, (l, t, r, b) = best
+        d.text((x0 - l, (h - (b - t)) // 2 - t), text, font=f, fill=(255, 255, 255, 255), stroke_width=1, stroke_fill=OUTLINE)
         ms[0] = tex.comp_encode(new, fmt, hdr, ms[0])
         out = 'patch_dlc2/%s/data/%s.narc' % (content, kind)
         os.makedirs(os.path.dirname(out), exist_ok=True)
@@ -47,7 +58,7 @@ for content, (small, title) in PLATES.items():
         bg = Image.new('RGBA', (w, h), (30, 60, 30, 255)); bg.alpha_composite(back)
         dd = ImageDraw.Draw(bg); dd.line([(x1, 0), (x1, h)], fill=(255, 0, 0, 255))
         tiles.append(bg)
-        print('wrote', out, repr(text), 'size', size, 'ink width', r - l, 'of', x1 - x0)
+        print('wrote', out, repr(text), variation, 'size', size, 'ink %dx%d of %dx%d' % (r - l, b - t, x1 - x0, h))
 sheet = Image.new('RGB', (128, (16 + 4) * len(tiles)))
 y = 0
 for t in tiles:

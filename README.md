@@ -41,7 +41,7 @@ and the DLC shop icons.
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
 
 Install order: base → Japanese update → DLC. The title screen reads
-**ENG 1.0.3**; a locally built base CIA reports version 1.0.3.
+**ENG 1.0.4**; a locally built base CIA reports version 1.0.4.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same
@@ -54,7 +54,7 @@ English data is ignored (details in TESTING.md).
 | area | |
 |---|---|
 | Text | 1,411 base strings and 875 DLC strings. Sega's Steam text where it exists; 392 lines written for the 3DS-only screens (Chapter 0 prologue, Club, SpotPass, errors, shop) |
-| In-battle voices | 24 Japanese character banks replaced from Steam's English recordings, matched by the Japanese takes' durations (zero error) |
+| In-battle voices | 24 Japanese character banks replaced from Steam's English recordings, matched by the Japanese takes' durations (zero error); the other 13 banks, already English from the earlier fan translation, are now re-imported from Steam too, so all 37 battle banks are this project's own encode at Sega's sample rate (`import_fan_banks.py`) |
 | DLC story voices | 760 of 763 clips; the other three were re-recorded for 3DS and have no English take |
 | Online UI textures | about 550 labels across the Club, Puzzle League, standby, replay and shop screens, redrawn in place |
 | DLC shop icons | 33 redrawn |
@@ -88,6 +88,9 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 - `import_extra_voices.py`, `import_select_voices.py`, `import_title_set.py`:
   import the launch title calls, the character-select confirm and pick
   lines, and the title-screen announcer from Steam's voice banks.
+- `import_fan_banks.py`: re-imports the 13 battle banks the earlier fan
+  translation had already made English, at Sega's sample rate, so all 37
+  battle banks are this project's own encode.
 - `build_cia.py`, `build_dlc_cia.py`: the packages. (`build_update_cia.py`
   builds a structurally valid update-title CIA and is kept for reference; this
   game never reads an update's RomFS, so it is not a delivery route.)

@@ -30,9 +30,9 @@ console, that alone is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.3** at its right end.
-- The console lists the base game as version **1.0.3** (a locally built CIA)
-  and the DLC as **0.2.2** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
+- The title screen logo's pink subtitle strip reads **ENG 1.0.4** at its right end.
+- The console lists the base game as version **1.0.4** (a locally built CIA)
+  and the DLC as **0.2.3** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
 
@@ -63,6 +63,10 @@ If the stamp is missing, the install did not take.
   Japanese**, deliberately left as artwork.
 - **The Broadcast Station category badge rows on the Replay Report stay
   Japanese**, not yet redrawn.
+- **Starting a local Multiplayer host and backing out crashed the emulator.**
+  The Azahar log ends on an assertion in its local-wireless service
+  (nwm_uds.cpp line 864); that is the emulator, not the patch. On real
+  hardware this path is untested.
 
 ## What is worth reporting
 
@@ -75,6 +79,9 @@ If the stamp is missing, the install did not take.
   which DLC scene.
 - **Anything that fails to load**: a scene, the DLC shop, a Club screen.
 - **Anything at all on real hardware**, good or bad.
+- **A hang at match end.** The game hung once at the end of a solo match in
+  Azahar; nothing was logged and the cause is unknown. Worth reporting: say
+  which mode and whether it repeats.
 
 ## Where to look first
 
@@ -107,13 +114,31 @@ Found by the user playing 1.0.2 in Azahar on 2026-09-04, fixed the same day:
   the count) is redrawn by a dedicated script (`work/record_card.py`) that
   inpaints the gradient plates.
 
+## What changed in 1.0.4
+
+Found by the user playing 1.0.3 in Azahar on 2026-09-04, fixed the same day:
+
+- **The boot notice screen was still cut off on the bottom screen**: the
+  bottom screen shows a narrower window of the texture (x 70 to 315) than the
+  top screen (x 60 to 350). Each half now has its own column
+  (`work/notice.py`).
+- **The DLC map plates** were width-fitted in a wide font and came out short
+  next to Sega's "Act 1" plate. They now use Bahnschrift Bold Condensed with
+  Sega's dark-green outline, fitted height-first: small plates 15 to 16 px,
+  titles 14 px, "An Interstellar Dream" 11 px (`work/dlc_plates.py`).
+- **Sound**: the 13 battle banks the fan patch had already made English
+  carried odd per-wave sample rates (24600, 23500, 10000 Hz and so on; 236
+  waves) where Sega's are 32000 Hz. All 13 are re-imported from Steam at
+  Sega's rate (`work/import_fan_banks.py`), so all 37 battle banks are now
+  this project's own encode: 1,517 waves, all 32000 Hz, verified.
+
 ## Testing status, honestly
 
 | | |
 |---|---|
 | Text, base and DLC | verified per font atlas section; **seen in the engine 2026-09-04** on the Options screen, Adventure map, and DLC chapters |
 | Font atlas swaps | verified by rendering the shipped text through the shipped atlas; confirmed on-screen where the boot above reached |
-| Battle and DLC voices | decoded back and compared to source (27 to 37 dB); never heard |
+| Battle and DLC voices | decoded back and compared to source (27 to 37 dB); never heard. All 37 battle banks are now this project's own encode at Sega's 32000 Hz (1,517 waves, verified); the 13 re-imported for 1.0.4 fix a sample-rate mismatch the fan build had left in |
 | Character-select pick lines and title-screen announcer | verified by duration against Steam and confirmed by the user by ear from the decoded clip |
 | Online UI textures | rendered and reviewed as images; not yet confirmed in the engine beyond the screens above |
 | Boot notice, DLC plates and Endless-mode record card | rendered and reviewed, not yet seen in the engine after the fix |

@@ -14,7 +14,7 @@ import narc, tex
 
 SRC = 'tr_envoice/logo/Attention.narc'
 OUT = 'patch/romfs/logo/Attention.narc'
-CENTRE, MAXW = 205, 290
+COLUMNS = [(205, 290), (190, 236)]      # (centre, max width) per member: top screen shows x ~60..350, bottom screen x ~70..315
 FONT = ImageFont.truetype('C:/Windows/Fonts/arial.ttf', 13)
 FONT_B = ImageFont.truetype('C:/Windows/Fonts/arialbd.ttf', 15)
 
@@ -54,6 +54,7 @@ for mi, (title, body) in enumerate(TEXT):
     assert fmt == tex.RGB565 and img.size == (512, 256)
     new = Image.new('RGBA', img.size, (0, 0, 0, 255))
     d = ImageDraw.Draw(new)
+    CENTRE, MAXW = COLUMNS[mi]
     lines = wrap(d, body, FONT, MAXW)
     total = (26 if title else 0) + 19 * len(lines)
     y = (256 - total) // 2 - 10
@@ -68,6 +69,6 @@ for mi, (title, body) in enumerate(TEXT):
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 open(OUT, 'wb').write(narc.build(arc, ms))
 sheet = Image.new('RGB', (512, 512)); sheet.paste(previews[0], (0, 0)); sheet.paste(previews[1], (0, 256))
-dd = ImageDraw.Draw(sheet); dd.line([(350, 0), (350, 512)], fill=(255, 0, 0), width=1); dd.line([(60, 0), (60, 512)], fill=(255, 0, 0), width=1)
+dd = ImageDraw.Draw(sheet); dd.line([(350, 0), (350, 256)], fill=(255, 0, 0), width=1); dd.line([(60, 0), (60, 256)], fill=(255, 0, 0), width=1); dd.line([(315, 256), (315, 512)], fill=(255, 0, 0), width=1); dd.line([(70, 256), (70, 512)], fill=(255, 0, 0), width=1)
 sheet.save('notice_preview.png')
-print('wrote', OUT, '(red lines = the extent of the Japanese block, x 60 and 350)')
+print('wrote', OUT, '(red lines = visible window: top x 60..350, bottom x 70..315)')
