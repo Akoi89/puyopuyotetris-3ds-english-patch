@@ -42,7 +42,7 @@ and the DLC shop icons.
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets; or **`PuyoPuyoTetris-DLC-xdelta.zip`**, an xdelta3 patch for your own decrypted DLC dump that produces the same file |
 
 Install order: base to Japanese update to DLC. The title screen reads
-**ENG 1.0.9**; a locally built base CIA reports version 1.0.9.
+**ENG 1.0.10**; a locally built base CIA reports version 1.0.10.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same
@@ -66,6 +66,7 @@ English data is ignored (details in TESTING.md).
 | Endless-mode record card | "Best Record", "This Run" and the "beaten" count redrawn with the gradient plates inpainted |
 | Swap-mode call logos | Sega's official English "Puyo" / "Tetris" logo art, taken from the Steam release's English swap texture (the 3DS texture at 4x) and scaled down into place |
 | Official Steam sprites | 222 hand-redrawn labels replaced with Sega's official English sprites matched by text against the Steam release, including the Broadcast Station and Club mode pills with their proper two-tone outlines; plus the 11 Replay Report badge rows, the 15 Puzzle League rank pills, and the Broadcast Station TV logo (Sega's "World Broadcast" mark), none of which the label match had caught |
+| HOME menu banner | Sega's official English "PuyoPuyo" logo swapped into the shared texture in place of the Japanese one, keeping Sega's TETRIS art untouched; this is in a locally built CIA only, since LayeredFS cannot change a banner |
 
 What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 
@@ -112,6 +113,13 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 - `import_fan_banks.py`: re-imports the 13 battle banks the earlier fan
   translation had already made English, at Sega's sample rate, so all 37
   battle banks are this project's own encode.
+- `banner_build.py`: swaps only the Japanese logo slot in the HOME menu
+  banner's shared RGB565 texture for Steam's high-resolution English logo,
+  downscaled with Lanczos, keeping Sega's TETRIS art and the rest of the
+  texture untouched, then rebuilds the CBMD.
+- `exefs_banner.py`: splices the new banner into the ExeFS in place (only
+  1,170 bytes of slack), recomputing the file hash and the ExeFS superblock
+  hash, instead of rebuilding the CXI.
 - `build_cia.py`, `build_dlc_cia.py`: the packages. (`build_update_cia.py`
   builds a structurally valid update-title CIA and is kept for reference; this
   game never reads an update's RomFS, so it is not a delivery route.)

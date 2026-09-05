@@ -33,8 +33,8 @@ console, that alone is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.9** at its right end.
-- The console lists the base game as version **1.0.9** (a locally built CIA)
+- The title screen logo's pink subtitle strip reads **ENG 1.0.10** at its right end.
+- The console lists the base game as version **1.0.10** (a locally built CIA)
   and the DLC as **0.2.6** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
@@ -236,6 +236,13 @@ to 36 dB.
 - `voice_gain.py` and `voice_gain_dlc.py` (the old three-pass tools) are
   kept only as a record and are not used anymore.
 - Nothing else changed since 1.0.8.
+
+## What changed in 1.0.10
+
+The HOME menu banner now shows Sega's official English "PuyoPuyo" logo
+instead of the Japanese one. This lives only in the locally built CIA;
+LayeredFS cannot carry a banner, so nothing public shows it. Nothing else
+changed since 1.0.9.
 
 ## Testing status, honestly
 
