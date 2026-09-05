@@ -34,7 +34,7 @@ font atlases. 1.0.6:
   scaled down 4x into the 3DS texture; only those two logo cells changed,
   everything else in that banner is still Sega's art. The earlier note in
   this release that this banner stays Japanese no longer applies.
-- **The bottom-screen boot notice text** moved a further 8 px left (column centre 187 to 179, in two steps at the user's request).
+- **The bottom-screen boot notice text** moved a further 21 px left (column centre 187 to 166, in three steps at the user's request, to sit under the top-screen text).
 - **The mixed-mode HOLD/NEXT labels** looked clipped in the emulator; I
   checked and the texture is byte-identical between the Japanese original,
   the fan build, and this patch, and the PC version shows the same clipping,
