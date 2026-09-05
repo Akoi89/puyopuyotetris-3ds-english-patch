@@ -11,7 +11,9 @@ For anyone playing these builds and reporting back. Spoiler-free.
    `PuyoPuyoTetris-LayeredFS.zip` under `luma/titles/0004000000101200/`.
 3. **The Japanese v1.2.0 update** (`0004000E`, 2.4 MB): code only; installs
    over the patched base safely.
-4. **`PuyoPuyoTetris-DLC-patched.cia`**: the translated DLC.
+4. **`PuyoPuyoTetris-DLC-patched.cia`**: the translated DLC. Or build the same
+   file yourself: `PuyoPuyoTetris-DLC-xdelta.zip` holds an xdelta3 patch for a
+   decrypted dump of your own Japanese DLC, with hashes to check both ends.
 
 **Do not use `PuyoPuyoTetris-Update-patched.cia` if you have one.** It was
 published for a few hours on 2026-09-04 and withdrawn. This game's code only

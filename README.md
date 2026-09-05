@@ -39,7 +39,7 @@ and the DLC shop icons.
 | Japanese *Puyo Puyo Tetris* (3DS) | your own copy |
 | **Patched base game** | built from your dump with `tools/build_cia.py`, or **`PuyoPuyoTetris-LayeredFS.zip`** from the release assets, unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
 | The Japanese v1.2.0 update | code only; installs over the patched base safely |
-| **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
+| **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets; or **`PuyoPuyoTetris-DLC-xdelta.zip`**, an xdelta3 patch for your own decrypted DLC dump that produces the same file |
 
 Install order: base to Japanese update to DLC. The title screen reads
 **ENG 1.0.9**; a locally built base CIA reports version 1.0.9.
