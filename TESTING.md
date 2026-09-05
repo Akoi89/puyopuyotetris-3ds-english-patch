@@ -5,19 +5,20 @@ For anyone playing these builds and reporting back. Spoiler-free.
 ## What to install, in order
 
 1. **The Japanese base game** — not distributed here. Cartridge or your own dump.
-   Leave it exactly as it is.
-2. **`PuyoPuyoTetris-Update-patched.cia`** — the translation, packaged as the
-   game's **update** (title `0004000E`). It is Sega's own v1.2.0 update code with
-   the English game data appended, so it replaces the official update and the
-   base game is never touched. Your save carries over.
-3. **`PuyoPuyoTetris-DLC-patched.cia`** — the translated DLC.
+2. **The patched base game** — either `PuyoPuyoTetris-EN-voices-patched.cia`
+   built from your dump with `tools/build_cia.py` (it replaces the base game,
+   same title ID; your save carries over), or on Luma3DS the contents of
+   `PuyoPuyoTetris-LayeredFS.zip` under `luma/titles/0004000000101200/`.
+3. **The Japanese v1.2.0 update** (`0004000E`, 2.4 MB) — code only; installs
+   over the patched base safely.
+4. **`PuyoPuyoTetris-DLC-patched.cia`** — the translated DLC.
 
-If the official Japanese v1.2.0 update is already installed, the update CIA
-replaces it (the console then shows 1.3.1 instead of 1.2.0). If the earlier
-full-base build (`PuyoPuyoTetris-EN-voices-patched.cia`, 1.0.x) is installed it
-can stay; the update's data takes precedence. Luma3DS users can instead unpack
-`PuyoPuyoTetris-LayeredFS.zip` into `luma/titles/0004000000101200/` and keep
-the official update.
+**Do not use `PuyoPuyoTetris-Update-patched.cia` if you have one.** It was
+published for a few hours on 2026-09-04 and withdrawn. This game's code only
+ever opens the base game's RomFS (SelfNCCH path type 0) and never the update
+RomFS (type 5), so an update title carrying the English files is ignored —
+Azahar's log shows it loading the update's romfs and the game then reading
+Sega's. Uninstall it and install the official update instead.
 
 **None of this has ever been booted** — not on hardware, not in an emulator.
 Every file was verified byte-for-byte on the way in and back out of the CIA,
@@ -28,9 +29,8 @@ worth reporting.
 ## How to tell which build you have
 
 - The title screen logo's pink subtitle strip reads **ENG 1.0.1** at its right end.
-- The console lists the update as version **1.3.1** (the official update is
-  1.2.0) and the DLC as **0.2.0** (the shipped DLC was 0.1.0). The earlier
-  full-base build shows the base game itself as 1.0.1.
+- The console lists the base game as version **1.0.1** (a locally built CIA)
+  and the DLC as **0.2.0** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
 
@@ -85,5 +85,5 @@ If the stamp is missing, the install did not take.
 | Battle and DLC voices | decoded back and compared to source (27–37 dB); never heard |
 | Online UI textures | rendered and reviewed as images; never seen in the engine |
 | Title version stamp | rendered; never seen in the engine |
-| Update-title packaging | the header maths strip and re-add the base game's own romfs byte-for-byte, and 3dstool reads the identical romfs back out of the update; never booted |
+| Update-title packaging | structurally correct, booted in Azahar, **ignored by the game** — withdrawn |
 | Emulator / hardware | **never** |
