@@ -5,7 +5,9 @@ For anyone playing these builds and reporting back. Spoiler-free.
 ## What to install, in order
 
 1. **The Japanese base game**: not distributed here. Cartridge or your own dump.
-2. **The patched base game**: either `PuyoPuyoTetris-EN-voices-patched.cia`
+2. **The patched base game**: `PuyoPuyoTetris-Base-xdelta.zip` applied to a
+   decrypted dump of your own game (see its README; this route also gives the
+   English HOME menu banner), or `PuyoPuyoTetris-EN-voices-patched.cia`
    built from your dump with `tools/build_cia.py` (it replaces the base game,
    same title ID; your save carries over), or on Luma3DS the contents of
    `PuyoPuyoTetris-LayeredFS.zip` under `luma/titles/0004000000101200/`.
