@@ -47,6 +47,7 @@ def main(src, png, out):
         if c is None:
             offs[i] = 0; continue
         offs[i] = pos; body += c; pos += len(c)
+    pad = (-pos) % 0x20; body += bytes(pad); pos += pad          # the CWAV must start 0x20-aligned (Sega's does; unaligned audio plays garbage)
     struct.pack_into('<14I', hdr, 8, *offs); struct.pack_into('<I', hdr, 0x84, pos)
     new = bytes(hdr) + body + b[cw:]
     open(out, 'wb').write(new)
