@@ -149,8 +149,8 @@ Found by the user playing Versus matches in Azahar on 2026-09-04, bisected and f
   texture, touching only the logo cells (rows 102..132); the curved "PUYO
   PUYO / TET RIS" lettering and everything else is unchanged, still Sega's
   art. The earlier note that this banner stays Japanese no longer applies.
-- **The bottom-screen boot notice text** moved a further 8 px left (column centre 187 to 179, in two steps at the user's request)
-  (`work/notice.py`, bottom column centre 179).
+- **The bottom-screen boot notice text** moved a further 21 px left (column centre 187 to 166, in three steps at the user's request, to sit under the top-screen text)
+  (`work/notice.py`, bottom column centre 166).
 - **The mixed-mode (Tetris side) HOLD/NEXT labels** were checked because they
   looked clipped in the emulator. The texture (`tenp/mix/mix2p/mix2P.narc`) is
   byte-identical in the Japanese original, the fan build, and this patch, and
