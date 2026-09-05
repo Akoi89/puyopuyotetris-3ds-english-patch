@@ -1,18 +1,18 @@
-The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.6** (see below). **Nothing has been booted on real hardware**: every file is verified byte-for-byte; base and DLC have been booted in Azahar and the English shows in the engine. See TESTING.md, and report problems in [issue #1](../../issues/1).
+The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.7** (see below). **Nothing has been booted on real hardware**: every file is verified byte-for-byte; base and DLC have been booted in Azahar and the English shows in the engine. See TESTING.md, and report problems in [issue #1](../../issues/1).
 
-- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.6**; the built CIA reports 1.0.6.
+- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.7**; the built CIA reports 1.0.7.
 - **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.4.
 - Install order: Japanese base → patched base (or LayeredFS) → Japanese v1.2.0 update (code only) → this DLC.
 
 **Withdrawn the same day: an "update title" CIA.** It packaged the English data inside Sega's v1.2.0 update. Puyo Puyo Tetris's code only ever opens the base game's RomFS (path type 0) and never asks for an update RomFS (type 5), so the console and Azahar keep reading Sega's Japanese files no matter what the update carries. It did nothing. If you downloaded it, delete it and install the official update instead.
 
-The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.6 (below) is the current build.
+The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.7 (below) is the current build.
 
 ---
 
-## Current build: 1.0.6
+## Current build: 1.0.7
 
-The build has moved on from 1.0.1 through 1.0.5 above. **Booted in the
+The build has moved on from 1.0.1 through 1.0.6 above. **Booted in the
 Azahar emulator**: base and DLC both run, and the text pipeline works in the
 engine: checked on the Options screen, the Adventure map, the DLC chapters,
 and the Versus result screen, all in English. Real hardware is still
@@ -24,29 +24,40 @@ title-screen announcer, the boot notice screen, the DLC map plates, and the
 Endless-mode record card. 1.0.4 fixed the bottom-screen boot notice column,
 refit the DLC map plates in a condensed font, and re-encoded all 37 battle
 banks to Sega's sample rate. 1.0.5 fixed the match-end hang by compacting the
-font atlases. 1.0.6:
+font atlases. 1.0.6 replaced the Swap-mode call logos with Sega's official
+English logo art and moved the bottom-screen boot notice text a further 21
+px left. 1.0.7:
 
-- **The Swap-mode "Puyo"/"Tetris" call logos are now Sega's official English
-  logo art.** The Steam release's `data/tenp/swap/swap2p/swap2p_e.narc`
-  carries a `tppk` container of DDS/DXT5 textures; its second texture is
-  1024x1024, the same layout as the 3DS texture at four times the size, with
-  "Puyo" and "Tetris" where the 3DS has the Japanese marks. The logos are
-  scaled down 4x into the 3DS texture; only those two logo cells changed,
-  everything else in that banner is still Sega's art. The earlier note in
-  this release that this banner stays Japanese no longer applies.
-- **The bottom-screen boot notice text** moved a further 21 px left in three steps while testing, so it sits under the top-screen text.
-- **The mixed-mode HOLD/NEXT labels** looked clipped in the emulator; I
-  checked and the texture is byte-identical between the Japanese original,
-  the fan build, and this patch, and the PC version shows the same clipping,
-  so this is Sega's own design and was left as shipped.
-- **Base game**: title screen now reads **ENG 1.0.6**; the built CIA reports
-  1.0.6.
+- **A sweep of the Steam release's English textures for Sega's official
+  art.** Because Steam's English atlases are laid out differently from both
+  the 3DS atlases and Steam's own Japanese atlases, sprites are matched by
+  their text instead of their position. 222 hand-redrawn labels are replaced
+  with Sega's official English sprites, including the Broadcast Station and
+  Club mode pills (Fusion, Swap, Party, Big Bang, Marathon, Sprint, Ultra,
+  Endless Puyo, Endless Fever, Tiny Puyo) with their proper two-tone
+  outlines, coloured category rows, Yes/No buttons, and Puzzle League
+  headers. Labels where the Steam sprite would be unreadable or clash in
+  style keep the hand redraw.
+- **The Replay Report badge rows (all 11)** are now Sega's official English
+  art: Epic Showdown!, Master Battle!, Regional Battle!, Must Watch!, Major
+  Upset!, Amazing Match!, Huge Comeback!, Back-n-Forth!, Surprise Win!, Great
+  Match!, Rank Up!
+- **The 15 Puzzle League rank pills** (Grand Master, Platinum, Golden,
+  Legend, Superstar, Star, Virtuoso, Elite, Professional, Wizard, Ace,
+  Amateur, Rookie, Beginner, Student) are now Sega's official English art;
+  these were still Japanese and hadn't previously been listed as a known
+  leftover.
+- **The Broadcast Station TV logo** is now Sega's official "World Broadcast"
+  mark. Earlier notes called this the "Replay TV" logo and said it was
+  artwork left Japanese; that isn't true any more.
+- **Base game**: title screen now reads **ENG 1.0.7**; the built CIA reports
+  1.0.7.
 - **`PuyoPuyoTetris-DLC-patched.cia`** stays **TMD 0.2.4**.
 - Still Japanese, deliberately or not yet: a few merged/rotated strings on
   the league result screen (vertical "you lose"/"congratulations" art), the
-  replay-speed hint strip, decorative screenshot thumbnails, the small "New
-  Record" ornament, and the Broadcast Station category badge rows on the
-  Replay Report.
+  replay-speed hint strip (not found anywhere in the Steam data), the three
+  DLC voice lines with no English take, decorative screenshot thumbnails,
+  and the small "New Record" ornament.
 - One stability report from testing, recorded honestly: starting a local
   Multiplayer host and backing out crashed the emulator (an emulator-side
   assertion, not the patch).

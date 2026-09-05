@@ -42,7 +42,7 @@ and the DLC shop icons.
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets |
 
 Install order: base → Japanese update → DLC. The title screen reads
-**ENG 1.0.6**; a locally built base CIA reports version 1.0.6.
+**ENG 1.0.7**; a locally built base CIA reports version 1.0.7.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same
@@ -65,6 +65,7 @@ English data is ignored (details in TESTING.md).
 | Boot notice and DLC map plates | re-wrapped/re-fitted into the Japanese texture's own ink window after a first pass cut them off |
 | Endless-mode record card | "Best Record", "This Run" and the "beaten" count redrawn with the gradient plates inpainted |
 | Swap-mode call logos | Sega's official English "Puyo" / "Tetris" logo art, taken from the Steam release's English swap texture (the 3DS texture at 4x) and scaled down into place |
+| Official Steam sprites | 222 hand-redrawn labels replaced with Sega's official English sprites matched by text against the Steam release, including the Broadcast Station and Club mode pills with their proper two-tone outlines; plus the 11 Replay Report badge rows, the 15 Puzzle League rank pills, and the Broadcast Station TV logo (Sega's "World Broadcast" mark), none of which the label match had caught |
 
 What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 
@@ -93,6 +94,11 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
   and the Swap-mode call logos (those come from Steam's English textures;
   Steam's `*_e.narc` archives hold official English art worth checking before
   drawing anything by hand).
+- `steam_sweep.py`, `steam_ocr.ps1`, `steam_text.py`, `steam_manual.py`: sweep
+  every Steam English texture against its Japanese twin, OCR the results, and
+  match them to this project's texture labels by text (Steam's atlases are
+  laid out differently from the 3DS's, so position doesn't work) to pull in
+  more of Sega's official English art.
 - `import_extra_voices.py`, `import_select_voices.py`, `import_title_set.py`:
   import the launch title calls, the character-select confirm and pick
   lines, and the title-screen announcer from Steam's voice banks.
