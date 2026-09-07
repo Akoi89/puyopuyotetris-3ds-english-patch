@@ -13,17 +13,21 @@ This finishes it: about 99% of displayed text, all 37 characters' in-battle
 voices, all three DLC story chapters (text and voices), the online UI textures,
 and the DLC shop icons.
 
-**[Download the current build from Releases](../../releases/latest)** (build 1.0.10, DLC 0.2.6). What changed in each build is in **[RELEASE_NOTES.md](RELEASE_NOTES.md)**. Also listed on [romhacking.net](https://www.romhacking.net/translations/7714/), and the xdelta patches (base and DLC, with xdelta3.exe) are mirrored as one zip on [archive.org](https://archive.org/details/puyopuyotetris-3ds-english-patch).
+**[Download the current build from Releases](../../releases/latest)** (build 1.0.11, DLC 0.2.6). What changed in each build is in **[RELEASE_NOTES.md](RELEASE_NOTES.md)**. Also listed on [romhacking.net](https://www.romhacking.net/translations/7714/), and the xdelta patches (base and DLC, with xdelta3.exe) are mirrored as one zip on [archive.org](https://archive.org/details/puyopuyotetris-3ds-english-patch).
 
 > ### Playtesters wanted
 >
-> **Booted in the Azahar emulator, not yet on real hardware.** Base and DLC
-> both run and the text pipeline works in the engine: checked on the Options
-> screen, the Adventure map, the DLC chapters, the Versus result screen, the
-> boot notice and the Swap-mode call banners, all in English. Every file
-> was also verified byte-for-byte on the way in and back out of the packages,
-> and every writer reproduces the game's own files byte-identically. If you
-> boot it on a console, that alone is worth reporting.
+> **Booted on a New 3DS on 6 September 2026.** The base game, the Japanese
+> update and the DLC install, the HOME menu tile shows the English logo, the
+> title screen and main menu run. That
+> first run on a console found a bug every earlier build had: the error and
+> system dialogs showed the wrong message (a blank entry in the error table
+> shifted every message by one). 1.0.11 fixes it and was confirmed on the same
+> console. Beyond the menus, play on hardware is still a few minutes old; the
+> rest of the testing was in Azahar, where the text pipeline was checked on
+> the Options screen, the Adventure map, the DLC chapters, the Versus result
+> screen, the boot notice and the Swap-mode call banners. Every file was also
+> verified byte-for-byte on the way in and back out of the packages.
 >
 > **[Report anything wrong in issue #1](../../issues/1)** (which screen, and a
 > photo beats a description). See **[TESTING.md](TESTING.md)** for what to
@@ -44,7 +48,7 @@ and the DLC shop icons.
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets; or **`PuyoPuyoTetris-DLC-xdelta.zip`**, an xdelta3 patch for your own decrypted DLC dump that produces the same file |
 
 Install order: base to Japanese update to DLC. The title screen reads
-**ENG 1.0.10**; a locally built base CIA reports version 1.0.10.
+**ENG 1.0.11**; a locally built base CIA reports version 1.0.11.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same

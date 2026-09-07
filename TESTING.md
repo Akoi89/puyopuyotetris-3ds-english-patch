@@ -24,14 +24,18 @@ RomFS (type 5), so an update title carrying the English files is ignored,
 Azahar's log shows it loading the update's romfs and the game then reading
 Sega's. Uninstall it and install the official update instead.
 
-**Booted in Azahar, not yet on real hardware.** Every build from 1.0.1 to
-1.0.6 has been booted in the Azahar emulator on 2026-09-04: it runs, and the
-text pipeline works in the engine: checked on the Options screen, the
-Adventure map, the DLC chapters, the Versus result screen, the boot notice
-and the Swap-mode call banners, all in English. Every file was also verified byte-for-byte on the way in and
-back out of the CIA, and all the writers reproduce the game's own files
-byte-identically. Real hardware is still untested: if you boot it on a
-console, that alone is worth reporting.
+**Booted on a New 3DS on 6 September 2026.** Base, Japanese update and DLC
+installed; HOME menu banner English; title screen and main menu run. The first console launch showed an error dialog with the
+wrong text, which turned out to be a shifted error table present since the
+first build (fixed in 1.0.11, confirmed on the same console: the SpotPass
+opt-in question now reads as itself). Before that, every build from 1.0.1 to
+1.0.10 had been booted only in the Azahar emulator: the text pipeline works
+in the engine, checked on the Options screen, the Adventure map, the DLC
+chapters, the Versus result screen, the boot notice and the Swap-mode call
+banners, all in English. Every file was verified byte-for-byte on the way in
+and back out of the CIA, and all the writers reproduce the game's own files
+byte-identically. Actual play on hardware is still short; a match or a story
+chapter played through on a console is worth reporting.
 
 ## How to tell which build you have
 

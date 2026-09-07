@@ -1,6 +1,6 @@
-The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.10** (see below). **Nothing has been booted on real hardware**: every file is verified byte-for-byte; base and DLC have been booted in Azahar and the English shows in the engine. See TESTING.md, and report problems in [issue #1](../../issues/1).
+The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.11** (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
 
-- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.10**; the built CIA reports 1.0.10.
+- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.11**; the built CIA reports 1.0.11.
 - **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.6.
 - **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 173 MB) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
 - **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
@@ -12,7 +12,25 @@ The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion
 
 ---
 
-## Current build: 1.0.10
+## Current build: 1.0.11
+
+The first run on real hardware (a New 3DS, 6 September 2026) found a bug that
+had been in every build: the error and system dialogs showed the wrong
+message. The game's error table (`tenp/text/error/errorJapanese.mtx`) had a
+blank entry at position 1, inherited from the earlier fan translation's files
+that this project built on, so every message after it was drawn one slot late.
+On a first launch that looked like "Could not read data. Turn off the power and
+reinsert the SD Card." with Yes and No buttons, when the game was actually
+asking whether to use SpotPass. 1.0.11 realigns the table to Sega's original
+38 entries, same English text, right slots. The other 29 base text tables and
+all 30 DLC tables were checked against the originals and match. Nothing else
+changed; the title screen reads **ENG 1.0.11**. Confirmed on the console: the
+SpotPass question now reads as itself.
+
+If you answered that first-launch question on 1.0.10 without knowing what it
+was, it was the SpotPass opt-in; the setting is in Options.
+
+## 1.0.10
 
 The build has moved on from 1.0.1 through 1.0.6 above. **Booted in the
 Azahar emulator**: base and DLC both run, and the text pipeline works in the
