@@ -1,18 +1,37 @@
-The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.11** (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
+The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.12** with DLC 0.2.7 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
 
-- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.11**; the built CIA reports 1.0.11.
-- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.6.
+- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.12**; the built CIA reports 1.0.12.
+- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.7.
 - **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 173 MB) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
 - **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
 - Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
 
 **Withdrawn the same day: an "update title" CIA.** It packaged the English data inside Sega's v1.2.0 update. Puyo Puyo Tetris's code only ever opens the base game's RomFS (path type 0) and never asks for an update RomFS (type 5), so the console and Azahar keep reading Sega's Japanese files no matter what the update carries. It did nothing. If you downloaded it, delete it and install the official update instead.
 
-The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.10 (below) is the current build.
+The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.12 (below) is the current build.
 
 ---
 
-## Current build: 1.0.11
+## Current build: 1.0.12 / DLC 0.2.7
+
+A texture quality pass, nothing functional. The textures this patch draws
+itself and that the game stores compressed (ETC1) had gone through a small
+encoder that took each block's average colour and stopped there. 1.0.12
+re-renders them with an encoder that searches for the best colour per block
+and ignores the pixels the game never shows, so the edges of white lettering
+on coloured plates come out cleaner. It covers fewer textures than I expected
+when I started: eight in total. Base game: the "New Record" card and the rank
+plates on the Puzzle League standby screen. DLC: the six EX chapter plates on
+the Adventure map (Act number and title for each of the three chapters).
+Every other file is byte-identical to 1.0.11 / 0.2.6; the title screen reads
+**ENG 1.0.12** and the DLC is **TMD 0.2.7**.
+
+Checked in Azahar. The hardware confirmation from 1.0.11 covers everything
+except these eight textures. If you already have 1.0.11 and DLC 0.2.6 there's
+no need to update; the difference is slightly sharper lettering on those
+screens.
+
+## 1.0.11
 
 The first run on real hardware (a New 3DS, 6 September 2026) found a bug that
 had been in every build: the error and system dialogs showed the wrong

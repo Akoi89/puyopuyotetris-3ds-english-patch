@@ -1,6 +1,6 @@
 """Rebuild the DLC CIA with the translated contents.
 
-    python build_dlc_cia.py <shell.cia> <out.cia>
+    python build_dlc_cia.py <shell.cia> <out.cia> [major.minor.micro]   (default 0.2.6)
 
 The DLC's contents are NCCH-encrypted CFAs, so the in-place splice used for the
 base game would write plaintext into ciphertext. Each touched content goes
@@ -22,6 +22,7 @@ TOOL = r'G:\Claude\TGAA 1-2\3dstool\3dstool.exe'
 PATCH = 'patch_dlc2'
 WORK = 'dlc_build'
 shell, out = sys.argv[1], sys.argv[2]
+VERSION = tuple(int(x) for x in sys.argv[3].split('.')) if len(sys.argv) > 3 else (0, 2, 6)
 
 
 def run(*a):
@@ -78,7 +79,7 @@ for idx in touched:
     print('   content %04x: %d -> %d bytes' % (idx, len(c.contents[idx]), len(new)))
 
 print('writing %s ...' % out)
-chk = Cia(shell).write(out, replace=replace, version=(0, 2, 6))
+chk = Cia(shell).write(out, replace=replace, version=VERSION)
 print('done: %d contents, %.1f MB' % (chk.count, sum(len(b) for b in chk.contents) / 1048576))
 
 # --- verify: extract a rebuilt content back out of the finished CIA -----------------
