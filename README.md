@@ -13,7 +13,7 @@ This finishes it: about 99% of displayed text, all 37 characters' in-battle
 voices, all three DLC story chapters (text and voices), the online UI textures,
 and the DLC shop icons.
 
-**[Download the current build from Releases](../../releases/latest)** (build 1.0.11, DLC 0.2.6). What changed in each build is in **[RELEASE_NOTES.md](RELEASE_NOTES.md)**. Also listed on [romhacking.net](https://www.romhacking.net/translations/7714/). The two xdelta patches, xdelta3.exe and a readme are also on the release as one zip, `PuyoPuyoTetris-xdelta-patches-1.0.11.zip`, which is the file the romhacking.net page links to.
+**[Download the current build from Releases](../../releases/latest)** (build 1.0.12, DLC 0.2.7). What changed in each build is in **[RELEASE_NOTES.md](RELEASE_NOTES.md)**. Also listed on [romhacking.net](https://www.romhacking.net/translations/7714/). The two xdelta patches, xdelta3.exe and a readme are also on the release as one zip, `PuyoPuyoTetris-xdelta-patches-1.0.12.zip`, which is the file the romhacking.net page links to.
 
 > ### Playtesters wanted
 >
@@ -48,7 +48,7 @@ and the DLC shop icons.
 | **`PuyoPuyoTetris-DLC-patched.cia`** | in the release assets; or **`PuyoPuyoTetris-DLC-xdelta.zip`**, an xdelta3 patch for your own decrypted DLC dump that produces the same file |
 
 Install order: base to Japanese update to DLC. The title screen reads
-**ENG 1.0.11**; a locally built base CIA reports version 1.0.11.
+**ENG 1.0.12**; a locally built base CIA reports version 1.0.12.
 
 The patched base game is a full copy of the game with English inside it and
 is **not published**; the LayeredFS zip is the published form of the same

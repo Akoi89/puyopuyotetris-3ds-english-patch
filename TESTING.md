@@ -39,9 +39,9 @@ chapter played through on a console is worth reporting.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.10** at its right end.
-- The console lists the base game as version **1.0.10** (a locally built CIA)
-  and the DLC as **0.2.6** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
+- The title screen logo's pink subtitle strip reads **ENG 1.0.12** at its right end.
+- The console lists the base game as version **1.0.12** (a locally built CIA)
+  and the DLC as **0.2.7** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
 

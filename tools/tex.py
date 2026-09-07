@@ -12,7 +12,7 @@ same format code, u16[3] = width, u16[4] = height).
 Pixel order is the 8x8 Morton tile order with no flips (proven byte-exact on
 CTPK RGBA4/RGBA8/RGB565 round trips in this project).
 """
-import struct, sys
+import os, struct, sys
 import numpy as np
 from PIL import Image
 sys.path.insert(0, r'G:\Claude\TGAA 1-2\testimony_pipeline')
@@ -88,7 +88,26 @@ def encode(img, fmt, base=None):
         if fmt == ETC1:
             raise NotImplementedError('ETC1 without alpha')
         rgba = np.array(img.convert('RGBA'))
-        return etc1_enc.encode_rgba(rgba, base, w, h, touch_mask=np.ones((h, w), bool))
+        # 1.0.12: PUYO_ETC1 = search (default: base-colour search + per-block etcpak fallback),
+        # etcpak (plain etcpak, measured worse on this art), legacy (the 1.0.11 encoder).
+        enc = {'legacy': etc1_enc.encode_rgba, 'etcpak': etc1_enc.encode_rgba_etcpak}.get(
+            os.environ.get('PUYO_ETC1', 'search'), etc1_enc.encode_rgba_search)
+        out = enc(rgba, base, w, h, touch_mask=np.ones((h, w), bool))
+        dump = os.environ.get('PUYO_TEX_DUMP')
+        if dump:                                    # save the drawn image for offline encoder experiments
+            os.makedirs(dump, exist_ok=True)
+            n = len([f for f in os.listdir(dump) if f.endswith('.png')])
+            Image.fromarray(rgba, 'RGBA').save(os.path.join(dump, 'tex_%02d_%dx%d.png' % (n, w, h)))
+        stats = os.environ.get('PUYO_TEX_STATS')
+        if stats:                                   # one line per texture: index w h rgb-PSNR (dB) vs the drawn image
+            rgb, _ = etc1a4.decode(out, w, h)
+            err = ((rgb.astype(np.float64) - rgba[..., :3]) ** 2)
+            vis = rgba[..., 3] > 0                  # only pixels the game can show
+            mse = err[vis].mean() if vis.any() else 0.0
+            psnr = 99.0 if mse == 0 else 10 * np.log10(255.0 ** 2 / mse)
+            with open(stats, 'a') as f:
+                f.write('%d %d %.2f\n' % (w, h, psnr))
+        return out
     px = img.load(); out = bytearray()
     for x, y in _order(w, h):
         r, g, b, a = px[x, y]
