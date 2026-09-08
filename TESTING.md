@@ -24,7 +24,8 @@ RomFS (type 5), so an update title carrying the English files is ignored,
 Azahar's log shows it loading the update's romfs and the game then reading
 Sega's. Uninstall it and install the official update instead.
 
-**Booted on a New 3DS on 6 September 2026.** Base, Japanese update and DLC
+**Booted on a New 3DS on 6 September 2026, and on a New 3DS XL and an original
+3DS on 7 September, with a few games played on hardware.** Base, Japanese update and DLC
 installed; HOME menu banner English; title screen and main menu run. The first console launch showed an error dialog with the
 wrong text, which turned out to be a shifted error table present since the
 first build (fixed in 1.0.11, confirmed on the same console: the SpotPass
@@ -264,4 +265,4 @@ changed since 1.0.9.
 | Update-title packaging | structurally correct, booted in Azahar, **ignored by the game**: withdrawn |
 | Versus result screen | **confirmed in the engine by the user 2026-09-04**: no hang, winner dialogue in English after the atlas-compact fix |
 | Emulator | **booted 2026-09-04**: Options screen, Adventure map, DLC chapters, Versus result screen, all in English |
-| Real hardware | **never** |
+| Real hardware | **booted 2026-09-06 (New 3DS) and 2026-09-07 (New 3DS XL, original 3DS)**, a few games played; no story chapter or full match played through |
