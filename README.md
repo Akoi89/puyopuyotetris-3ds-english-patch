@@ -4,10 +4,11 @@
 carried onto the Japanese Nintendo 3DS release, DLC included.**
 
 *Puyo Puyo Tetris* (3DS, 2014) never had an English release. Sega localized the game for PC
-and consoles in 2017 but never brought that text back to the handheld. An earlier fan
-translation carried the Adventure story across but left the online menus, the prologue, the
-error dialogs, the shop, most of the in-battle character voices, the DLC chapters and every
-texture label in Japanese.
+and consoles in 2017 but never brought that text back to the handheld. ongo_gablogian's fan
+translation carried the Adventure story across, and Partyderp64's `PPT3dsENG_0.3dx` build
+added English story voices on top of it. Between them they still left the online menus, the
+prologue, the error dialogs, the shop, most of the in-battle character voices, the DLC
+chapters and every texture label in Japanese.
 
 This finishes it: about 99% of displayed text, all 37 characters' in-battle voices, all
 three DLC story chapters (text and voices), the online UI textures, and the DLC shop icons.
@@ -71,8 +72,17 @@ the tools ship as source so you can check that.
 
 ## Credits
 
-Sega for the text and voices; the earlier fan translation for the Adventure story and the
-UI texture work it did. Tooling reused from the
+Sega for the text and voices.
+
+**ongo_gablogian and the original translation team** for the Adventure story and the UI
+texture work, which is what made the game playable in English at all.
+
+**Partyderp64**, whose `PPT3dsENG_0.3dx` build put English story voices over that
+translation. That build is the fan shell this patch is built from: 2,534 of its 2,535 files
+are carried through unchanged, and the one that isn't is the sound archive, where the 13
+battle voice banks it had already made English were re-imported at Sega's own sample rate.
+
+Tooling reused from the
 [TGAA 3DS patch](https://github.com/Akoi89/tgaa-3ds-english-patch) (3dstool, ctrtool, the
 CIA and NCCH writers).
 
