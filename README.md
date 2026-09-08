@@ -25,11 +25,12 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 
 > ### Playtesters wanted
 >
-> **Booted on a New 3DS on 6 September 2026**, and that's about the extent of it. The base
-> game, the Japanese update and the DLC install, the HOME menu tile shows the English logo,
-> the title screen and main menu run. That first run on a console found a bug every earlier
-> build had, which 1.0.11 fixes. Beyond the menus, play on hardware is a few minutes old.
-> The rest was tested in Azahar.
+> **Booted on a New 3DS on 6 September 2026, and on a New 3DS XL and an original 3DS on
+> 7 September**, with a few games played on hardware. The base game, the Japanese update
+> and the DLC install, the HOME menu tile shows the English logo, and the title screen and
+> main menu run. That first console run found a bug every earlier build had, which 1.0.11
+> fixes. Beyond that, play on hardware is still short: a story chapter or a full match
+> played through on a console is worth reporting. The rest was tested in Azahar.
 >
 > **[Report anything wrong in issue #1](../../issues/1)** (which screen, and a photo beats a
 > description). See [TESTING.md](TESTING.md) for what to install, how to identify the build,
