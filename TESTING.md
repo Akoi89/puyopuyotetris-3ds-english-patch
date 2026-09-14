@@ -45,9 +45,11 @@ chapter played through on a console is worth reporting.
 13 September**: ENG 1.0.12 stamp, main menu, a Quick Play match with audio, and
 DLC EX Act 10 with its English plate and story scene. Its text and textures are
 byte for byte the 1.0.12 files above; only the voice files differ, and those are
-Sega's own. The voice language was not checked by ear in that run, and it has
-not been on a console. If you run it, Japanese voices in a battle and a DLC
-chapter with English text over Japanese speech are the things worth confirming.
+Sega's own. **Confirmed on a New 3DS XL on 14 September 2026** by the player who
+asked for the edition: installed by the xdelta route, a couple of DLC Adventure
+chapters played, Japanese speech in both story and gameplay under the English
+text. That was the one thing the emulator run could not settle, since the voice
+files matching Sega's byte for byte is not the same as hearing them.
 In that edition a voice in Japanese is correct, not a bug.
 
 **1.0.13 / DLC 0.2.8 (14 September 2026)** fix the two things the first report

@@ -44,8 +44,9 @@ so install one edition or the other; the HOME menu jingle is the quick way to
 tell them apart. **Booted in Azahar on 13 September 2026**: ENG 1.0.12 stamp,
 main menu and a Quick Play match with audio, DLC EX Act 10 with its English
 plate and story scene. The DLC battle voices were listened to in that run
-and were Japanese; the rest rests on the file comparison above. Not yet on
-a console. Rebuilt on 14 September 2026 as 1.0.13 / DLC 0.2.8 with the two
+and were Japanese. **Confirmed on a New 3DS XL on 14 September 2026** by the
+player who asked for the edition, who installed it by the xdelta route and
+heard Japanese speech in the story and in play across a couple of DLC chapters. Rebuilt on 14 September 2026 as 1.0.13 / DLC 0.2.8 with the two
 fixes described under the current build; the recipe and the file-by-file
 comparison were repeated on the new files.
 
