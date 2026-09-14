@@ -43,8 +43,9 @@ Same title ID and the same **ENG 1.0.12** stamp as the English-voice build,
 so install one edition or the other; the HOME menu jingle is the quick way to
 tell them apart. **Booted in Azahar on 13 September 2026**: ENG 1.0.12 stamp,
 main menu and a Quick Play match with audio, DLC EX Act 10 with its English
-plate and story scene. The voice language was not checked by ear in that
-run; it rests on the file comparison above. Not yet on a console.
+plate and story scene. The DLC battle voices were listened to in that run
+and were Japanese; the rest rests on the file comparison above. Not yet on
+a console.
 
 ## Current build: 1.0.12 / DLC 0.2.7
 
