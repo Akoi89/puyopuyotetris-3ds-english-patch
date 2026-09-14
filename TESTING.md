@@ -11,9 +11,9 @@ For anyone playing these builds and reporting back. Spoiler-free.
    built from your dump with `tools/build_cia.py` (it replaces the base game,
    same title ID; your save carries over), or on Luma3DS the contents of
    `PuyoPuyoTetris-LayeredFS.zip` under `luma/titles/0004000000101200/`.
-   For the Japanese-voice edition use `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.12.zip`
+   For the Japanese-voice edition use `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.13.zip`
    or `PuyoPuyoTetris-JP-voices-LayeredFS.zip` instead, and in step 4
-   `PuyoPuyoTetris-DLC-JP-voices-0.2.7.cia`. One edition or the other, not both.
+   `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. One edition or the other, not both.
 3. **The Japanese v1.2.0 update** (`0004000E`, 2.4 MB): code only; installs
    over the patched base safely.
 4. **`PuyoPuyoTetris-DLC-patched.cia`**: the translated DLC. Or build the same
@@ -50,11 +50,21 @@ not been on a console. If you run it, Japanese voices in a battle and a DLC
 chapter with English text over Japanese speech are the things worth confirming.
 In that edition a voice in Japanese is correct, not a bug.
 
+**1.0.13 / DLC 0.2.8 (14 September 2026)** fix the two things the first report
+in issue #1 found: EX chapter dialogue running past the right edge of its
+bubble (276 of 734 bubbles re-broken onto two or three lines, words unchanged)
+and the Party-mode Time Up graphic drawn as slices (now Sega's own "TIME!"
+art, one letter per sprite). Not yet booted anywhere; the change is line
+breaks in three text tables and one texture, each verified byte for byte on
+the way in and out of the CIAs. The base chapters 1 to 7 draw through a
+different font and were not changed; a clipped bubble there is worth a
+screenshot.
+
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.12** at its right end.
-- The console lists the base game as version **1.0.12** (a locally built CIA)
-  and the DLC as **0.2.7** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
+- The title screen logo's pink subtitle strip reads **ENG 1.0.13** at its right end.
+- The console lists the base game as version **1.0.13** (a locally built CIA)
+  and the DLC as **0.2.8** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
 

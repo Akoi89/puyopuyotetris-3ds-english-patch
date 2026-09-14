@@ -1,15 +1,15 @@
-The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.12** with DLC 0.2.7 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
+The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.13** with DLC 0.2.8 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar; 1.0.13 fixes the EX chapter line breaks and the Party-mode Time Up graphic). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
 
-- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.12**; the built CIA reports 1.0.12.
-- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.7.
+- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.13**; the built CIA reports 1.0.13.
+- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.8.
 - **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 173 MB) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
 - **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
 - Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
-- **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.12.zip` (base and DLC as xdelta3 patches for your own decrypted dumps, xdelta3.exe and a readme inside), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (the LayeredFS files without the English voice bank) and `PuyoPuyoTetris-DLC-JP-voices-0.2.7.cia`. Same title ID and the same ENG 1.0.12 stamp as the English-voice build, so install one edition or the other. Details in the section below.
+- **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.13.zip` (base and DLC as xdelta3 patches for your own decrypted dumps, xdelta3.exe and a readme inside), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (the LayeredFS files without the English voice bank) and `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. Same title ID and the same ENG 1.0.13 stamp as the English-voice build, so install one edition or the other. Details in the section below.
 
 **Withdrawn the same day: an "update title" CIA.** It packaged the English data inside Sega's v1.2.0 update. Puyo Puyo Tetris's code only ever opens the base game's RomFS (path type 0) and never asks for an update RomFS (type 5), so the console and Azahar keep reading Sega's Japanese files no matter what the update carries. It did nothing. If you downloaded it, delete it and install the official update instead.
 
-The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.12 (below) is the current build.
+The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.13 (below) is the current build.
 
 ---
 
@@ -31,23 +31,56 @@ all play Sega's Japanese takes, and everything on screen is the same English
 as the main release.
 
 Three files on the release page: the xdelta bundle
-`PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.12.zip` (the base patch is
+`PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.13.zip` (the base patch is
 about 8 MB rather than 173 MB, because leaving the voice files at their
 original sizes leaves nearly the whole file system where your dump has it),
 the LayeredFS zip `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (the same 100
 files as the main LayeredFS zip minus `sound/tenp.bcsar`; delete the old
 romfs folder from the card first or the English bank stays), and the DLC as
-a ready CIA, `PuyoPuyoTetris-DLC-JP-voices-0.2.7.cia`.
+a ready CIA, `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`.
 
-Same title ID and the same **ENG 1.0.12** stamp as the English-voice build,
+Same title ID and the same **ENG 1.0.13** stamp as the English-voice build,
 so install one edition or the other; the HOME menu jingle is the quick way to
 tell them apart. **Booted in Azahar on 13 September 2026**: ENG 1.0.12 stamp,
 main menu and a Quick Play match with audio, DLC EX Act 10 with its English
 plate and story scene. The DLC battle voices were listened to in that run
 and were Japanese; the rest rests on the file comparison above. Not yet on
-a console.
+a console. Rebuilt on 14 September 2026 as 1.0.13 / DLC 0.2.8 with the two
+fixes described under the current build; the recipe and the file-by-file
+comparison were repeated on the new files.
 
-## Current build: 1.0.12 / DLC 0.2.7
+## Current build: 1.0.13 / DLC 0.2.8
+
+Two fixes from the first report in [issue #1](../../issues/1) (14 September
+2026, a New 3DS XL running the Japanese-voice edition). Nothing else changed.
+
+1. **EX chapter dialogue ran off the right edge of its speech bubble.** The
+   three DLC story chapters (EX Acts 8, 9 and 10) took Sega's English lines
+   from the Steam release with Steam's line breaks, and the 3DS bubble is
+   narrower: about 215 pixels of text room, measured on the reporter's
+   screenshots. 276 of the 734 English bubbles had at least one line too
+   wide. DLC 0.2.8 re-breaks those bubbles onto two or three lines so that no
+   line is wider than 205 pixels. The words are Sega's and unchanged; only
+   where the lines break has moved, and Sega's own Japanese script already
+   uses three-line bubbles in the same scenes. The base game's chapters 1 to
+   7 draw through a different, narrower font and were left alone; if a bubble
+   there looks clipped too, say so in the issue.
+2. **The "Time Up" call in Party mode was drawn as slices.** The game draws
+   that graphic as six separate sprites, one per Japanese character, and 1.0.12
+   had painted "TIME UP!" across the whole texture, so each sprite showed a
+   piece of it. 1.0.13 uses Sega's own "TIME!" art from the Steam release, cut
+   into one letter per sprite.
+
+Files changed: base game 2 (the title screen stamp and the Party-mode texture
+archive), DLC 3 (the three chapter text tables). Both CIAs were compared
+against 1.0.12 / 0.2.7 file by file and differ in exactly those. Not yet
+booted anywhere; the change is line breaks in three text tables and one
+texture, each verified byte for byte on the way in and out of the CIAs. The
+Japanese-voice edition was rebuilt the same way and carries the same two
+fixes; its release files now read 1.0.13 / 0.2.8. The title screen reads **ENG
+1.0.13** and the DLC is **TMD 0.2.8**.
+
+## 1.0.12 / DLC 0.2.7
 
 A texture quality pass, nothing functional. The textures this patch draws
 itself and that the game stores compressed (ETC1) had gone through a small
