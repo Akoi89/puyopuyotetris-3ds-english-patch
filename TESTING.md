@@ -11,6 +11,9 @@ For anyone playing these builds and reporting back. Spoiler-free.
    built from your dump with `tools/build_cia.py` (it replaces the base game,
    same title ID; your save carries over), or on Luma3DS the contents of
    `PuyoPuyoTetris-LayeredFS.zip` under `luma/titles/0004000000101200/`.
+   For the Japanese-voice edition use `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.12.zip`
+   or `PuyoPuyoTetris-JP-voices-LayeredFS.zip` instead, and in step 4
+   `PuyoPuyoTetris-DLC-JP-voices-0.2.7.cia`. One edition or the other, not both.
 3. **The Japanese v1.2.0 update** (`0004000E`, 2.4 MB): code only; installs
    over the patched base safely.
 4. **`PuyoPuyoTetris-DLC-patched.cia`**: the translated DLC. Or build the same
@@ -37,6 +40,15 @@ banners, all in English. Every file was verified byte-for-byte on the way in
 and back out of the CIA, and all the writers reproduce the game's own files
 byte-identically. Actual play on hardware is still short; a match or a story
 chapter played through on a console is worth reporting.
+
+**The Japanese-voice edition (added 11 September 2026) was booted in Azahar on
+13 September**: ENG 1.0.12 stamp, main menu, a Quick Play match with audio, and
+DLC EX Act 10 with its English plate and story scene. Its text and textures are
+byte for byte the 1.0.12 files above; only the voice files differ, and those are
+Sega's own. The voice language was not checked by ear in that run, and it has
+not been on a console. If you run it, Japanese voices in a battle and a DLC
+chapter with English text over Japanese speech are the things worth confirming.
+In that edition a voice in Japanese is correct, not a bug.
 
 ## How to tell which build you have
 

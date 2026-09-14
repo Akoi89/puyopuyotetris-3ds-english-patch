@@ -5,12 +5,46 @@ The completed English patch. This release tag is v1.0.0; the assets on it are re
 - **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 173 MB) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
 - **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
 - Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
+- **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.12.zip` (base and DLC as xdelta3 patches for your own decrypted dumps, xdelta3.exe and a readme inside), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (the LayeredFS files without the English voice bank) and `PuyoPuyoTetris-DLC-JP-voices-0.2.7.cia`. Same title ID and the same ENG 1.0.12 stamp as the English-voice build, so install one edition or the other. Details in the section below.
 
 **Withdrawn the same day: an "update title" CIA.** It packaged the English data inside Sega's v1.2.0 update. Puyo Puyo Tetris's code only ever opens the base game's RomFS (path type 0) and never asks for an update RomFS (type 5), so the console and Azahar keep reading Sega's Japanese files no matter what the update carries. It did nothing. If you downloaded it, delete it and install the official update instead.
 
 The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.12 (below) is the current build.
 
 ---
+
+## Japanese-voice edition of 1.0.12 / DLC 0.2.7 (11 September 2026)
+
+Asked for in issue #2: the English text without the English voices. This is
+the 1.0.12 build taken apart and put back together with its `sound` folder
+swapped for Sega's original (2,320 story voice streams and the in-battle
+voice bank), and the HOME menu banner's audio put back to Sega's jingle. The
+rebuilt file system was compared against the English-voice build file by
+file: the only differences are under `sound`. The DLC was rebuilt from the
+same text and texture overlay with the 760 imported voice clips left out;
+676 of its 701 contents are byte for byte the Japanese DLC, and the other
+three differ from it only in their 12 text and texture files each.
+
+What that means in play: story scenes, in-battle voices, character select,
+the title-screen announcer, the HOME menu jingle and the three DLC chapters
+all play Sega's Japanese takes, and everything on screen is the same English
+as the main release.
+
+Three files on the release page: the xdelta bundle
+`PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.12.zip` (the base patch is
+about 8 MB rather than 173 MB, because leaving the voice files at their
+original sizes leaves nearly the whole file system where your dump has it),
+the LayeredFS zip `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (the same 100
+files as the main LayeredFS zip minus `sound/tenp.bcsar`; delete the old
+romfs folder from the card first or the English bank stays), and the DLC as
+a ready CIA, `PuyoPuyoTetris-DLC-JP-voices-0.2.7.cia`.
+
+Same title ID and the same **ENG 1.0.12** stamp as the English-voice build,
+so install one edition or the other; the HOME menu jingle is the quick way to
+tell them apart. **Booted in Azahar on 13 September 2026**: ENG 1.0.12 stamp,
+main menu and a Quick Play match with audio, DLC EX Act 10 with its English
+plate and story scene. The voice language was not checked by ear in that
+run; it rests on the file comparison above. Not yet on a console.
 
 ## Current build: 1.0.12 / DLC 0.2.7
 
