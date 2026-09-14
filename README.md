@@ -49,9 +49,10 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 | **Patched base game** | `PuyoPuyoTetris-Base-xdelta.zip` (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or built from your dump with `tools/build_cia.py`, or `PuyoPuyoTetris-LayeredFS.zip` unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
 | The Japanese v1.2.0 update | code only; installs over the patched base safely |
 | **The DLC** | `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump, which produces the same file |
+| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.12.zip` (base and DLC patches for your own decrypted dumps), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (Luma3DS) and `PuyoPuyoTetris-DLC-JP-voices-0.2.7.cia`. Install one edition or the other, not both |
 
 Install order is base, then Japanese update, then DLC. The title screen reads **ENG
-1.0.12**.
+1.0.12** in both editions.
 
 The patched base game is a full copy of the game with English inside it and is **not
 published**; the LayeredFS zip is the published form of the same files. An update-title CIA

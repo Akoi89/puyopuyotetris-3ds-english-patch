@@ -19,8 +19,8 @@ sys.path.insert(0, r'G:\Claude\TGAA 1-2\testimony_pipeline')
 from cia import Cia
 
 TOOL = r'G:\Claude\TGAA 1-2\3dstool\3dstool.exe'
-PATCH = 'patch_dlc2'
-WORK = 'dlc_build'
+PATCH = os.environ.get('PUYO_DLC_PATCH', 'patch_dlc2')   # overlay tree; the JP-voice edition uses patch_dlc2_jpv
+WORK = os.environ.get('PUYO_DLC_WORK', 'dlc_build')
 shell, out = sys.argv[1], sys.argv[2]
 VERSION = tuple(int(x) for x in sys.argv[3].split('.')) if len(sys.argv) > 3 else (0, 2, 6)
 
