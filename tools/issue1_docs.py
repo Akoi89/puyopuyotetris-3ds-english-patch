@@ -30,19 +30,19 @@ def sz(p):
     return '{:,}'.format(os.path.getsize(p))
 
 
-EN_CIA = r'Final\_new\PuyoPuyoTetris-EN-voices-1.0.13.cia'
-EN_DLC = r'Final\_new\PuyoPuyoTetris-DLC-0.2.8.cia'
-JP_CIA = r'Final\_new\PuyoPuyoTetris-JP-voices-1.0.13.cia'
-JP_DLC = r'Final\_new\PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia'
+EN_CIA = r'Final\_new\PuyoPuyoTetris-EN-voices-1.0.14.cia'
+EN_DLC = r'Final\_CURRENT\PuyoPuyoTetris-DLC-0.2.8.cia'
+JP_CIA = r'Final\_new\PuyoPuyoTetris-JP-voices-1.0.14.cia'
+JP_DLC = r'Final\_CURRENT\PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia'
 for p in (EN_CIA, EN_DLC, JP_CIA, JP_DLC):
     assert os.path.exists(p), p
 EN_SHA, EN_DLC_SHA, JP_SHA, JP_DLC_SHA = sha(EN_CIA), sha(EN_DLC), sha(JP_CIA), sha(JP_DLC)
-OLD_SHA = '238589ac07b650c0001c3e871612582d960f28c60fd113144ca8dde4695fd905'   # 1.0.12 base CIA
+OLD_SHA = '505b9c4033c0a3d0c6b61153d59e25a2abbc8506be1f52675fe12a53a083cb88'   # 1.0.13 base CIA
 OLD_DLC = 'a34fac38e7b6756a583f47f46643ba4775698a1c1a73b570e206926f09fc83b7'   # DLC 0.2.7
-OLD_JP = 'fe2d1927728e258f108d889985b29fe77e3378139957f519d7f60a72a9dc1349'    # JP base 1.0.12
+OLD_JP = '78e75703f5749badfbdba48093ef86379b67a9c8afa355f1dc63f24b209b0522'    # JP base 1.0.13
 OLD_JP_DLC = 'd7af2e37acd97d2482ed32ab67ea996e452996951729e010b1f7fb8753eaec09'  # JP DLC 0.2.7
-assert sha(r'Final\_CURRENT\PuyoPuyoTetris-EN-voices-1.0.12.cia') == OLD_SHA
-assert sha(r'Final\_CURRENT\PuyoPuyoTetris-JP-voices-1.0.12.cia') == OLD_JP
+assert sha(r'Final\_CURRENT\PuyoPuyoTetris-EN-voices-1.0.13.cia') == OLD_SHA
+assert sha(r'Final\_CURRENT\PuyoPuyoTetris-JP-voices-1.0.13.cia') == OLD_JP
 
 RN_1013 = """## Current build: 1.0.13 / DLC 0.2.8
 

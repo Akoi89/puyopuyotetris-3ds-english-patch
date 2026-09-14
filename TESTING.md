@@ -11,7 +11,7 @@ For anyone playing these builds and reporting back. Spoiler-free.
    built from your dump with `tools/build_cia.py` (it replaces the base game,
    same title ID; your save carries over), or on Luma3DS the contents of
    `PuyoPuyoTetris-LayeredFS.zip` under `luma/titles/0004000000101200/`.
-   For the Japanese-voice edition use `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.13.zip`
+   For the Japanese-voice edition use `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.14.zip`
    or `PuyoPuyoTetris-JP-voices-LayeredFS.zip` instead, and in step 4
    `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. One edition or the other, not both.
 3. **The Japanese v1.2.0 update** (`0004000E`, 2.4 MB): code only; installs
@@ -57,13 +57,17 @@ and the Party-mode Time Up graphic drawn as slices (now Sega's own "TIME!"
 art, one letter per sprite). Not yet booted anywhere; the change is line
 breaks in three text tables and one texture, each verified byte for byte on
 the way in and out of the CIAs. The base chapters 1 to 7 draw through a
-different font and were not changed; a clipped bubble there is worth a
-screenshot.
+different font and were not re-wrapped, but every base scene script was
+checked for the second half of the same problem, a bubble scripted for fewer
+lines than the English needs. Two were found and are raised in **1.0.14**
+(14 September 2026): one in Chapter 1, one in the shared end-of-chapter
+script. The two bubbles have not been looked at in the engine, so a screenshot of either is still
+worth having.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.13** at its right end.
-- The console lists the base game as version **1.0.13** (a locally built CIA)
+- The title screen logo's pink subtitle strip reads **ENG 1.0.14** at its right end.
+- The console lists the base game as version **1.0.14** (a locally built CIA)
   and the DLC as **0.2.8** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
