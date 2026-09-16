@@ -12,7 +12,7 @@ Everything the README used to carry inline. Nothing here has been reworded.
 | Text | 1,411 base strings and 875 DLC strings. Sega's Steam text where it exists; 392 lines written for the 3DS-only screens (Chapter 0 prologue, Club, SpotPass, errors, shop) |
 | In-battle voices | 24 Japanese character banks replaced from Steam's English recordings, matched by the Japanese takes' durations (zero error); the other 13 banks, already English from the earlier fan translation, are now re-imported from Steam too, so all 37 battle banks are this project's own encode at Sega's sample rate (`import_fan_banks.py`). Levels matched to Sega's own Japanese takes with `voice_gain_clean.py`, gain and limiting done in float with a single encode: 62 of 63 banks re-levelled, averaging about 1 dB below Sega's takes |
 | DLC story voices | 760 of 763 clips; the other three were re-recorded for 3DS and have no English take. Levels matched to Sega's own Japanese takes with `voice_gain_clean.py`, a single clean encode: about 1.1 dB below Sega's takes |
-| Online UI textures | about 550 labels across the Club, Puzzle League, standby, replay and shop screens, redrawn in place |
+| Online UI textures | 1,028 label boxes across the Club, Puzzle League, standby, replay and shop screens, 806 of them redrawn here and 222 using Sega's own sprites |
 | DLC shop icons | 33 redrawn |
 | Font atlases | the game pre-renders only the glyphs each screen uses; every screen that gained English got a matching atlas, verified per section |
 | Character-select pick lines | all 24 (the fan patch had only 15), matched to Steam's English pick bank by duration |
