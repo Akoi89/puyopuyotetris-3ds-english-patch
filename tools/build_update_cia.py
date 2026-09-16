@@ -37,7 +37,8 @@ import os
 import struct
 import sys
 
-sys.path.insert(0, r'G:\Claude\TGAA 1-2\testimony_pipeline')
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+sys.path.insert(0, os.path.join(TGAA_ROOT, 'testimony_pipeline'))
 import ncch
 from cia import Cia
 

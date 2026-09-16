@@ -6,10 +6,11 @@ header) so no local path text lands in the patch (the TGAA finding of 2026-09-11
 
 Usage: python rebuild_rhdn_xdelta_jpv.py   (writes into work\rhdn_xdelta_jpv\)
 """
-import hashlib, os, shutil, struct, subprocess, zlib
+import hashlib, os, shutil, struct, subprocess, sys, zlib
 
-R = r'G:\Claude\PuyoPuyo'
-XD = r'G:\Claude\TGAA 1-2\patches\xdelta3.exe'
+R = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+XD = os.path.join(TGAA_ROOT, 'patches', 'xdelta3.exe')
 OUT = os.path.join(R, 'work', 'rhdn_xdelta_jpv')
 JOBS = [
     dict(name='PuyoPuyoTetris-JP-voices-1.0.12.xdelta',

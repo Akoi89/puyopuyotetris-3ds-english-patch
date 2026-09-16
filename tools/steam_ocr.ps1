@@ -7,7 +7,8 @@ $null = [Windows.Storage.StorageFile,Windows.Storage,ContentType=WindowsRuntime]
 $asTaskGeneric = ([System.WindowsRuntimeSystemExtensions].GetMethods() | Where-Object { $_.Name -eq 'AsTask' -and $_.GetParameters().Count -eq 1 -and $_.GetParameters()[0].ParameterType.Name -eq 'IAsyncOperation`1' })[0]
 function Await($WinRtTask, $ResultType) { $asTask = $asTaskGeneric.MakeGenericMethod($ResultType); $netTask = $asTask.Invoke($null, @($WinRtTask)); $netTask.Wait(-1) | Out-Null; $netTask.Result }
 $engine = [Windows.Media.Ocr.OcrEngine]::TryCreateFromUserProfileLanguages()
-$root = 'G:\Claude\PuyoPuyo\work\steam_sweep'
+if (-not $env:PUYO_ROOT) { throw 'set PUYO_ROOT to the project folder' }
+$root = Join-Path $env:PUYO_ROOT 'work\steam_sweep'
 $out = @{}
 $files = Get-ChildItem $root -Recurse -Filter '*_en.png'
 $i = 0
@@ -40,5 +41,5 @@ foreach ($f in $files) {
     if ($i % 50 -eq 0) { Write-Output ("$i / " + $files.Count) }
 }
 $json = ConvertTo-Json -InputObject $out -Depth 6 -Compress
-[System.IO.File]::WriteAllText('G:\Claude\PuyoPuyo\work\steam_ocr.json', $json, [System.Text.Encoding]::UTF8)
+[System.IO.File]::WriteAllText((Join-Path $env:PUYO_ROOT 'work\steam_ocr.json'), $json, [System.Text.Encoding]::UTF8)
 Write-Output ("done " + $out.Count + " textures")

@@ -13,7 +13,7 @@ Every xdelta is re-applied out of its zip to the decrypted dump and hash-checked
 """
 import io, os, sys, zipfile, hashlib, shutil, subprocess
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-R = r'G:\Claude\PuyoPuyo'
+R = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
 W = os.path.join(R, 'work')
 os.chdir(R)
 ED = sys.argv[1]

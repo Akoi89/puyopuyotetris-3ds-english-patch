@@ -4,11 +4,13 @@ title_set_bank.xwb's four entries to the millisecond, so index i <-> wave i.
 Rewrites patch/romfs/sound/tenp.bcsar in place and audits the result.
 """
 import os
+import sys
 import numpy as np
 import dsp, csar
 from import_dlc_voices import xwb, resample
 
-SD = r'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/sound/voice'
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+SD = os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data', 'sound', 'voice')
 CUR = 'patch/romfs/sound/tenp.bcsar'
 JP = 'jp_orig/sound/tenp.bcsar'
 FI = 143

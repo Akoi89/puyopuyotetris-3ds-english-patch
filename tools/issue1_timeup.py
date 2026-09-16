@@ -18,7 +18,8 @@ from PIL import Image
 import narc, labels, tex, labels2
 
 SCR = 'issue1_scratch/'
-STEAM = 'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/tenp/party/party2p/party2p_e.narc'
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+STEAM = os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data', 'tenp', 'party', 'party2p', 'party2p_e.narc')
 NARC = 'tenp/party/party2p/party2p.narc'
 CELLS = [((1, 1, 63, 65), -102, 0), ((65, 1, 119, 61), -60, -16), ((121, 1, 182, 62), -13, -3),
          ((1, 67, 62, 126), 34, 3), ((64, 67, 108, 111), 59, -18), ((185, 1, 247, 67), 95, -3)]

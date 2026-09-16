@@ -10,7 +10,7 @@ Hashes are read from the built files, never typed. Set STATUS below to what was 
 """
 import io, os, sys, zipfile, hashlib
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-os.chdir(r'G:\Claude\PuyoPuyo')
+os.chdir(os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder'))
 
 # What has been checked in-engine for 1.0.13. Edit before running if the rig run happened.
 STATUS = ('Not yet booted anywhere; the change is line breaks in three' + chr(10) + 'text tables and one '

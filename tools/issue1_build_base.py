@@ -11,8 +11,9 @@ Nothing published, nothing in Final/_CURRENT touched.
 """
 import os, sys, shutil, subprocess, hashlib, time, filecmp
 
-TOOL = r'G:\Claude\TGAA 1-2\3dstool\3dstool.exe'
-R = r'G:\Claude\PuyoPuyo'
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+TOOL = os.path.join(TGAA_ROOT, '3dstool', '3dstool.exe')
+R = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
 SHELL = os.path.join(R, '0004000000101200 Puyopuyo Tetris (English Translated, English Voices) (CTR-P-BPTJ) (v0.0.0) (J).standard.cia')
 OUT = os.path.join(R, 'Final', '_new', 'PuyoPuyoTetris-EN-voices-1.0.13.cia')
 VER = '1.0.13'

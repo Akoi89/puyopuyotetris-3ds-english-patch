@@ -17,7 +17,8 @@ import csar
 from import_dlc_voices import xwb, resample
 from voice_gain import limiter, rms
 
-SD = r'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/sound/voice'
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+SD = os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data', 'sound', 'voice')
 TAKE = 3
 
 

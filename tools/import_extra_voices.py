@@ -11,12 +11,13 @@
 
 Starts from the current patch/romfs/sound/tenp.bcsar and rewrites it in place.
 """
-import os, re, time
+import os, re, sys, time
 import numpy as np
 import dsp, csar
 from import_dlc_voices import xwb, resample
 
-SD = r'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/sound/voice'
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+SD = os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data', 'sound', 'voice')
 JP = 'jp_orig/sound/tenp.bcsar'
 CUR = 'patch/romfs/sound/tenp.bcsar'
 

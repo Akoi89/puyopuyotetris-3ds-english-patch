@@ -12,7 +12,8 @@ Reuses the TGAA pipeline:
   cia.Cia      - rewrite the CIA, recomputing every TMD hash and re-verifying
 """
 import sys, os, struct
-sys.path.insert(0, r'G:\Claude\TGAA 1-2\testimony_pipeline')
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+sys.path.insert(0, os.path.join(TGAA_ROOT, 'testimony_pipeline'))
 import ncch
 from cia import Cia
 

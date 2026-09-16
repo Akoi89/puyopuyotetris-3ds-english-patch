@@ -3,13 +3,14 @@ next rebuild does not reintroduce them. The JP template still carries its
 {BASE_XD_MB} placeholder; none of the anchors touch that line."""
 import os, sys, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-os.chdir(r'G:\Claude\PuyoPuyo')
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+os.chdir(PUYO_ROOT)
 
 import importlib.util
-spec = importlib.util.spec_from_file_location('fix', r'G:\Claude\PuyoPuyo\work\_readme_fix_0915.py')
+spec = importlib.util.spec_from_file_location('fix', os.path.join(PUYO_ROOT, 'work', '_readme_fix_0915.py'))
 
 # import the strings without running the zip rebuild
-src = open(r'G:\Claude\PuyoPuyo\work\_readme_fix_0915.py', encoding='utf-8').read()
+src = open(os.path.join(PUYO_ROOT, 'work', '_readme_fix_0915.py'), encoding='utf-8').read()
 ns = {}
 exec(src.split('def edit(')[0].replace('import zipfile, hashlib, io, os, re, sys',
                                        'import os, re, sys'), ns)

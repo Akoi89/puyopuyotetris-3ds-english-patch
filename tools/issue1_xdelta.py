@@ -8,8 +8,9 @@ region is random, then applied back on the real source plus two randomly perturb
 """
 import os, sys, shutil, subprocess, hashlib, zlib, struct
 
-R = r'G:\Claude\PuyoPuyo'
-XD = r'G:\Claude\TGAA 1-2\patches\xdelta3.exe'
+R = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+XD = os.path.join(TGAA_ROOT, 'patches', 'xdelta3.exe')
 ED = sys.argv[1]
 BASE_SRC = os.path.join(R, '0004000000101200 Jap-ORG-Base (CTR-P-BPTJ) (v0.1.0) (J).piratelegit-decrypted.cci')
 if ED == 'en':

@@ -1,7 +1,8 @@
-import os,re,json,collections,unicodedata
+import os,re,json,collections,unicodedata,sys
 from mtx import parse
 JP=re.compile(r'[\u3040-\u30ff\u3400-\u9fff\uff66-\uff9d]')
-STEAM=r'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data'
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+STEAM=os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data')
 def trim(s):
     i=len(s)
     while i>0 and not s[i-1].strip(): i-=1

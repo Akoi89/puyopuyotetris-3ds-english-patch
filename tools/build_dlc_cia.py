@@ -15,10 +15,11 @@ Null test first: content 0010 is round-tripped untouched and must come back
 byte-identical before anything is modified.
 """
 import os, sys, shutil, subprocess, hashlib
-sys.path.insert(0, r'G:\Claude\TGAA 1-2\testimony_pipeline')
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+sys.path.insert(0, os.path.join(TGAA_ROOT, 'testimony_pipeline'))
 from cia import Cia
 
-TOOL = r'G:\Claude\TGAA 1-2\3dstool\3dstool.exe'
+TOOL = os.path.join(TGAA_ROOT, '3dstool', '3dstool.exe')
 PATCH = os.environ.get('PUYO_DLC_PATCH', 'patch_dlc2')   # overlay tree; the JP-voice edition uses patch_dlc2_jpv
 WORK = os.environ.get('PUYO_DLC_WORK', 'dlc_build')
 shell, out = sys.argv[1], sys.argv[2]

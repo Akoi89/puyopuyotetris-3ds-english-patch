@@ -8,7 +8,7 @@ Output banner_jpv.bin, then exefs_banner.py splices it into the fan decrypted CC
 import hashlib, struct, subprocess, sys, os
 import csar
 
-R = r'G:\Claude\PuyoPuyo'
+R = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
 FAN_CCI = os.path.join(R, '0004000000101200 Puyopuyo Tetris (English Translated, English Voices) (CTR-P-BPTJ) (v0.0.0) (J).standard-decrypted.cci')
 
 ship = open('banner_new.bin', 'rb').read()

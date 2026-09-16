@@ -15,7 +15,8 @@ import os, re, struct, math, sys, time
 import numpy as np
 import dsp
 
-SD = r'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/sound/manzai'
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+SD = os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data', 'sound', 'manzai')
 CH = {'08': ('0010', 'dl01'), '09': ('0011', 'dl02'), '10': ('0012', 'dl03')}
 
 

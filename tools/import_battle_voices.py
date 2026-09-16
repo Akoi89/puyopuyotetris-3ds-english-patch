@@ -12,7 +12,8 @@ import numpy as np
 import dsp, csar
 from import_dlc_voices import xwb, resample
 
-SD = r'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/sound/voice'
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+SD = os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data', 'sound', 'voice')
 JP = 'jp_orig/sound/tenp.bcsar'
 CUR = 'tr_envoice/sound/tenp.bcsar'          # the fan build: 13 banks already English
 

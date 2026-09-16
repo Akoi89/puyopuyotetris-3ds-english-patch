@@ -11,7 +11,8 @@ Encoders:
 import glob, os, struct, sys, time
 import numpy as np
 from PIL import Image
-sys.path.insert(0, r'G:\Claude\TGAA 1-2\testimony_pipeline')
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+sys.path.insert(0, os.path.join(TGAA_ROOT, 'testimony_pipeline'))
 import etc1a4, etc1_enc
 from etc1a4 import MOD
 
