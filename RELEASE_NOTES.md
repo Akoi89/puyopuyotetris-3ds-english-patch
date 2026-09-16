@@ -2,7 +2,7 @@ The completed English patch. This release tag is v1.0.0; the assets on it are re
 
 - **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.14**; the built CIA reports 1.0.14.
 - **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.8.
-- **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 173 MB) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
+- **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 169 MB) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
 - **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
 - Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
 - **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.14.zip` (base and DLC as xdelta3 patches for your own decrypted dumps, xdelta3.exe and a readme inside), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (the LayeredFS files without the English voice bank) and `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. Same title ID and the same ENG 1.0.14 stamp as the English-voice build, so install one edition or the other. Details in the section below.
@@ -13,7 +13,7 @@ The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion
 
 ---
 
-## Japanese-voice edition of 1.0.12 / DLC 0.2.7 (11 September 2026)
+## Japanese-voice edition (first released 11 September 2026 for 1.0.12, now 1.0.14 / DLC 0.2.8)
 
 Asked for in issue #2: the English text without the English voices. This is
 the 1.0.12 build taken apart and put back together with its `sound` folder
@@ -32,7 +32,7 @@ as the main release.
 
 Three files on the release page: the xdelta bundle
 `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.14.zip` (the base patch is
-about 8 MB rather than 173 MB, because leaving the voice files at their
+about 8 MB rather than 169 MB, because leaving the voice files at their
 original sizes leaves nearly the whole file system where your dump has it),
 the LayeredFS zip `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (the same 100
 files as the main LayeredFS zip minus `sound/tenp.bcsar`; delete the old
@@ -96,8 +96,10 @@ Two fixes from the first report in [issue #1](../../issues/1) (14 September
 
 Files changed: base game 2 (the title screen stamp and the Party-mode texture
 archive), DLC 3 (the three chapter text tables). Both CIAs were compared
-against 1.0.12 / 0.2.7 file by file and differ in exactly those. Not yet
-booted anywhere; the change is line breaks in three text tables and one
+against 1.0.12 / 0.2.7 file by file and differ in exactly those. The
+Japanese-voice edition of this build was confirmed on a New 3DS XL on 14
+September 2026, and 1.0.14 on the same console on 16 September (issue #1);
+the change is line breaks in three text tables and one
 texture, each verified byte for byte on the way in and out of the CIAs. The
 Japanese-voice edition was rebuilt the same way and carries the same two
 fixes; its release files now read 1.0.13 / 0.2.8. The title screen reads **ENG

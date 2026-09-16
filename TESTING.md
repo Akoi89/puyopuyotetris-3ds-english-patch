@@ -56,7 +56,8 @@ In that edition a voice in Japanese is correct, not a bug.
 in issue #1 found: EX chapter dialogue running past the right edge of its
 bubble (276 of 734 bubbles re-broken onto two or three lines, words unchanged)
 and the Party-mode Time Up graphic drawn as slices (now Sega's own "TIME!"
-art, one letter per sprite). Not yet booted anywhere; the change is line
+art, one letter per sprite). Confirmed on a New 3DS XL on 14 September 2026
+(issue #1); the change is line
 breaks in three text tables and one texture, each verified byte for byte on
 the way in and out of the CIAs. The base chapters 1 to 7 draw through a
 different font and were not re-wrapped, but every base scene script was
@@ -289,8 +290,8 @@ changed since 1.0.9.
 | Character-select pick lines and title-screen announcer | verified by duration against Steam and confirmed by the user by ear from the decoded clip |
 | Online UI textures | rendered and reviewed as images; not yet confirmed in the engine beyond the screens above |
 | Boot notice, DLC plates and Endless-mode record card | rendered and reviewed, not yet seen in the engine after the fix |
-| Title version stamp | rendered; never seen in the engine |
+| Title version stamp | seen in Azahar (ENG 1.0.14) and in the tester's console screenshots |
 | Update-title packaging | structurally correct, booted in Azahar, **ignored by the game**: withdrawn |
 | Versus result screen | **confirmed in the engine by the user 2026-09-04**: no hang, winner dialogue in English after the atlas-compact fix |
 | Emulator | **booted 2026-09-04**: Options screen, Adventure map, DLC chapters, Versus result screen, all in English |
-| Real hardware | **booted 2026-09-06 (New 3DS) and 2026-09-07 (New 3DS XL, original 3DS)**, a few games played; no story chapter or full match played through |
+| Real hardware | **booted 2026-09-06 (New 3DS) and 2026-09-07 (New 3DS XL, original 3DS)**, a few games played; DLC Adventure chapters and the stage 1-1 cutscene played on a New 3DS XL on 14 and 16 September 2026 (issue #1); no full story playthrough yet |
