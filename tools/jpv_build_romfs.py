@@ -8,7 +8,8 @@
 """
 import os, shutil, subprocess, hashlib, sys, time
 
-TOOL = r'G:\Claude\TGAA 1-2\3dstool\3dstool.exe'
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+TOOL = os.path.join(TGAA_ROOT, '3dstool', '3dstool.exe')
 SRC = 'romfs_110_tree'
 TREE = 'romfs_jpv_tree'
 OVERLAY = os.path.join('patch', 'romfs')

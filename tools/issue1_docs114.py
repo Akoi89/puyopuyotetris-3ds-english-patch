@@ -10,7 +10,7 @@ before anything is written, and every hash is read from the built file.
 """
 import io, os, sys, hashlib
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-os.chdir(r'G:\Claude\PuyoPuyo')
+os.chdir(os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder'))
 NL = chr(10)
 
 STATUS = ('The two bubbles were not looked at in the engine; the edit is one byte in each of two' + NL +

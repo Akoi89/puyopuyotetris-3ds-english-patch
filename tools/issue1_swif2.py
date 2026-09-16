@@ -4,13 +4,16 @@
 
 Prints size, the texture-entry table and the timeup UV rects (in texture pixels) for each.
 """
+import os
 import struct
+import sys
 import narc
 
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
 SRC = [
     ('3DS JP ', 'tr_envoice/tenp/party/party2p/party2p.narc', 256, 128),
-    ('StmJP  ', 'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/tenp/party/party2p/party2p.narc', 1024, 512),
-    ('StmEN  ', 'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/tenp/party/party2p/party2p_e.narc', 1024, 512),
+    ('StmJP  ', os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data', 'tenp', 'party', 'party2p', 'party2p.narc'), 1024, 512),
+    ('StmEN  ', os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data', 'tenp', 'party', 'party2p', 'party2p_e.narc'), 1024, 512),
 ]
 for tag, p, TW, TH in SRC:
     m = narc.read(p)['members'][17]

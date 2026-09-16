@@ -12,7 +12,8 @@ import numpy as np
 from PIL import Image, ImageDraw
 import narc
 
-D = 'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/'
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+D = os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data') + '/'
 OUT = 'steam_sweep'
 os.makedirs(OUT, exist_ok=True)
 

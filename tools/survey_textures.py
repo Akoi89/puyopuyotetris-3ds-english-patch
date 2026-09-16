@@ -8,7 +8,8 @@ Formats: RGBA4, RGB565, RGBA8, RGB8, RGBA5551, L8, A8, LA8, LA4, L4, A4 decoded
 here; ETC1 / ETC1A4 through the TGAA decoder.
 """
 import os, sys, struct, zlib
-sys.path.insert(0, r'G:\Claude\TGAA 1-2\testimony_pipeline')
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+sys.path.insert(0, os.path.join(TGAA_ROOT, 'testimony_pipeline'))
 from check_glyphs import narc_members
 try:
     import etc1a4

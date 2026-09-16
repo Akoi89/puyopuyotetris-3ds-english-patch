@@ -9,14 +9,15 @@ scene scripts whose bubble size codes were raised.
 DLC: unchanged in this build, so only checked to still hash as the published 0.2.8 files.
 """
 import os, sys, struct, hashlib, shutil, subprocess, filecmp
-sys.path.insert(0, r'G:\Claude\TGAA 1-2\testimony_pipeline')
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+sys.path.insert(0, os.path.join(TGAA_ROOT, 'testimony_pipeline'))
 import ncch
 from cia import Cia
 
 ED = sys.argv[1] if len(sys.argv) > 1 else 'en'
-R = r'G:\Claude\PuyoPuyo'
+R = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
 W = os.path.join(R, 'work'); os.chdir(W)
-TOOL = r'G:\Claude\TGAA 1-2\3dstool\3dstool.exe'
+TOOL = os.path.join(TGAA_ROOT, '3dstool', '3dstool.exe')
 MU = 0x200
 if ED == 'en':
     OLD = os.path.join(R, r'Final\_CURRENT\PuyoPuyoTetris-EN-voices-1.0.13.cia')

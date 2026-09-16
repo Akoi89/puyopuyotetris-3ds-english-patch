@@ -7,10 +7,11 @@ are written directly). Azahar must be closed.
     python issue1_azahar_swap.py restore    (puts the newest backup back)
 """
 import hashlib, os, shutil, sys, time
-sys.path.insert(0, r'G:\Claude\TGAA 1-2\testimony_pipeline')
+TGAA_ROOT = os.environ.get('TGAA_ROOT') or sys.exit('set TGAA_ROOT to the TGAA project folder')
+sys.path.insert(0, os.path.join(TGAA_ROOT, 'testimony_pipeline'))
 from cia import Cia
 
-R = r'G:\Claude\PuyoPuyo'
+R = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
 T = os.path.join(os.environ['APPDATA'], 'AzaharPlus', 'sdmc', 'Nintendo 3DS', '0' * 32, '0' * 32, 'title')
 BASE_DIR = os.path.join(T, '00040000', '00101200', 'content')
 DLC_DIR = os.path.join(T, '0004008c', '00101200', 'content')

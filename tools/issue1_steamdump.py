@@ -5,6 +5,7 @@ from PIL import Image
 
 OUT = sys.argv[1]
 os.makedirs(OUT, exist_ok=True)
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
 
 
 def textures(member):
@@ -21,7 +22,7 @@ def textures(member):
 
 
 for tag in ['party2p_e', 'party2p']:
-    ms = narc.read('G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data/tenp/party/party2p/%s.narc' % tag)['members']
+    ms = narc.read(os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data', 'tenp', 'party', 'party2p', '%s.narc' % tag))['members']
     print(tag, 'members', len(ms), [m[:4] for m in ms])
     for i, m in enumerate(ms):
         for k, b in enumerate(textures(m)):

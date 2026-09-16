@@ -3,7 +3,7 @@ against the real source and hash-match the result against the shipped CIA."""
 import os, sys, zipfile, hashlib, shutil, subprocess, io
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-R = r'G:\Claude\PuyoPuyo'
+R = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
 W = os.path.join(R, 'work')
 os.chdir(R)
 BASE_SRC = os.path.join(R, '0004000000101200 Jap-ORG-Base (CTR-P-BPTJ) (v0.1.0) (J).piratelegit-decrypted.cci')

@@ -5,7 +5,7 @@
 Both xdeltas come from work/rhdn_xdelta_jpv (rebuild_rhdn_xdelta_jpv.py, proven on perturbed sources)."""
 import io, os, sys, zipfile, hashlib, shutil, subprocess
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-R = r'G:\Claude\PuyoPuyo'
+R = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
 W = os.path.join(R, 'work')
 os.chdir(R)
 BASE_SHA = 'fe2d1927728e258f108d889985b29fe77e3378139957f519d7f60a72a9dc1349'

@@ -1,5 +1,6 @@
 import os,sys,mtx
-for root in ['jp_orig','tr_jpvoice',r'G:/Claude/PuyoPuyo/PuyoPuyoTetris/data_steam/data']:
+PUYO_ROOT = os.environ.get('PUYO_ROOT') or sys.exit('set PUYO_ROOT to the project folder')
+for root in ['jp_orig','tr_jpvoice',os.path.join(PUYO_ROOT, 'PuyoPuyoTetris', 'data_steam', 'data')]:
     ok=bad=err=0; bl=[]
     for dp,dn,fn in os.walk(root):
         for f in fn:
