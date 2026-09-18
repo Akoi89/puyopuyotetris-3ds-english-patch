@@ -54,6 +54,14 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 Install order is base, then Japanese update, then DLC. The title screen reads **ENG
 1.0.15** in both editions.
 
+> **If you're using any of the xdelta zips, dump the title as an encrypted CIA and decrypt it
+> on the PC.** In GodMode9, dump the title to CIA with no decrypt and no trim option, copy that
+> to your computer, and run Batch CIA 3DS Decryptor on it there. Its output is what every xdelta
+> here applies to. GodMode9's own decrypt hands you a file of the **right size** that isn't the
+> same bytes, and the patch will refuse it, so a matching file size is not proof your file is
+> right. Each zip's readme carries the SHA-256 of the source I used and of the file you should
+> end up with. The LayeredFS zips need none of this.
+
 The patched base game is a full copy of the game with English inside it and is **not
 published**; the LayeredFS zip is the published form of the same files. An update-title CIA
 was tried and withdrawn, because this game's code only ever opens the base RomFS (details
