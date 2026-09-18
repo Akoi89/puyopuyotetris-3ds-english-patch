@@ -11,7 +11,7 @@ For anyone playing these builds and reporting back. Spoiler-free.
    built from your dump with `tools/build_cia.py` (it replaces the base game,
    same title ID; your save carries over), or on Luma3DS the contents of
    `PuyoPuyoTetris-LayeredFS.zip` under `luma/titles/0004000000101200/`.
-   For the Japanese-voice edition use `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.14.zip`
+   For the Japanese-voice edition use `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip`
    or `PuyoPuyoTetris-JP-voices-LayeredFS.zip` instead, and in step 4
    `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. One edition or the other, not both.
 3. **The Japanese v1.2.0 update** (`0004000E`, 2.4 MB): code only; installs
@@ -59,18 +59,27 @@ and the Party-mode Time Up graphic drawn as slices (now Sega's own "TIME!"
 art, one letter per sprite). Confirmed on a New 3DS XL on 14 September 2026
 (issue #1); the change is line
 breaks in three text tables and one texture, each verified byte for byte on
-the way in and out of the CIAs. The base chapters 1 to 7 draw through a
-different font and were not re-wrapped, but every base scene script was
-checked for the second half of the same problem, a bubble scripted for fewer
-lines than the English needs. Two were found and are raised in **1.0.14**
-(14 September 2026): one in Chapter 1, one in the shared end-of-chapter
-script. The two bubbles have not been looked at in the engine, so a screenshot of either is still
-worth having.
+the way in and out of the CIAs. Every base scene script was also checked for the second half of the same
+problem, a bubble scripted for fewer lines than the English needs. Two were
+found and are raised in **1.0.14** (14 September 2026): one in Chapter 1, one
+in the shared end-of-chapter script. The Chapter 1 one was photographed
+drawing correctly on a New 3DS XL on 17 September 2026; the shared one has
+still not been seen running.
+
+The base chapters were not re-wrapped for width at that point, and should
+have been. The tool that measures line width was reading Sega's Japanese font
+for them, so every base line came out as a meaningless number and nobody
+looked again. The third report in issue #1 (17 September 2026) photographed a
+base line running onto the border. **1.0.15** re-breaks 162 lines in 160
+bubbles across Chapters 1 to 7 and the shared script so no line is wider than
+193 pixels, the widest width a photograph shows drawing cleanly, and raises 28
+bubbles to hold the line that results. Words unchanged. None of it has been
+seen running, so screenshots of any Adventure scene are worth having.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.14** at its right end.
-- The console lists the base game as version **1.0.14** (a locally built CIA)
+- The title screen logo's pink subtitle strip reads **ENG 1.0.15** at its right end.
+- The console lists the base game as version **1.0.15** (a locally built CIA)
   and the DLC as **0.2.8** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
 
 If the stamp is missing, the install did not take.
@@ -284,14 +293,15 @@ changed since 1.0.9.
 
 | | |
 |---|---|
+| Adventure bubble line widths | measured through each scene's own Latin atlas and calibrated to within 2 px against console photographs; every drawn line is at or under 193 px as of 1.0.15, but no 1.0.15 bubble has been seen running |
 | Text, base and DLC | verified per font atlas section; **seen in the engine 2026-09-04** on the Options screen, Adventure map, and DLC chapters |
 | Font atlas swaps | verified by rendering the shipped text through the shipped atlas; confirmed on-screen where the boot above reached |
 | Battle and DLC voices | decoded back and compared to source (27 to 37 dB); never heard. All 37 battle banks are now this project's own encode at Sega's 32000 Hz (1,517 waves, verified); the 13 re-imported for 1.0.4 fix a sample-rate mismatch the fan build had left in |
 | Character-select pick lines and title-screen announcer | verified by duration against Steam and confirmed by the user by ear from the decoded clip |
 | Online UI textures | rendered and reviewed as images; not yet confirmed in the engine beyond the screens above |
 | Boot notice, DLC plates and Endless-mode record card | rendered and reviewed, not yet seen in the engine after the fix |
-| Title version stamp | seen in Azahar (ENG 1.0.14) and in the tester's console screenshots |
+| Title version stamp | seen in Azahar and in the tester's console screenshots; ENG 1.0.15 decoded back out of both built CIAs |
 | Update-title packaging | structurally correct, booted in Azahar, **ignored by the game**: withdrawn |
 | Versus result screen | **confirmed in the engine by the user 2026-09-04**: no hang, winner dialogue in English after the atlas-compact fix |
 | Emulator | **booted 2026-09-04**: Options screen, Adventure map, DLC chapters, Versus result screen, all in English |
-| Real hardware | **booted 2026-09-06 (New 3DS) and 2026-09-07 (New 3DS XL, original 3DS)**, a few games played; DLC Adventure chapters and the stage 1-1 cutscene played on a New 3DS XL on 14 and 16 September 2026 (issue #1); no full story playthrough yet |
+| Real hardware | **booted 2026-09-06 (New 3DS) and 2026-09-07 (New 3DS XL, original 3DS)**, a few games played; DLC Adventure chapters played on a New 3DS XL on 14 and 16 September 2026, and Chapter 1 through to its end on 17 September (issue #1); no full story playthrough yet |
