@@ -19,7 +19,7 @@ Every count is reproducible. The method behind each one is in [DETAILS.md](DETAI
 the tools that produce them are in [`tools/`](tools/), which ships as source. Where
 something has not been verified, TESTING.md says so.
 
-**[Download the current build from Releases](../../releases/latest)** (build 1.0.14, DLC
+**[Download the current build from Releases](../../releases/latest)** (build 1.0.15, DLC
 0.2.8). What changed in each build is in [RELEASE_NOTES.md](RELEASE_NOTES.md). Also listed
 on [romhacking.net](https://www.romhacking.net/translations/7714/).
 
@@ -49,10 +49,10 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 | **Patched base game** | `PuyoPuyoTetris-Base-xdelta.zip` (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or built from your dump with `tools/build_cia.py`, or `PuyoPuyoTetris-LayeredFS.zip` unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
 | The Japanese v1.2.0 update | code only; installs over the patched base safely |
 | **The DLC** | `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump, which produces the same file |
-| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.14.zip` (base and DLC patches for your own decrypted dumps), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (Luma3DS) and `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. Install one edition or the other, not both |
+| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip` (base and DLC patches for your own decrypted dumps), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (Luma3DS) and `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. Install one edition or the other, not both |
 
 Install order is base, then Japanese update, then DLC. The title screen reads **ENG
-1.0.14** in both editions.
+1.0.15** in both editions.
 
 The patched base game is a full copy of the game with English inside it and is **not
 published**; the LayeredFS zip is the published form of the same files. An update-title CIA
@@ -67,14 +67,14 @@ These are the eight assets currently on the v1.0.0 tag; the tag's files are repl
 
 | File | Bytes | SHA-256 |
 |---|---|---|
-| `PuyoPuyoTetris-Base-xdelta.zip` | 169204774 | `cc872b465b35c938e0313f332ff518283093368e53863494391e29fd90bed3b4` |
+| `PuyoPuyoTetris-Base-xdelta.zip` | 169205271 | `68b70b6bf7b66be8803757574efa2720a2052a914064c2932decc7b177dd0c01` |
 | `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia` | 116165696 | `b742243d81c2b7b2ef91d27c5c6570291b5b4cbcdfd3e3c6d847aab33ad00475` |
 | `PuyoPuyoTetris-DLC-patched.cia` | 111889472 | `de833dede4482b83f24e413dc9f3801c66de6f3e6315d2fd4e4449d29e51971c` |
 | `PuyoPuyoTetris-DLC-xdelta.zip` | 33920283 | `62952ba3075cf7b367e602a51a353b340a995c240dcd6463816dd31c080d2813` |
-| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 8537268 | `f99c5e53cfa98ac4459200a7c2fa45df07611aaf6242e0a455e1fbafc9d7d7ac` |
-| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.14.zip` | 11352097 | `98de69754b1edf91f1b2046c3d52d6a02d17973205296a6210213039fcb88613` |
-| `PuyoPuyoTetris-LayeredFS.zip` | 42774019 | `986e7b6f822a9ffa621b1d904b243d5f8b75b9f9681caf70226af3a543f5defd` |
-| `PuyoPuyoTetris-xdelta-patches-1.0.14.zip` | 203281223 | `c441cf880217872583ffbb19557bcd9acf0de48a3a55e7e148b4c00043f3ece3` |
+| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 8612432 | `0668d5e9e8735f7703252d238fa39f25b1a4c45e70ff5d4a56db8bc20a05aee3` |
+| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip` | 11352401 | `244b0a18d5f83c823f3da0eadac7d7a09418b6be8138b2f99d3b0b6e6a902742` |
+| `PuyoPuyoTetris-LayeredFS.zip` | 42849184 | `7ba3b55702ce366b40a265a107c780523d2ed7f5d3fe7c0b492613111da97971` |
+| `PuyoPuyoTetris-xdelta-patches-1.0.15.zip` | 203281923 | `abea4da57faaa5f88373cb214520f5dcdf3c7f38f1e2543c4243453809b0e93b` |
 
 ## How it works
 
