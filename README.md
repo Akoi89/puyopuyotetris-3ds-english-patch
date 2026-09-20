@@ -63,7 +63,8 @@ Install order is base, then Japanese update, then DLC. The title screen reads **
 > on the PC.** In GodMode9, dump the title to CIA with no decrypt and no trim option, copy that
 > to your computer, and run Batch CIA 3DS Decryptor on it there. Its output is what every xdelta
 > here applies to. GodMode9's own decrypt hands you a file of the **right size** that isn't the
-> same bytes, and the patch will refuse it, so a matching file size is not proof your file is
+> same bytes, and the patch will refuse it with `target window checksum mismatch`, so a
+> matching file size is not proof your file is
 > right. Each zip's readme carries the SHA-256 of the source I used and of the file you should
 > end up with. The LayeredFS zips need none of this.
 
