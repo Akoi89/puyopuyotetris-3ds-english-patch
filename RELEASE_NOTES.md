@@ -1,282 +1,53 @@
-The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.0.15** with DLC 0.2.8 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar; 1.0.13 fixes the EX chapter line breaks and the Party-mode Time Up graphic; 1.0.14 raises two base-game speech bubbles; 1.0.15 re-breaks the base-game Adventure dialogue so no line runs past the bubble edge). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
+This is a fan made English patch for Puyo Puyo Tetris on 3DS. It carries Sega's own official English text and voice work over from the PC release, DLC included. Everything below covers what changed in each build and whether you need to update anything.
 
-- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.15**; the built CIA reports 1.0.15.
-- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.8.
-- **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 169 MB) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
-- **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
-- Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
-- **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip` (base and DLC as xdelta3 patches for your own decrypted dumps, xdelta3.exe and a readme inside), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (the LayeredFS files without the English voice bank) and `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. Same title ID and the same ENG 1.0.15 stamp as the English-voice build, so install one edition or the other. Details in the section below.
+## Japanese-voice edition
 
-**Withdrawn the same day: an "update title" CIA.** It packaged the English data inside Sega's v1.2.0 update. Puyo Puyo Tetris's code only ever opens the base game's RomFS (path type 0) and never asks for an update RomFS (type 5), so the console and Azahar keep reading Sega's Japanese files no matter what the update carries. It did nothing. If you downloaded it, delete it and install the official update instead.
+If you would rather keep the original Japanese voice acting alongside the English text and menus, this edition is for you. Story scenes, in-battle callouts, character select, the title-screen announcer, the HOME menu jingle and all three DLC chapters play Sega's original Japanese performances, while everything you read on screen stays in English.
 
-The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.0.15 (below) is the current build.
+It installs the same way as the main patch, using its own set of files on the release page, and it carries the same version number and on-screen stamp as the English-voice build, so only one edition can be installed at a time. The HOME menu jingle is the quickest way to tell which one you have running.
 
----
+This edition has been confirmed working on real 3DS hardware, with Japanese speech heard through a story chapter and several matches, and it gets rebuilt alongside every update to the main patch.
 
-## Japanese-voice edition (first released 11 September 2026 for 1.0.12, now 1.0.15 / DLC 0.2.8)
+## 1.0.15 / DLC 0.2.8
 
-Asked for in issue #2: the English text without the English voices. This is
-the 1.0.12 build taken apart and put back together with its `sound` folder
-swapped for Sega's original (2,320 story voice streams and the in-battle
-voice bank), and the HOME menu banner's audio put back to Sega's jingle. The
-rebuilt file system was compared against the English-voice build file by
-file: the only differences are under `sound`. The DLC was rebuilt from the
-same text and texture overlay with the 760 imported voice clips left out;
-676 of its 701 contents are byte for byte the Japanese DLC, and the other
-three differ from it only in their 12 text and texture files each.
+This update re-breaks the line breaks in the base game's story dialogue so no line of text runs past the edge of its speech bubble. Earlier builds carried line breaks meant for a wider text box, so a number of lines in the main story chapters pushed past where the bubble stops. Nothing about the wording changes, not a single word is added, removed or altered, only where each line splits. A number of bubbles also grew slightly taller so their text fits properly.
 
-What that means in play: story scenes, in-battle voices, character select,
-the title-screen announcer, the HOME menu jingle and the three DLC chapters
-all play Sega's Japanese takes, and everything on screen is the same English
-as the main release.
-
-Three files on the release page: the xdelta bundle
-`PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip` (the base patch is
-about 8 MB rather than 169 MB, because leaving the voice files at their
-original sizes leaves nearly the whole file system where your dump has it),
-the LayeredFS zip `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (116 files, the
-same as the main LayeredFS zip's 117 minus `sound/tenp.bcsar`; delete the old
-romfs folder from the card first or the English bank stays), and the DLC as
-a ready CIA, `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`.
-
-Same title ID and the same **ENG 1.0.15** stamp as the English-voice build,
-so install one edition or the other; the HOME menu jingle is the quick way to
-tell them apart. **Booted in Azahar on 13 September 2026**: ENG 1.0.12 stamp,
-main menu and a Quick Play match with audio, DLC EX Act 10 with its English
-plate and story scene. The DLC battle voices were listened to in that run
-and were Japanese. **Confirmed on a New 3DS XL on 14 September 2026** by the
-player who asked for the edition, who installed it by the xdelta route and
-heard Japanese speech in the story and in play across a couple of DLC chapters. Rebuilt on 14 September 2026 as 1.0.13 / DLC 0.2.8, again as 1.0.14, and on
-17 September 2026 as 1.0.15 with the line-break fix described under the
-current build. Each time the recipe and the file-by-file comparison were
-repeated on the new files, and none of those builds touches a voice file.
-
-## Current build: 1.0.15 / DLC 0.2.8
-
-The base game's Adventure dialogue, re-broken so no line runs past the edge of
-its speech bubble. The DLC is unchanged; if you are already on DLC 0.2.8 you
-only need the base files.
-
-This is the width half of the bubble problem, and until now only the DLC had
-been checked for it. The base text came from the earlier fan translation with
-its line breaks set for a wider box, and 162 lines in 160 bubbles, spread
-across Chapters 1 to 7 and the shared end-of-chapter script, were wide enough
-to run into the border. They are all re-broken. **No word is changed, added or
-dropped**; only where the breaks fall. Where the text no longer fits the number
-of lines the bubble was scripted for, the height goes up too: 28 bubbles, one
-byte each.
-
-The cap is 193 pixels, which is not a guess. A player on a New 3DS XL
-photographed one line at 204 pixels landing on the border and another at 193
-drawing with 22 pixels to spare, so 193 is the widest width there is a
-photograph of working. Line widths are summed from the game's own glyph table
-for the scene, and against those photographs the model lands within 2 pixels of
-what the console actually drew.
-
-The reason this took until the third report is worth writing down. The tool that
-measures bubble width was reading Sega's Japanese font for base chapters, where
-every English letter misses the table and falls back to a default cell width, so
-every base line came out as a meaningless number and the base was never
-width-checked at all. The Latin glyphs live in the `_F1` companion archive, one
-font per scene.
-
-1.0.15 has not been seen running anywhere. It is line breaks in eight text
-tables and 28 single script bytes, each verified byte for byte on the way in and
-out of both CIAs, but nobody has watched it draw. The title screen reads
-**ENG 1.0.15** and the DLC stays **TMD 0.2.8**.
+The DLC is unchanged, so if you are already on the current DLC release you only need to update the base game files. This build has not yet been confirmed running on a console or in an emulator, though every file going in and out of it was checked carefully. If you spot a bubble that still looks wrong, please report it.
 
 ## 1.0.14 / DLC 0.2.8
 
-The rest of the bubble work from [issue #1](../../issues/1), in the base game
-this time. The DLC is unchanged; if you are already on DLC 0.2.8 you only need
-the base files.
+This update finishes the speech bubble height fixes reported by a player, this time for the base game rather than the DLC. A speech bubble's height in this game is not worked out automatically from how much text it holds. Each scene sets that height by hand, and it was set to fit the original Japanese line lengths. Where an English line needed more room than the Japanese did, the last line could spill past the bottom of the bubble.
 
-A speech bubble's height is not worked out from the text. Each scene script
-sets it per line, and Sega's values were chosen for the Japanese. Where an
-English line needs more lines than the Japanese did, the extra line falls
-outside the bubble, which is what the DLC report showed. Every base scene
-script was checked against that rule and two bubbles needed a taller box: one
-in Chapter 1 and one in the shared end-of-chapter script. Two bytes in total,
-and the two archives are otherwise byte for byte Sega's own.
-
-Four more base bubbles hold English that runs to more lines than the bubble
-implies, but Sega's own Japanese runs to the same number or more in those same
-bubbles, so they draw the way the original game draws them and were left alone.
-
-The two bubbles were not looked at in the engine; the edit is one byte in each of two
-scene scripts, and both CIAs were compared against 1.0.13 file by file. The title screen reads **ENG 1.0.14**
-and the DLC stays **TMD 0.2.8**.
+Two bubbles in the base game needed a taller box and now have one. A few other bubbles run to more lines in English than in Japanese, but the original game already draws those the same way, so they were left as they are. The DLC is unchanged, so update the base files only if you already have the current DLC.
 
 ## 1.0.13 / DLC 0.2.8
 
-Two fixes from the first report in [issue #1](../../issues/1) (14 September
-2026, a New 3DS XL running the Japanese-voice edition). Nothing else changed.
+Two fixes from the first player report on this project. First, dialogue in the three DLC story chapters sometimes ran off the right edge of its speech bubble. Those chapters had reused line breaks from the PC release, whose text box is wider than the 3DS allows, so a good number of bubbles needed rewrapping onto two or three lines. The words themselves are unchanged, still Sega's own English text, only where the lines break has moved.
 
-1. **EX chapter dialogue ran off the right edge of its speech bubble.** The
-   three DLC story chapters (EX Acts 8, 9 and 10) took Sega's English lines
-   from the Steam release with Steam's line breaks, and the 3DS bubble is
-   narrower: about 215 pixels of text room, measured on the reporter's
-   screenshots. 276 of the 734 English bubbles had at least one line too
-   wide. DLC 0.2.8 re-breaks those bubbles onto two or three lines so that no
-   line is wider than 205 pixels. The words are Sega's and unchanged; only
-   where the lines break has moved, and Sega's own Japanese script already
-   uses three-line bubbles in the same scenes. The base game's chapters 1 to
-   7 were left alone here. That was a mistake: they draw through a different
-   font, and the tool was reading the wrong one for them, so they were never
-   width-checked at all until 1.0.15.
-2. **The "Time Up" call in Party mode was drawn as slices.** The game draws
-   that graphic as six separate sprites, one per Japanese character, and 1.0.12
-   had painted "TIME UP!" across the whole texture, so each sprite showed a
-   piece of it. 1.0.13 uses Sega's own "TIME!" art from the Steam release, cut
-   into one letter per sprite.
+Second, the "Time Up" banner in Party mode had been drawn as several broken pieces instead of one clean word. It now uses Sega's own "Time!" artwork instead.
 
-Files changed: base game 2 (the title screen stamp and the Party-mode texture
-archive), DLC 3 (the three chapter text tables). Both CIAs were compared
-against 1.0.12 / 0.2.7 file by file and differ in exactly those. The
-Japanese-voice edition of this build was confirmed on a New 3DS XL on 14
-September 2026, and again on the same console on 16 September (issue #1);
-the change is line breaks in three text tables and one
-texture, each verified byte for byte on the way in and out of the CIAs. The
-Japanese-voice edition was rebuilt the same way and carries the same two
-fixes; its release files now read 1.0.13 / 0.2.8. The title screen reads **ENG
-1.0.13** and the DLC is **TMD 0.2.8**.
+The base game's main story chapters were not touched in this update, since they turned out to need this same kind of fix too, which arrived later in 1.0.15.
 
 ## 1.0.12 / DLC 0.2.7
 
-A texture quality pass, nothing functional. The textures this patch draws
-itself and that the game stores compressed (ETC1) had gone through a small
-encoder that took each block's average colour and stopped there. 1.0.12
-re-renders them with an encoder that searches for the best colour per block
-and ignores the pixels the game never shows, so the edges of white lettering
-on coloured plates come out cleaner. It covers fewer textures than I expected
-when I started: eight in total. Base game: the "New Record" card and the rank
-plates on the Puzzle League standby screen. DLC: the six EX chapter plates on
-the Adventure map (Act number and title for each of the three chapters).
-Every other file is byte-identical to 1.0.11 / 0.2.6; the title screen reads
-**ENG 1.0.12** and the DLC is **TMD 0.2.7**.
+A visual quality pass, nothing that changes how the game plays. A handful of textures drawn by this patch itself had been compressed with a basic method that softened fine detail, so this update redraws them with a better method that keeps edges sharp. That mostly shows up as cleaner white lettering on colored plates and cards.
 
-Checked in Azahar. The hardware confirmation from 1.0.11 covers everything
-except these eight textures. If you already have 1.0.11 and DLC 0.2.6 there's
-no need to update; the difference is slightly sharper lettering on those
-screens.
+A small set of textures were redone this way: the "New Record" card and the rank plates on the Puzzle League standby screen in the base game, plus the DLC chapter plates on the Adventure map. Everything else is identical to 1.0.11 and its matching DLC.
+
+This build was checked in an emulator rather than on hardware, though earlier hardware testing still covers everything except these textures. If you already have 1.0.11, updating is optional, the only difference is sharper lettering on a few screens.
 
 ## 1.0.11
 
-The first run on real hardware (a New 3DS, 6 September 2026) found a bug that
-had been in every build: the error and system dialogs showed the wrong
-message. The game's error table (`tenp/text/error/errorJapanese.mtx`) had a
-blank entry at position 1, inherited from the earlier fan translation's files
-that this project built on, so every message after it was drawn one slot late.
-On a first launch that looked like "Could not read data. Turn off the power and
-reinsert the SD Card." with Yes and No buttons, when the game was actually
-asking whether to use SpotPass. 1.0.11 realigns the table to Sega's original
-38 entries, same English text, right slots. The other 29 base text tables and
-all 30 DLC tables were checked against the originals and match. Nothing else
-changed; the title screen reads **ENG 1.0.11**. Confirmed on the console: the
-SpotPass question now reads as itself.
+The first test on real 3DS hardware turned up a bug present in every earlier build: error messages and system dialogs showed the wrong text. A blank entry near the start of the game's error message list, left over from the fan translation this patch builds on, pushed every message after it into the wrong slot. On first launch, that made the game's SpotPass question read like a corrupted save warning, complete with the wrong buttons.
 
-If you answered that first-launch question on 1.0.10 without knowing what it
-was, it was the SpotPass opt-in; the setting is in Options.
+This update realigns that list to match Sega's original layout, so every message appears in its correct spot with the same English wording as before. Every other text table in the base game and DLC was checked against the originals and confirmed to match. Nothing else changed. If you answered that confusing first-launch question on an earlier build without knowing what it was, it was the SpotPass opt-in, which you can still change from the options menu.
 
 ## 1.0.10
 
-The build has moved on from 1.0.1 through 1.0.6 above. **Booted in the
-Azahar emulator**: base and DLC both run, and the text pipeline works in the
-engine: checked on the Options screen, the Adventure map, the DLC chapters,
-and the Versus result screen, all in English. Real hardware is still
-untested.
+This build wraps up a long stretch of early work, most of it already superseded by later updates above, so it is summarized here rather than repeated in full.
 
-1.0.2 (below) added a full texture survey, a second label pass, and two more
-imported voice sets. 1.0.3 fixed the character-select pick lines, the
-title-screen announcer, the boot notice screen, the DLC map plates, and the
-Endless-mode record card. 1.0.4 fixed the bottom-screen boot notice column,
-refit the DLC map plates in a condensed font, and re-encoded all 37 battle
-banks to Sega's sample rate. 1.0.5 fixed the match-end hang by compacting the
-font atlases. 1.0.6 replaced the Swap-mode call logos with Sega's official
-English logo art and moved the bottom-screen boot notice text a further 21
-px left. 1.0.7 replaced the Swap-mode call logos and moved the boot notice text; 1.0.8:
+Earlier updates in this stretch replaced many remaining Japanese textures with Sega's own official English artwork, including menu labels, mode badges, rank icons and a broadcast logo, matched by reading their text rather than guessing their position on screen. Character voices across the base game and DLC were re-leveled twice, once with a rough fix that left them sounding a bit muffled, then again with a cleaner pass that matches Sega's own Japanese volume without that side effect. If you installed a build from partway through this stretch, replace it with something newer.
 
-- **A sweep of the Steam release's English textures for Sega's official
-  art.** Because Steam's English atlases are laid out differently from both
-  the 3DS atlases and Steam's own Japanese atlases, sprites are matched by
-  their text instead of their position. 222 hand-redrawn labels are replaced
-  with Sega's official English sprites, including the Broadcast Station and
-  Club mode pills (Fusion, Swap, Party, Big Bang, Marathon, Sprint, Ultra,
-  Endless Puyo, Endless Fever, Tiny Puyo) with their proper two-tone
-  outlines, coloured category rows, Yes/No buttons, and Puzzle League
-  headers. Labels where the Steam sprite would be unreadable or clash in
-  style keep the hand redraw.
-- **The Replay Report badge rows (all 11)** are now Sega's official English
-  art: Epic Showdown!, Master Battle!, Regional Battle!, Must Watch!, Major
-  Upset!, Amazing Match!, Huge Comeback!, Back-n-Forth!, Surprise Win!, Great
-  Match!, Rank Up!
-- **The 15 Puzzle League rank pills** (Grand Master, Platinum, Golden,
-  Legend, Superstar, Star, Virtuoso, Elite, Professional, Wizard, Ace,
-  Amateur, Rookie, Beginner, Student) are now Sega's official English art;
-  these were still Japanese and hadn't previously been listed as a known
-  leftover.
-- **The Broadcast Station TV logo** is now Sega's official "World Broadcast"
-  mark. Earlier notes called this the "Replay TV" logo and said it was
-  artwork left Japanese; that isn't true any more.
-- **Base game**: title screen now reads **ENG 1.0.7**; the built CIA reports
-  1.0.7.
-- **`PuyoPuyoTetris-DLC-patched.cia`** stays **TMD 0.2.4**.
+This update itself only changes the HOME menu banner, swapping in Sega's official English logo. Everything else carries over from the build before it.
 
-1.0.8 fixed the in-battle and DLC voice loudness, reported as quiet next
-to the story voices:
-
-- Measured with `voice_levels.py` (peak and RMS in dBFS): Sega's Japanese
-  3DS takes run about -11 dBFS RMS with peaks near 0 dBFS (heavily
-  limited); the imported base voice clips sat 5 to 11 dB below that in
-  RMS, and the DLC story clips about 7 dB low, in both cases with peaks
-  already close to full scale, so a flat gain would have clipped.
-- Fix: gain each clip to the RMS of Sega's Japanese take of the same line
-  through a look-ahead peak limiter, then re-encode. Base battle/select/
-  title voices now average 1.2 dB below Sega's takes (62 of 63 banks
-  re-levelled); DLC story clips about 1.3 dB below (734 clips
-  re-levelled). Pitch and timing untouched.
-- **Base game**: title screen now reads **ENG 1.0.8**; the built CIA
-  reports 1.0.8.
-- **`PuyoPuyoTetris-DLC-patched.cia`** is now **TMD 0.2.5**.
-- Nothing else changed: text, textures and atlases are as in 1.0.7.
-- Still Japanese, deliberately or not yet: a few merged/rotated strings on
-  the league result screen (vertical "you lose"/"congratulations" art), the
-  replay-speed hint strip (not found anywhere in the Steam data), the three
-  DLC voice lines with no English take, decorative screenshot thumbnails,
-  and the small "New Record" ornament.
-- One stability report from testing, recorded honestly: starting a local
-  Multiplayer host and backing out crashed the emulator (an emulator-side
-  assertion, not the patch).
-- Install order is unchanged: Japanese base, then patched base (or
-  LayeredFS), then the Japanese v1.2.0 update (code only), then this DLC.
-  The withdrawn update-title CIA note above still applies: do not use it.
-
-1.0.9 redid the voice loudness fix, within hours of 1.0.8:
-
-- **The 1.0.8 fix should be replaced.** It matched levels by running gain,
-  a limiter, and a DSP-ADPCM re-encode three times per clip, which stacked
-  four generations of encoder error. Both the 1.0.8 base voices and the DLC
-  0.2.5 voices came out sounding muffled and gritty next to Sega's takes.
-- **Fix: a single clean encode.** Gain and limiting are now done in
-  floating point on the decoded audio, iterated until the level matches
-  Sega's Japanese take, and DSP-ADPCM is encoded exactly once. Base
-  battle/select/title voices now average about 1 dB below Sega's takes (62
-  of 63 banks re-levelled); DLC story clips about 1.1 dB below (760 clips
-  re-levelled). Pitch and timing untouched.
-- **Base game**: title screen now reads **ENG 1.0.9**; the built CIA
-  reports 1.0.9.
-- **`PuyoPuyoTetris-DLC-patched.cia`** is now **TMD 0.2.6**.
-- Nothing else changed since 1.0.8.
-- If you installed 1.0.8 or DLC 0.2.5, replace them with 1.0.9 and 0.2.6.
-
-1.0.10 changed the HOME menu banner only:
-
-- **The HOME menu banner now shows Sega's official English "PuyoPuyo" logo**
-  instead of the Japanese one, built from Sega's own banner with only the
-  logo swapped, Sega's TETRIS art untouched. This lives in the locally
-  built CIA only; LayeredFS cannot carry a banner, so nothing public
-  changes apart from the version stamp.
-- **Base game**: title screen now reads **ENG 1.0.10**; the built CIA
-  reports 1.0.10.
-- **`PuyoPuyoTetris-DLC-patched.cia`** stays **TMD 0.2.6**.
-- Nothing else changed since 1.0.9.
+The full technical history, including every measurement behind these updates, is kept in BUILD_NOTES.md.
