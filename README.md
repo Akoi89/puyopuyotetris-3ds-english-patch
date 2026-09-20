@@ -15,8 +15,10 @@ three DLC story chapters (text and voices), the online UI textures, and the DLC 
 Sega's own English sprites are used wherever they exist in the Steam data rather than
 anything redrawn by hand.
 
-Every count is reproducible. The method behind each one is in [DETAILS.md](DETAILS.md) and
-the tools that produce them are in [`tools/`](tools/), which ships as source. Where
+Nearly every count here is reproducible. The method is in [DETAILS.md](DETAILS.md) and the
+tools that produce them are in [`tools/`](tools/), which ships as source. The exceptions are
+the two string totals in DETAILS, 1,411 and 875, which came from a count made while the work
+was going on and which no shipped tool reproduces, so treat those two as approximate. Where
 something has not been verified, TESTING.md says so.
 
 **[Download the current build from Releases](../../releases/latest)** (build 1.0.15, DLC
@@ -33,8 +35,11 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 > played through on a console is worth reporting. The rest was tested in Azahar.
 >
 > **[Report anything wrong in issue #1](../../issues/1)** (which screen, and a photo beats a
-> description). See [TESTING.md](TESTING.md) for what to install, how to identify the build,
-> and what's known.
+> description). Don't check first to see whether I already know. A duplicate costs me
+> nothing and a report you talked yourself out of costs me a bug.
+>
+> **[TESTING.md](TESTING.md) lists what's already known**, along with what to install and
+> how to identify the build you're running.
 
 > **You need the Japanese base game.** It isn't distributed here or anywhere in this
 > project. Cartridge or your own dump.
