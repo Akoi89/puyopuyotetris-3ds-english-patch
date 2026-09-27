@@ -33,7 +33,8 @@ This is a fan English patch for *Puyo Puyo Tetris* on 3DS, carrying Sega's own o
 
 - A few dozen strings are Japanese on purpose: the character-entry keyboards (the hiragana/katakana/kanji inventories in name entry) and the developer tables define what can be typed and aren't translations waiting to happen.
 - Three DLC story lines stay Japanese (chapter 8 scene 5, chapter 9 scenes 4 and 7); those lines were re-recorded for the 3DS and have no English take.
-- Voices are a little duller than the story voices. Every in-battle and DLC voice is re-encoded from Steam's PCM with a home-grown encoder whose coefficient search is weaker than Sega's. Pitch and timing are correct. The levels are matched to within about 1 dB of Sega's own Japanese takes (measured RMS, look-ahead limited so nothing clips).
+- Voices are a little duller than the story voices. Every in-battle and DLC voice is re-encoded from Steam's PCM with a home-grown encoder whose coefficient search is weaker than Sega's. Pitch and timing are correct.
+- Some battle shouts are quieter than the Japanese ones. Steam's English recordings are mastered at a lower volume, and I capped the audio boost that brings them up, so a few characters' shouts in battle still come out noticeably softer.
 - Stylised mode names in the online menus (Fusion, Swap, Party, Big Bang) are plain white where the Japanese had a thick two-tone outline.
 - Prefecture buttons in the online rankings are tiny: nine-letter names in boxes drawn for two kanji.
 - A few merged/rotated strings on the league result screen are Japanese: the vertical "you lose" / "congratulations" art doesn't split cleanly from the artwork around it.

@@ -77,8 +77,10 @@ you're looking at something and you're not sure which side it falls on, just tel
 - **Voices are a little duller than the story voices.** Every in-battle and
   DLC voice is re-encoded from Steam's PCM with a home-grown encoder whose
   coefficient search is weaker than Sega's. Pitch and timing are correct.
-  The levels are matched to within about 1 dB of Sega's own
-  Japanese takes (measured RMS, look-ahead limited so nothing clips).
+- **Some battle shouts are quieter than the Japanese ones.** Steam's English
+  recordings are mastered at a lower volume, and I capped the audio boost
+  that brings them up, so a few characters' shouts in battle still come out
+  noticeably softer.
 - **Stylised mode names in the online menus (Fusion, Swap, Party, Big Bang)
   are plain white** where the Japanese had a thick two-tone outline.
 - **Prefecture buttons in the online rankings are tiny.** Nine-letter names in
