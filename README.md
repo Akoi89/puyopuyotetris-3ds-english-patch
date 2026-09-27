@@ -30,9 +30,9 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 > **Booted on a New 3DS on 6 September 2026, and on a New 3DS XL and an original 3DS on
 > 7 September**, with a few games played on hardware. The base game, the Japanese update
 > and the DLC install, the HOME menu tile shows the English logo, and the title screen and
-> main menu run. That first console run found a bug every earlier build had, which 1.0.11
-> fixes. Beyond that, play on hardware is still short: a story chapter or a full match
-> played through on a console is worth reporting. The rest was tested in Azahar.
+> main menu run. Since then the DLC Adventure chapters have been played on a console, and
+> Chapter 1 through to its end; later story chapters and the 1.0.15 bubble fix are still
+> worth reporting. The rest was tested in Azahar.
 >
 > **[Report anything wrong in issue #1](../../issues/1)** (which screen, and a photo beats a
 > description). Don't check first to see whether I already know. A duplicate costs me
@@ -81,14 +81,14 @@ These are the eight assets currently on the v1.0.0 tag; the tag's files are repl
 
 | File | Bytes | SHA-256 |
 |---|---|---|
-| `PuyoPuyoTetris-Base-xdelta.zip` | 169205271 | `68b70b6bf7b66be8803757574efa2720a2052a914064c2932decc7b177dd0c01` |
+| `PuyoPuyoTetris-Base-xdelta.zip` | 169205659 | `d33b52edae719d1f538eaba646648d4baa6f4792f6da881185a882f41d1569ea` |
 | `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia` | 116165696 | `b742243d81c2b7b2ef91d27c5c6570291b5b4cbcdfd3e3c6d847aab33ad00475` |
 | `PuyoPuyoTetris-DLC-patched.cia` | 111889472 | `de833dede4482b83f24e413dc9f3801c66de6f3e6315d2fd4e4449d29e51971c` |
-| `PuyoPuyoTetris-DLC-xdelta.zip` | 33920283 | `62952ba3075cf7b367e602a51a353b340a995c240dcd6463816dd31c080d2813` |
-| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 8612432 | `0668d5e9e8735f7703252d238fa39f25b1a4c45e70ff5d4a56db8bc20a05aee3` |
-| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip` | 11352401 | `244b0a18d5f83c823f3da0eadac7d7a09418b6be8138b2f99d3b0b6e6a902742` |
-| `PuyoPuyoTetris-LayeredFS.zip` | 42849184 | `7ba3b55702ce366b40a265a107c780523d2ed7f5d3fe7c0b492613111da97971` |
-| `PuyoPuyoTetris-xdelta-patches-1.0.15.zip` | 203281923 | `abea4da57faaa5f88373cb214520f5dcdf3c7f38f1e2543c4243453809b0e93b` |
+| `PuyoPuyoTetris-DLC-xdelta.zip` | 33920676 | `8dbc822469759fd990b306a605bc7a5e50f3405b6eeea2d414a1b14befc235bd` |
+| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 8612588 | `80f65b30cc21462cec28b71f5d9ece42291134e8c85a5144f5644be31e8bd32a` |
+| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip` | 11352821 | `f923e1c669e022483ac95af6a8eb7ebf3bf395daa1ea03880c33f59200b37be0` |
+| `PuyoPuyoTetris-LayeredFS.zip` | 42849354 | `20005850b780662a5e133f2faabf866dc32f861fa379ef75641b4635413b26bf` |
+| `PuyoPuyoTetris-xdelta-patches-1.0.15.zip` | 203282326 | `59fd5e1ec069fc4c4aa95604680df0de1f86636bee7f22018aeffd5391265e00` |
 
 ## How it works
 

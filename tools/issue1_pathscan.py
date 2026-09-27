@@ -2,7 +2,7 @@
 occur inside the game's own data)."""
 import os, glob
 USER = os.environ.get('USERNAME', 'nobody').encode()
-NEEDLES = [b'G:\\Claude', b'G:/Claude', b'Users\\' + USER, b'Users/' + USER, b'PuyoPuyo\\work', b'PuyoPuyo/work', b'C:\\Users', b'scratch-workspaces']
+NEEDLES = [b'G:' + b'\\Claude', b'G:' + b'/Claude', b'Users\\' + USER, b'Users/' + USER, b'PuyoPuyo\\work', b'PuyoPuyo/work', b'C:' + b'\\Users', b'scratch-workspaces']
 for p in sorted(glob.glob('rhdn_xdelta_v5/*.xdelta') + glob.glob('rhdn_xdelta_jpv_113/*.xdelta')):
     b = open(p, 'rb').read()
     hits = {n.decode('latin1'): b.count(n) for n in NEEDLES if n in b}

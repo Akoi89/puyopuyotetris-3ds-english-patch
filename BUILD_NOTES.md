@@ -8,7 +8,7 @@ The completed English patch. This release tag is v1.0.0; the assets on it are re
 
 - **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.0.15**; the built CIA reports 1.0.15.
 - **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates. TMD 0.2.8.
-- **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 169 MB) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
+- **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 169 MB) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). Dump the title as an encrypted CIA with GodMode9 and decrypt it on the PC; GodMode9's own decrypt gives a file of the right size that the patch refuses. It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
 - **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
 - Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
 - **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip` (base and DLC as xdelta3 patches for your own decrypted dumps, xdelta3.exe and a readme inside), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (the LayeredFS files without the English voice bank) and `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. Same title ID and the same ENG 1.0.15 stamp as the English-voice build, so install one edition or the other. Details in the section below.
@@ -250,7 +250,7 @@ to the story voices:
   replay-speed hint strip (not found anywhere in the Steam data), the three
   DLC voice lines with no English take, decorative screenshot thumbnails,
   and the small "New Record" ornament.
-- One stability report from testing, recorded honestly: starting a local
+- One stability report from testing: starting a local
   Multiplayer host and backing out crashed the emulator (an emulator-side
   assertion, not the patch).
 - Install order is unchanged: Japanese base, then patched base (or
@@ -411,8 +411,8 @@ since the limiter gives some loudness back on every pass.
   1.2 dB below Sega's takes (range -3.1 to +2.4 dB); the title announcer bank
   was already louder than Sega's and was left alone.
 - DLC story clips: 734 clips re-levelled, now about 1.3 dB below Sega's takes.
-- Pitch and timing untouched. The remaining gap is the limiter: our takes
-  are less compressed than Sega's.
+- Pitch and timing untouched. The remaining gap is the limiter: my re-encoded
+  takes are less compressed than Sega's.
 - Nothing else changed: text, textures and atlases are as in 1.0.7.
 
 ## What changed in 1.0.9

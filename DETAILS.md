@@ -1,6 +1,6 @@
 # Puyo Puyo Tetris 3DS patch: the detail
 
-Everything the README used to carry inline. Nothing here has been reworded.
+The full table of what changed and what stayed Japanese, by screen and system.
 
 
 ---

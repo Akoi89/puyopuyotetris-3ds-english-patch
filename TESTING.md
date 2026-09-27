@@ -38,8 +38,9 @@ in the engine, checked on the Options screen, the Adventure map, the DLC
 chapters, the Versus result screen, the boot notice and the Swap-mode call
 banners, all in English. Every file was verified byte-for-byte on the way in
 and back out of the CIA, and all the writers reproduce the game's own files
-byte-identically. Actual play on hardware is still short; a match or a story
-chapter played through on a console is worth reporting.
+byte-identically. Since then the DLC Adventure chapters have been played on a console, and
+Chapter 1 through to its end; later story chapters and the 1.0.15 bubble fix are still
+worth reporting.
 
 **The Japanese-voice edition (added 11 September 2026) was booted in Azahar on
 13 September**: ENG 1.0.12 stamp, main menu, a Quick Play match with audio, and
@@ -56,7 +57,7 @@ In that edition a voice in Japanese is correct, not a bug.
 in issue #1 found: EX chapter dialogue running past the right edge of its
 bubble (276 of 734 bubbles re-broken onto two or three lines, words unchanged)
 and the Party-mode Time Up graphic drawn as slices (now Sega's own "TIME!"
-art, one letter per sprite). Confirmed on a New 3DS XL on 14 September 2026
+art, one letter per sprite). Confirmed on a New 3DS XL on 16 September 2026
 (issue #1); the change is line
 breaks in three text tables and one texture, each verified byte for byte on
 the way in and out of the CIAs. Every base scene script was also checked for the second half of the same
@@ -147,7 +148,7 @@ you're looking at something and you're not sure which side it falls on, just tel
 5. Any **character-select shout**: re-encoded battle voice.
 6. **DLC chapter 8**: text, atlases, voices and shop icons all at once.
 
-## Testing status, honestly
+## Testing status
 
 | | |
 |---|---|
@@ -157,7 +158,7 @@ you're looking at something and you're not sure which side it falls on, just tel
 | Battle and DLC voices | decoded back and compared to source (27 to 37 dB); never heard. All 37 battle banks are now this project's own encode at Sega's 32000 Hz (1,517 waves, verified); the 13 re-imported for 1.0.4 fix a sample-rate mismatch the fan build had left in |
 | Character-select pick lines and title-screen announcer | verified by duration against Steam and confirmed by the user by ear from the decoded clip |
 | Online UI textures | rendered and reviewed as images; not yet confirmed in the engine beyond the screens above |
-| Boot notice, DLC plates and Endless-mode record card | rendered and reviewed, not yet seen in the engine after the fix |
+| Boot notice and DLC plates | seen in the engine (Azahar); Endless-mode record card not yet checked |
 | Title version stamp | seen in Azahar and in the tester's console screenshots; ENG 1.0.15 decoded back out of both built CIAs |
 | Update-title packaging | structurally correct, booted in Azahar, **ignored by the game**: withdrawn |
 | Versus result screen | **confirmed in the engine by the user 2026-09-04**: no hang, winner dialogue in English after the atlas-compact fix |
