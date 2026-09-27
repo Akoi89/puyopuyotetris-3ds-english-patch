@@ -1,53 +1,65 @@
-This is a fan made English patch for Puyo Puyo Tetris on 3DS. It carries Sega's own official English text and voice work over from the PC release, DLC included. Everything below covers what changed in each build and whether you need to update anything.
+This is a fan English patch for *Puyo Puyo Tetris* on 3DS, carrying Sega's own official English text and voice work over from the PC release, DLC included. This page covers what the patch fixes overall, one line of history per build, and what's still known to be off.
 
-## Japanese-voice edition
+## What this build fixes
 
-If you would rather keep the original Japanese voice acting alongside the English text and menus, this edition is for you. Story scenes, in-battle callouts, character select, the title-screen announcer, the HOME menu jingle and all three DLC chapters play Sega's original Japanese performances, while everything you read on screen stays in English.
+- **Story lines running past the edge of their speech bubble.** The base game's dialogue kept line breaks sized for a wider text box, so lines in the main story chapters pushed past where the bubble stops. The words are unchanged, not one is added, removed or altered, only where each line splits. This build has not yet been confirmed running on a console or in an emulator; if you spot a bubble that still looks wrong, please report it.
+- **Lines spilling past the bottom of a speech bubble.** A speech bubble's height in this game is set by hand for each scene, sized to the original Japanese line lengths, so an English line that needed more room could run past the bottom edge. The affected bubbles are now taller.
+- **DLC dialogue running off the right edge of its bubble.** The three DLC story chapters kept line breaks sized for the PC release's wider text box; they're rewrapped for the 3DS bubble, words unchanged.
+- **The Party-mode "Time Up" banner drawn as broken pieces instead of one clean word.** It now uses Sega's own "Time!" artwork.
+- **Wrong text in error messages and system dialogs**, including the first-launch SpotPass prompt reading like a save-corruption warning. A blank entry near the start of the error message list had pushed every later message into the wrong slot; the list now matches Sega's original layout. If you answered that confusing first-launch question on an earlier build without knowing what it was, it was the SpotPass opt-in, which you can still change from the options menu.
+- **Soft, blurry lettering on a handful of this patch's own textures** (the "New Record" card, the rank plates, the DLC map plates). They had been compressed with a method that softened fine detail and are now redrawn with one that keeps edges sharp.
+- **Character voices sounding muffled after the first loudness fix.** Character voices across the base game and DLC were re-leveled twice, once with a rough fix that left them sounding a bit muffled, then again with a cleaner pass that matches Sega's own Japanese volume without that side effect.
+- **A Japanese-voice edition, for anyone who'd rather keep the original cast.** Story scenes, in-battle callouts, character select, the title-screen announcer, the HOME menu jingle and all three DLC chapters play Sega's original Japanese performances, while everything you read on screen stays in English. It installs the same way as the main patch and gets rebuilt alongside every update to it.
 
-It installs the same way as the main patch, using its own set of files on the release page, and it carries the same version number and on-screen stamp as the English-voice build, so only one edition can be installed at a time. The HOME menu jingle is the quickest way to tell which one you have running.
+## Version history
 
-This edition has been confirmed working on real 3DS hardware, with Japanese speech heard through a story chapter and several matches, and it gets rebuilt alongside every update to the main patch.
+- **1.0.15 / DLC 0.2.8**: re-broke the base game's Adventure dialogue so no line runs past its bubble.
+- **1.0.14 / DLC 0.2.8**: raised base-game speech bubbles that were cutting off their last line.
+- **1.0.13 / DLC 0.2.8**: rewrapped DLC dialogue to fit its bubbles and redrew the Party-mode "Time Up" graphic as one clean word.
+- **1.0.12 / DLC 0.2.7**: redrew a handful of this patch's own textures (the "New Record" card, rank plates, DLC map plates) with sharper lettering.
+- **1.0.11**: realigned the error-message table to Sega's layout, fixing the misplaced first-launch SpotPass prompt.
+- **1.0.10 / DLC 0.2.6**: swapped the HOME menu banner to Sega's official English logo.
+- **1.0.9 / DLC 0.2.6**: redid the voice loudness fix with a single clean encode after the earlier pass left voices sounding muffled.
+- **1.0.8 / DLC 0.2.5**: raised the in-battle and DLC voices to Sega's Japanese volume, first pass.
+- **1.0.7 / DLC 0.2.4**: swept Steam's English textures for official label art, including the Puzzle League rank pills.
+- **1.0.6**: swapped the Swap-mode call logos to Sega's official English art and nudged the boot notice further left.
+- **1.0.5**: fixed a Versus-match hang at the win/lose screen.
+- **1.0.4**: fixed the boot notice on the bottom screen, refit the DLC map plates, and brought back the fan build's English battle voices at Sega's sample rate.
+- **1.0.3**: fixed the character-select pick lines, the title-screen announcer, the boot notice, the DLC map plates and the Endless-mode record card.
+- **1.0.2**: added a full texture survey, a second label pass, and more imported voice sets.
+- **1.0.1**: folded in a second-opinion review of the hand-written text.
 
-## 1.0.15 / DLC 0.2.8
+## Known problems
 
-This update re-breaks the line breaks in the base game's story dialogue so no line of text runs past the edge of its speech bubble. Earlier builds carried line breaks meant for a wider text box, so a number of lines in the main story chapters pushed past where the bubble stops. Nothing about the wording changes, not a single word is added, removed or altered, only where each line splits. A number of bubbles also grew slightly taller so their text fits properly.
+- A few dozen strings are Japanese on purpose: the character-entry keyboards (the hiragana/katakana/kanji inventories in name entry) and the developer tables define what can be typed and aren't translations waiting to happen.
+- Three DLC story lines stay Japanese (chapter 8 scene 5, chapter 9 scenes 4 and 7); those lines were re-recorded for the 3DS and have no English take.
+- Voices are a little duller than the story voices. Every in-battle and DLC voice is re-encoded from Steam's PCM with a home-grown encoder whose coefficient search is weaker than Sega's. Pitch and timing are correct. The levels are matched to within about 1 dB of Sega's own Japanese takes (measured RMS, look-ahead limited so nothing clips).
+- Stylised mode names in the online menus (Fusion, Swap, Party, Big Bang) are plain white where the Japanese had a thick two-tone outline.
+- Prefecture buttons in the online rankings are tiny: nine-letter names in boxes drawn for two kanji.
+- A few merged/rotated strings on the league result screen are Japanese: the vertical "you lose" / "congratulations" art doesn't split cleanly from the artwork around it.
+- The replay-speed hint strip stays Japanese, along with decorative screenshot thumbnails and the small "New Record" ornament, left as artwork on purpose.
+- Starting a local Multiplayer host and backing out crashed the emulator; this is an emulator-side assertion, not the patch, and is untested on real hardware.
 
-The DLC is unchanged, so if you are already on the current DLC release you only need to update the base game files. This build has not yet been confirmed running on a console or in an emulator, though every file going in and out of it was checked carefully. If you spot a bubble that still looks wrong, please report it.
+The full list, with what to report and how, is in TESTING.md.
 
-## 1.0.14 / DLC 0.2.8
+## Files
 
-This update finishes the speech bubble height fixes reported by a player, this time for the base game rather than the DLC. A speech bubble's height in this game is not worked out automatically from how much text it holds. Each scene sets that height by hand, and it was set to fit the original Japanese line lengths. Where an English line needed more room than the Japanese did, the last line could spill past the bottom of the bubble.
+Install order is the Japanese base game, then the patched base, then the Japanese v1.2.0 update, then the patched DLC.
 
-Two bubbles in the base game needed a taller box and now have one. A few other bubbles run to more lines in English than in Japanese, but the original game already draws those the same way, so they were left as they are. The DLC is unchanged, so update the base files only if you already have the current DLC.
+- **Base game**: `PuyoPuyoTetris-xdelta-patches-1.0.15.zip` (the base and DLC xdelta3 patches together, with a readme carrying every hash; the file romhacking.net links to), or `PuyoPuyoTetris-Base-xdelta.zip` on its own (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or `PuyoPuyoTetris-LayeredFS.zip` for Luma3DS.
+- **DLC**: `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump.
+- **Japanese-voice edition**: `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip`, `PuyoPuyoTetris-JP-voices-LayeredFS.zip` and `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. Install one edition or the other, not both.
 
-## 1.0.13 / DLC 0.2.8
-
-Two fixes from the first player report on this project. First, dialogue in the three DLC story chapters sometimes ran off the right edge of its speech bubble. Those chapters had reused line breaks from the PC release, whose text box is wider than the 3DS allows, so a good number of bubbles needed rewrapping onto two or three lines. The words themselves are unchanged, still Sega's own English text, only where the lines break has moved.
-
-Second, the "Time Up" banner in Party mode had been drawn as several broken pieces instead of one clean word. It now uses Sega's own "Time!" artwork instead.
-
-The base game's main story chapters were not touched in this update, since they turned out to need this same kind of fix too, which arrived later in 1.0.15.
-
-## 1.0.12 / DLC 0.2.7
-
-A visual quality pass, nothing that changes how the game plays. A handful of textures drawn by this patch itself had been compressed with a basic method that softened fine detail, so this update redraws them with a better method that keeps edges sharp. That mostly shows up as cleaner white lettering on colored plates and cards.
-
-A small set of textures were redone this way: the "New Record" card and the rank plates on the Puzzle League standby screen in the base game, plus the DLC chapter plates on the Adventure map. Everything else is identical to 1.0.11 and its matching DLC.
-
-This build was checked in an emulator rather than on hardware, though earlier hardware testing still covers everything except these textures. If you already have 1.0.11, updating is optional, the only difference is sharper lettering on a few screens.
-
-## 1.0.11
-
-The first test on real 3DS hardware turned up a bug present in every earlier build: error messages and system dialogs showed the wrong text. A blank entry near the start of the game's error message list, left over from the fan translation this patch builds on, pushed every message after it into the wrong slot. On first launch, that made the game's SpotPass question read like a corrupted save warning, complete with the wrong buttons.
-
-This update realigns that list to match Sega's original layout, so every message appears in its correct spot with the same English wording as before. Every other text table in the base game and DLC was checked against the originals and confirmed to match. Nothing else changed. If you answered that confusing first-launch question on an earlier build without knowing what it was, it was the SpotPass opt-in, which you can still change from the options menu.
-
-## 1.0.10
-
-This build wraps up a long stretch of early work, most of it already superseded by later updates above, so it is summarized here rather than repeated in full.
-
-Earlier updates in this stretch replaced many remaining Japanese textures with Sega's own official English artwork, including menu labels, mode badges, rank icons and a broadcast logo, matched by reading their text rather than guessing their position on screen. Character voices across the base game and DLC were re-leveled twice, once with a rough fix that left them sounding a bit muffled, then again with a cleaner pass that matches Sega's own Japanese volume without that side effect. If you installed a build from partway through this stretch, replace it with something newer.
-
-This update itself only changes the HOME menu banner, swapping in Sega's official English logo. Everything else carries over from the build before it.
+If you're using any of the xdelta zips, dump the title as an encrypted CIA with GodMode9 and decrypt it on the PC; GodMode9's own decrypt gives a file of the right size that the patch will refuse. Sizes and hashes for every file are in the README.
 
 The full technical history, including every measurement behind these updates, is kept in BUILD_NOTES.md.
+
+## Credits
+
+Sega for the text and voices.
+
+ongo_gablogian and the original translation team, for the Adventure story and the UI texture work that made the game playable in English at all.
+
+Partyderp64, whose `PPT3dsENG_0.3dx` build put English story voices over that translation and is the fan shell this patch is built from.
+
+Tooling reused from the TGAA 3DS patch (3dstool, ctrtool, the CIA and NCCH writers).
