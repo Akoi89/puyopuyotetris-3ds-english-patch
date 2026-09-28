@@ -2,16 +2,16 @@ This is a fan English patch for *Puyo Puyo Tetris* on 3DS, carrying Sega's own o
 
 ## What this build fixes
 
-- **Story dialogue running past the edge of its speech bubble, or off the bottom.** The base game's dialogue kept line breaks and box heights sized for a wider text box, so English lines pushed past where the bubble stops, and a few ran below the bottom edge. Words unchanged; only where lines split and how tall a handful of bubbles are.
-- **DLC dialogue running off the right edge of its bubble.** The three DLC story chapters kept line breaks sized for the PC release's wider text box; they're rewrapped for the 3DS bubble, words unchanged.
-- **Wrong text in error messages and system dialogs**, including the first-launch SpotPass prompt reading like a save-corruption warning. A blank entry near the start of the error message list had pushed every later message into the wrong slot; the list now matches Sega's original layout. If you answered that question on an earlier build without knowing what it was, it was the SpotPass opt-in, changeable from the options menu.
-- **Some battle shouts and DLC voice lines sounding clearly quieter than the Japanese lines they replace**, worst on characters like Dark Prince, Feli, Tee, Ess and Zed. Steam's English recordings are mastered at a lower volume, and the earlier fix for this was capped too low; they're re-leveled from Steam's recordings in one clean pass and now sit close to the Japanese volume.
-- **Story (Adventure) voices crackling on loud lines.** They came from the earlier fan translation, which had turned Steam's recordings up and cut off the loudest parts. Re-imported from Steam in one clean pass, each set to the volume of the Japanese line it replaces; one English-only line keeps its earlier version.
-- **LayeredFS players hearing the story in Japanese even when using the English voice edition.** The LayeredFS zip never carried the English story voices; only the built CIA or xdelta routes did. It now includes them, so it's a much bigger download than before.
-- **A Japanese-voice edition, for anyone who'd rather keep the original cast.** Story scenes, in-battle callouts, character select, the title-screen announcer, the HOME menu jingle and all three DLC chapters play Sega's original Japanese performances, while everything you read stays in English. This build's fixes are all in voices this edition doesn't use, so it's unchanged and stays at 1.0.15 / DLC 0.2.8.
+- **Some story, tutorial and profile lines still read the earlier fan translation's wording, typos and all.** A mission target could read "10,00 pts" where it meant 10,000, and the opening story line read "This it not good!" Those lines, and others like them across the Adventure story, the lesson screens and the profile/records screens, now read Sega's official English instead, refitted to the 3DS speech bubbles. Sega's wording is kept as written, except that a few records lines spell out "percent" because the 3DS font has no % sign, and a couple of bubbles grew a line taller to hold the result.
+- **Story (Adventure) voices, re-leveled again.** 1.1.0 brought these up toward the Japanese volume and a few of the loudest lines ended up sounding squashed. They're re-leveled a second time to sit as close to the Japanese volume as they can without squashing, and they still don't crackle.
+- **The Adventure mission screen's red "New!" tag is now Sega's English art**, replacing a Japanese banner that had been sitting above "Versus" on that screen.
+- **The Broadcast Station's replay badges are now Sega's English art**, on both places that screen appears; they'd read as an untranslated grid of Japanese badges before.
+- **The DLC stage's shop sign and its stage-select icon now read "Ando Family FRESH PRODUCE"** in Sega's own lettering, where both had shown the Japanese sign before.
+- **Some graphics are still Japanese or clipped.** The Slot rule's "N more Puyo" counter and a handful of online menu preview cards are still Japanese because Sega's PC release has no English version of them. A faint Puzzle League medal crest stays Japanese on purpose: Sega's English one looked worse at the 3DS crest's size. The clipped HOLD/NEXT labels on the Tetris side, already reported in issue #1, are listed too.
 
 ## Version history
 
+- **1.1.1 / DLC 0.2.10**: Sega's official English on lines that had kept the earlier fan translation's wording; a second, gentler voice re-level for the base game's story voices; Steam's official art for the Adventure "New!" tag, the Broadcast Station badges, and the DLC stage's shop sign and icon. The Japanese-voice edition gets the text and art fixes too and now shares the same version number.
 - **1.1.0 / DLC 0.2.9**: re-leveled quiet battle and DLC voices, and re-imported crackly story voices in one clean pass; LayeredFS now includes the English story voices for the first time.
 - **1.0.15 / DLC 0.2.8**: re-broke the base game's Adventure dialogue so no line runs past its bubble.
 - **1.0.14 / DLC 0.2.8**: raised base-game speech bubbles that were cutting off their last line.
@@ -35,9 +35,12 @@ This is a fan English patch for *Puyo Puyo Tetris* on 3DS, carrying Sega's own o
 - Three DLC story lines stay Japanese (chapter 8 scene 5, chapter 9 scenes 4 and 7); those lines were re-recorded for the 3DS and have no English take.
 - Voices can sound a touch less crisp than on PC. Every English voice is re-encoded from Steam's recordings with a home-grown encoder that's a little weaker than Sega's. Pitch and timing are correct.
 - Stylised mode names in the online menus (Fusion, Swap, Party, Big Bang) are plain white where the Japanese had a thick two-tone outline.
+- The HOLD and NEXT labels on the Tetris side of a mixed match look clipped at the top; that's Sega's own art, and the PC version shows the same clipping.
 - Prefecture buttons in the online rankings are tiny: nine-letter names in boxes drawn for two kanji.
 - A few merged/rotated strings on the league result screen are Japanese: the vertical "you lose" / "congratulations" art doesn't split cleanly from the artwork around it.
 - The replay-speed hint strip stays Japanese, along with decorative screenshot thumbnails and the small "New Record" ornament, left as artwork on purpose.
+- A faint Puzzle League medal crest stays Japanese; Sega's own English version of it read worse once fitted here, so the Japanese one was kept.
+- The Slot rule's "N more Puyo" counter and a handful of online menu preview cards stay Japanese; Sega's PC release has no matching English art for either.
 - Starting a local Multiplayer host and backing out crashed the emulator; this is an emulator-side assertion, not the patch, and is untested on real hardware.
 
 The full list, with what to report and how, is in TESTING.md.
@@ -46,9 +49,9 @@ The full list, with what to report and how, is in TESTING.md.
 
 Install order is the Japanese base game, then the patched base, then the Japanese v1.2.0 update, then the patched DLC.
 
-- **Base game**: `PuyoPuyoTetris-xdelta-patches-1.1.0.zip` (the base and DLC xdelta3 patches together, with a readme carrying every hash; the file romhacking.net links to), or `PuyoPuyoTetris-Base-xdelta.zip` on its own (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or `PuyoPuyoTetris-LayeredFS.zip` for Luma3DS, now much bigger since it includes the English story voices for the first time.
+- **Base game**: `PuyoPuyoTetris-xdelta-patches-1.1.1.zip` (the base and DLC xdelta3 patches together, with a readme carrying every hash; the file romhacking.net links to), or `PuyoPuyoTetris-Base-xdelta.zip` on its own (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or `PuyoPuyoTetris-LayeredFS.zip` for Luma3DS.
 - **DLC**: `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump.
-- **Japanese-voice edition**: `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip`, `PuyoPuyoTetris-JP-voices-LayeredFS.zip` and `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. Unchanged this build and still at 1.0.15 / DLC 0.2.8. Install one edition or the other, not both.
+- **Japanese-voice edition**: `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.1.zip`, `PuyoPuyoTetris-JP-voices-LayeredFS.zip` and `PuyoPuyoTetris-DLC-JP-voices-0.2.10.cia`. Rebuilt this time along with the main release, since the text and art fixes aren't voice files; now at the same 1.1.1 / DLC 0.2.10 as the English-voice build. Install one edition or the other, not both.
 
 If you're using any of the xdelta zips, dump the title as an encrypted CIA with GodMode9 and decrypt it on the PC; GodMode9's own decrypt gives a file of the right size that the patch will refuse. Sizes and hashes for every file are in the README.
 
