@@ -10,8 +10,9 @@ The full table of what changed and what stayed Japanese, by screen and system.
 | area | |
 |---|---|
 | Text | 1,411 base strings and 875 DLC strings. Sega's Steam text where it exists; 392 lines written for the 3DS-only screens (Chapter 0 prologue, Club, SpotPass, errors, shop) |
-| In-battle voices | 24 Japanese character banks replaced from Steam's English recordings, matched by the Japanese takes' durations (zero error); the other 13 banks, already English from the earlier fan translation, are now re-imported from Steam too, so all 37 battle banks are this project's own encode at Sega's sample rate (`import_fan_banks.py`). Levels matched to Sega's own Japanese takes with `voice_gain_clean.py`, gain and limiting done in float with a single encode: 62 of 63 banks re-levelled, averaging about 1 dB below Sega's takes |
-| DLC story voices | 760 of 763 clips; the other three were re-recorded for 3DS and have no English take. Levels matched to Sega's own Japanese takes with `voice_gain_clean.py`, a single clean encode: about 1.1 dB below Sega's takes |
+| In-battle, select and title-call voices | 24 Japanese character banks replaced from Steam's English recordings, matched by the Japanese takes' durations (zero error); the other 13 banks, already English from the earlier fan translation, are re-imported from Steam too, so all 37 battle banks are this project's own encode at Sega's sample rate (`import_fan_banks.py`). Re-levelled for 1.1.0 by `voice_relevel3.py`, one encode per wave from Steam's recording: 1,626 of 1,641 waves re-levelled, 15 kept the 1.0.15 bytes; battle waves within 1 LU of the Japanese take went from 772 to 998 of 1,519, more than 2 LU under from 311 to 59 |
+| DLC story voices | 760 of 763 clips; the other three were re-recorded for 3DS and have no English take. Re-levelled for 1.1.0 by the same tool: 755 of 760 re-levelled, 5 kept the 0.2.8 bytes; within 1 LU of the Japanese take went from 479 to 538 of 760 |
+| Base game story (Adventure) voices | 2,320 of 2,321 MZV streams re-imported from Steam's recording for 1.1.0 (`import_story_voices.py` with `voice_relevel3.py`), each aimed at the Japanese stream's loudness; the English-only MZV_07_01_1_039 has no Japanese take or matching Steam row and keeps its shipped audio. Clip events (runs of 3+ samples at full scale) went from 117,198 to zero; within 1 LU of the Japanese take went from 672 to 2,306 of 2,320. Now also in the LayeredFS zip |
 | Online UI textures | 1,028 label boxes across the Club, Puzzle League, standby, replay and shop screens, 806 of them redrawn here and 222 using Sega's own sprites |
 | DLC shop icons | 33 redrawn |
 | Font atlases | the game pre-renders only the glyphs each screen uses; every screen that gained English got a matching atlas, verified per section |
@@ -23,7 +24,8 @@ The full table of what changed and what stayed Japanese, by screen and system.
 | Official Steam sprites | 222 hand-redrawn labels replaced with Sega's official English sprites matched by text against the Steam release, including the Broadcast Station and Club mode pills with their proper two-tone outlines; plus the 11 Replay Report badge rows, the 15 Puzzle League rank pills, and the Broadcast Station TV logo (Sega's "World Broadcast" mark), none of which the label match had caught |
 | HOME menu banner | Sega's official English "PuyoPuyo" logo swapped into the shared texture in place of the Japanese one, keeping Sega's TETRIS art untouched; this is in a locally built CIA only, since LayeredFS cannot change a banner |
 
-What stays Japanese, and why, is in [TESTING.md](TESTING.md).
+What stays Japanese, and why, is in [TESTING.md](TESTING.md). The Japanese-voice edition
+is unchanged by the 1.1.0 voice work above; none of its files carry English audio.
 
 ---
 
@@ -60,13 +62,19 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 - `import_extra_voices.py`, `import_select_voices.py`, `import_title_set.py`:
   import the launch title calls, the character-select confirm and pick
   lines, and the title-screen announcer from Steam's voice banks.
+- `import_story_voices.py`: re-imports the base game's story (Adventure) voice
+  streams from Steam's master, on the shipped stream as template.
 - `voice_levels.py`: measures peak and RMS in dBFS against Sega's Japanese
   takes.
 - `voice_gain_clean.py`: decodes the once-encoded import audio, iterates
-  gain and look-ahead limiting in floating point until every base and DLC
-  voice clip matches Sega's Japanese take, then encodes DSP-ADPCM a single
-  time (`voice_gain.py` and `voice_gain_dlc.py`, an earlier multi-pass
-  version, are kept only for reference and are not used anymore).
+  gain and look-ahead limiting in floating point across a small set of
+  candidate profiles until the level matches Sega's Japanese take under a
+  per-frame noise guard, then encodes DSP-ADPCM a single time per wave or
+  stream (`voice_gain.py` and `voice_gain_dlc.py`, an earlier multi-pass
+  version, are kept only for reference and are not used anymore). The 1.1.0
+  pass re-ran this against every battle, select, title and DLC voice and
+  every base-game story stream; a candidate that could not beat the shipped
+  bytes on its own terms keeps the shipped bytes exactly.
 - `import_fan_banks.py`: re-imports the 13 battle banks the earlier fan
   translation had already made English, at Sega's sample rate, so all 37
   battle banks are this project's own encode.

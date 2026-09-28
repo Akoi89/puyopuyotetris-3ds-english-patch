@@ -29,13 +29,17 @@ Sega's. Uninstall it and install the official update instead.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.0.15** at its right end.
-- The console lists the base game as version **1.0.15** (a locally built CIA)
-  and the DLC as **0.2.8** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
-- **Japanese-voice edition**: same title ID and the same version stamp as the
-  English-voice build, so install one edition or the other; the HOME menu
-  jingle is the quickest way to tell which one you have running. In that
-  edition a voice in Japanese is correct, not a bug.
+- The title screen logo's pink subtitle strip reads **ENG 1.1.0** at its right
+  end on the English-voice build. The Japanese-voice edition's files aren't
+  touched by this update, so it still reads **ENG 1.0.15**; the HOME menu
+  jingle is the quickest way to tell which edition you're running.
+- The console lists the base game as version **1.1.0** (a locally built CIA)
+  and the DLC as **0.2.9**, or, on the Japanese-voice edition, **1.0.15** and
+  **0.2.8** (the fan build and the shipped DLC were 0.0.0 / 0.1.0).
+- **Japanese-voice edition**: same title ID as the English-voice build, so
+  install one edition or the other; the HOME menu jingle is the quickest way
+  to tell which one you have running. In that edition a voice in Japanese is
+  correct, not a bug.
 
 If the stamp is missing, the install did not take.
 
@@ -62,6 +66,8 @@ These are the ones I'd most like to hear about, because they're the ways this pa
 - **Screenshots of any Adventure scene.** None of 1.0.15's line-break fix has
   been seen running anywhere, so a screenshot of any story scene helps confirm
   it drew the way it should.
+- **Any battle shout, DLC voice line or story voice heard on hardware.** None
+  of 1.1.0's re-leveled voices have been heard outside this project yet.
 
 ## Already known
 
@@ -74,13 +80,9 @@ you're looking at something and you're not sure which side it falls on, just tel
   to happen.
 - **Three DLC story lines stay Japanese** (chapter 8 scene 5, chapter 9 scenes
   4 and 7). Those lines were re-recorded for the 3DS and have no English take.
-- **Voices are a little duller than the story voices.** Every in-battle and
-  DLC voice is re-encoded from Steam's PCM with a home-grown encoder whose
-  coefficient search is weaker than Sega's. Pitch and timing are correct.
-- **Some battle shouts are quieter than the Japanese ones.** Steam's English
-  recordings are mastered at a lower volume, and I capped the audio boost
-  that brings them up, so a few characters' shouts in battle still come out
-  noticeably softer.
+- **Voices can sound a touch less crisp than on PC.** Every English voice is
+  re-encoded from Steam's recordings with a home-grown encoder that's a little
+  weaker than Sega's. Pitch and timing are correct.
 - **Stylised mode names in the online menus (Fusion, Swap, Party, Big Bang)
   are plain white** where the Japanese had a thick two-tone outline.
 - **Prefecture buttons in the online rankings are tiny.** Nine-letter names in
@@ -116,16 +118,16 @@ you're looking at something and you're not sure which side it falls on, just tel
 | 1.0.14 bubble raises | the Chapter 1 bubble was photographed drawing correctly on a New 3DS XL on 17 September 2026; the shared end-of-chapter script bubble has not been seen running |
 | Text, base and DLC | verified per font atlas section; **seen in the engine 2026-09-04** on the Options screen, Adventure map, and DLC chapters |
 | Font atlas swaps | verified by rendering the shipped text through the shipped atlas; confirmed on-screen where the boot below reached |
-| Battle and DLC voices | decoded back and compared to source (27 to 37 dB); never heard. All 37 battle banks are now this project's own encode at Sega's 32000 Hz (1,517 waves, verified); the 13 re-imported for 1.0.4 fix a sample-rate mismatch the fan build had left in |
+| Battle, DLC and story voices | decoded back and compared to source; never heard on hardware. All 37 battle banks are this project's own encode at Sega's 32000 Hz (1,517 waves, verified); the 13 re-imported for 1.0.4 fix a sample-rate mismatch the fan build had left in; 1.1.0 re-levels the quiet battle and DLC voices and re-imports the crackly base-game story voices, each re-verified byte for byte, but not yet heard outside this project |
 | Character-select pick lines and title-screen announcer | verified by duration against Steam and confirmed by the user by ear from the decoded clip |
 | Online UI textures | rendered and reviewed as images; not yet confirmed in the engine beyond the screens above |
 | Boot notice and DLC plates | seen in the engine (Azahar); Endless-mode record card not yet checked |
-| Title version stamp | seen in Azahar and in the tester's console screenshots; ENG 1.0.15 decoded back out of both built CIAs |
+| Title version stamp | seen in Azahar and in the tester's console screenshots; **ENG 1.1.0** decoded back out of the English-voice CIA, **ENG 1.0.15** out of the unchanged Japanese-voice CIA |
 | Update-title packaging | structurally correct, booted in Azahar, **ignored by the game**: withdrawn |
 | Versus result screen | **confirmed in the engine by the user 2026-09-04**: no hang, winner dialogue in English after the atlas-compact fix |
 | Emulator | **booted 2026-09-04**: Options screen, Adventure map, DLC chapters, Versus result screen, all in English. Later emulator runs, before the first hardware boot, also showed the boot notice screen and the Swap-mode call banners in English |
-| Real hardware | **booted 2026-09-06 (New 3DS) and 2026-09-07 (New 3DS XL, original 3DS)**, a few games played; DLC Adventure chapters played on a New 3DS XL on 14 and 16 September 2026, and Chapter 1 through to its end on 17 September (issue #1); no full story playthrough yet |
-| Japanese-voice edition | booted in Azahar on 13 September 2026; **confirmed on a New 3DS XL on 14 September 2026** by the player who asked for it; rebuilt alongside every base update since, most recently as 1.0.15 with the same line-break fix, and none of those rebuilds touches a voice file |
+| Real hardware | **booted 2026-09-06 (New 3DS) and 2026-09-07 (New 3DS XL, original 3DS)**, a few games played; DLC Adventure chapters played on a New 3DS XL on 14 and 16 September 2026, and Chapter 1 through to its end on 17 September (issue #1); no full story playthrough yet; 1.1.0's re-leveled battle shouts heard in a Versus match in Azahar, not yet on a console |
+| Japanese-voice edition | booted in Azahar on 13 September 2026; **confirmed on a New 3DS XL on 14 September 2026** by the player who asked for it; rebuilt alongside every base update through 1.0.15 with the same line-break fix; 1.1.0 does not touch it, so it stays at 1.0.15 / DLC 0.2.8 and none of those rebuilds touches a voice file |
 | File verification | every file is verified byte-for-byte on the way in and back out of the CIA, and all the writers reproduce the game's own files byte-identically |
 
 Full build-by-build history, including every measurement behind these updates, is kept in

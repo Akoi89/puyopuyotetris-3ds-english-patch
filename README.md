@@ -21,8 +21,8 @@ the two string totals in DETAILS, 1,411 and 875, which came from a count made wh
 was going on and which no shipped tool reproduces, so treat those two as approximate. Where
 something has not been verified, TESTING.md says so.
 
-**[Download the current build from Releases](../../releases/latest)** (build 1.0.15, DLC
-0.2.8). What changed in each build is in [RELEASE_NOTES.md](RELEASE_NOTES.md). Also listed
+**[Download the current build from Releases](../../releases/latest)** (build 1.1.0, DLC
+0.2.9). What changed in each build is in [RELEASE_NOTES.md](RELEASE_NOTES.md). Also listed
 on [romhacking.net](https://www.romhacking.net/translations/7714/).
 
 > ### Playtesters wanted
@@ -31,8 +31,8 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 > 7 September**, with a few games played on hardware. The base game, the Japanese update
 > and the DLC install, the HOME menu tile shows the English logo, and the title screen and
 > main menu run. Since then the DLC Adventure chapters have been played on a console, and
-> Chapter 1 through to its end; later story chapters and the 1.0.15 bubble fix are still
-> worth reporting. The rest was tested in Azahar.
+> Chapter 1 through to its end; later story chapters, the 1.0.15 bubble fix and 1.1.0's
+> re-leveled voices are still worth reporting. The rest was tested in Azahar.
 >
 > **[Report anything wrong in issue #1](../../issues/1)** (which screen, and a photo beats a
 > description). Don't check first to see whether I already know. A duplicate costs me
@@ -57,7 +57,8 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 | **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip` (base and DLC patches for your own decrypted dumps), `PuyoPuyoTetris-JP-voices-LayeredFS.zip` (Luma3DS) and `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia`. Install one edition or the other, not both |
 
 Install order is base, then Japanese update, then DLC. The title screen reads **ENG
-1.0.15** in both editions.
+1.1.0** on the English-voice build; the Japanese-voice edition isn't touched by this
+update and still reads **ENG 1.0.15**.
 
 > **If you're using any of the xdelta zips, dump the title as an encrypted CIA and decrypt it
 > on the PC.** In GodMode9, dump the title to CIA with no decrypt and no trim option, copy that
@@ -77,18 +78,21 @@ What stays Japanese, and why, is in [TESTING.md](TESTING.md).
 
 ### Checking a download
 
-These are the eight assets currently on the v1.0.0 tag; the tag's files are replaced in place with each build, so an older download will not match.
+These are the current files on the v1.0.0 tag; the tag's files are replaced in place with each build, so an older download will not match. The previous build's bundle zip stays on the tag until romhacking.net links the new one.
 
 | File | Bytes | SHA-256 |
 |---|---|---|
-| `PuyoPuyoTetris-Base-xdelta.zip` | 169205659 | `d33b52edae719d1f538eaba646648d4baa6f4792f6da881185a882f41d1569ea` |
+| `PuyoPuyoTetris-Base-xdelta.zip` | 168213934 | `f294a6091b36df4af75897622faef90617fe3d9579a4d4e9057d6dbe80e1c005` |
 | `PuyoPuyoTetris-DLC-JP-voices-0.2.8.cia` | 116165696 | `b742243d81c2b7b2ef91d27c5c6570291b5b4cbcdfd3e3c6d847aab33ad00475` |
-| `PuyoPuyoTetris-DLC-patched.cia` | 111889472 | `de833dede4482b83f24e413dc9f3801c66de6f3e6315d2fd4e4449d29e51971c` |
-| `PuyoPuyoTetris-DLC-xdelta.zip` | 33920676 | `8dbc822469759fd990b306a605bc7a5e50f3405b6eeea2d414a1b14befc235bd` |
+| `PuyoPuyoTetris-DLC-patched.cia` | 111889472 | `2d5b6adf4c82bb7cfdad8640712e83975beb1ac50130410ad69899c646cf2af5` |
+| `PuyoPuyoTetris-DLC-xdelta.zip` | 33915430 | `f73bf920f1aa4e4c339b88ee8a991e3367ad02bd2dc24b99675a8765788881dc` |
 | `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 8612588 | `80f65b30cc21462cec28b71f5d9ece42291134e8c85a5144f5644be31e8bd32a` |
 | `PuyoPuyoTetris-JP-voices-xdelta-patches-1.0.15.zip` | 11352821 | `f923e1c669e022483ac95af6a8eb7ebf3bf395daa1ea03880c33f59200b37be0` |
-| `PuyoPuyoTetris-LayeredFS.zip` | 42849354 | `20005850b780662a5e133f2faabf866dc32f861fa379ef75641b4635413b26bf` |
-| `PuyoPuyoTetris-xdelta-patches-1.0.15.zip` | 203282326 | `59fd5e1ec069fc4c4aa95604680df0de1f86636bee7f22018aeffd5391265e00` |
+| `PuyoPuyoTetris-LayeredFS.zip` | 171228121 | `90cc008b698e1c918b14759bc50fa576a9b1fd6e293b974be99e39f787ca69d8` |
+| `PuyoPuyoTetris-xdelta-patches-1.1.0.zip` | 202286113 | `bc110ea0b2bc8d91b3d3d5ad00553c3c6b1defe0382d4d1d558e12cec63571ea` |
+
+The Japanese-voice edition's three files above are unchanged this build; only the
+English-voice base and DLC files were rebuilt.
 
 ## How it works
 
