@@ -21,11 +21,12 @@ source. The exceptions: the two string totals in DETAILS, 1,411 and 875, came fr
 made while the work was going on and no shipped tool reproduces them, so treat those two as
 approximate; and the voice re-level tools used from 1.0.8 through 1.1.1 depend on local
 analysis helpers that live in a private work repo, not in `tools/`, so don't expect to
-rebuild that step yourself from what's published here. Where something has not been
-verified, TESTING.md says so.
+rebuild that step yourself from what's published here. The same goes for the scripts
+that staged and checked 1.1.2's redrawn pictures, which aren't in `tools/` either. Where
+something has not been verified, TESTING.md says so.
 
-**[Download the current build from Releases](../../releases/latest)** (build 1.1.1, DLC
-0.2.10). What changed in each build is in [RELEASE_NOTES.md](RELEASE_NOTES.md). Also listed
+**[Download the current build from Releases](../../releases/latest)** (build 1.1.2, DLC
+0.2.11). What changed in each build is in [RELEASE_NOTES.md](RELEASE_NOTES.md). Also listed
 on [romhacking.net](https://www.romhacking.net/translations/7714/).
 
 > ### Playtesters wanted
@@ -35,11 +36,12 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 > and the DLC install, the HOME menu tile shows the English logo, and the title screen and
 > main menu run. Since then the DLC Adventure chapters have been played on a console, and
 > Chapter 1 through to its end; later story chapters, the 1.0.15 bubble fix, and 1.1.0's and
-> 1.1.1's re-leveled voices are still worth reporting. 1.1.1 itself was checked in Azahar on
-> 28 September 2026: the title screen, the DLC stage's new shop sign, the Adventure mission
-> screen's new tag and its opening story text all showed correctly, but the re-leveled
-> voices, the Broadcast Station art, the Japanese-voice edition and a real console are not
-> yet confirmed. The rest was tested in Azahar.
+> 1.1.1's re-leveled voices are still worth reporting. 1.1.2 redraws 111 pictures and has
+> been checked on an emulator only, not on a console. In Azahar (English-voice edition) the menus and tiles, Options, Versus setup, My Data, the Adventure mission panel and the "Ready" call all showed English, with no crash, freeze or garbled screen. Not seen yet: "Ready" in a versus match, the DLC chapter strips, the tournament card, the Japanese-voice edition and a console. 1.1.1 was checked
+> in Azahar on 28 September 2026: the title screen, the DLC stage's new shop sign, the
+> Adventure mission screen's new tag and its opening story text all showed correctly. The
+> re-leveled voices, the Broadcast Station art, the Japanese-voice edition and a real
+> console are not yet confirmed. The rest was tested in Azahar.
 >
 > **[Report anything wrong in issue #1](../../issues/1)** (which screen, and a photo beats a
 > description). Don't check first to see whether I already know. A duplicate costs me
@@ -61,13 +63,12 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 | **Patched base game** | `PuyoPuyoTetris-Base-xdelta.zip` (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or built from your dump with `tools/build_cia.py`, or `PuyoPuyoTetris-LayeredFS.zip` unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
 | The Japanese v1.2.0 update | code only; installs over the patched base safely |
 | **The DLC** | `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump, which produces the same file |
-| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: a base xdelta patch, a LayeredFS zip, and a DLC CIA, all at 1.1.1 / DLC 0.2.10 as of this build. Install one edition or the other, not both |
+| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: a base xdelta patch, a LayeredFS zip, and a DLC CIA, all at 1.1.2 / DLC 0.2.11 as of this build. Install one edition or the other, not both |
 
 Install order is base, then Japanese update, then DLC. The title screen reads **ENG
-1.1.1** on both editions now: this is the first build where the Japanese-voice edition
-carries the same version number as the English-voice build, since neither of 1.1.1's fixes
-touches a voice file. The HOME menu jingle, not the version stamp, is what tells the two
-editions apart from here on.
+1.1.2** on both editions, as it did at 1.1.1: this build's redrawn pictures aren't voice
+files, so the Japanese-voice edition carries the same version number as the English-voice
+build. The HOME menu jingle, not the version stamp, is what tells the two editions apart.
 
 > **If you're using any of the xdelta zips, dump the title as an encrypted CIA and decrypt it
 > on the PC.** In GodMode9, dump the title to CIA with no decrypt and no trim option, copy that
@@ -91,18 +92,17 @@ These are the current files on the v1.0.0 tag; the tag's files are replaced in p
 
 | File | Bytes | SHA-256 |
 |---|---|---|
-| `PuyoPuyoTetris-Base-xdelta.zip` | 168,129,863 | `64514f8fa9f94ce977aceb9f317487b1829b394e2e3f82596094ce614f2d7605` |
-| `PuyoPuyoTetris-DLC-JP-voices-0.2.10.cia` | 116,165,696 | `ea9d08a3a62fa603338c53664d10025ca10c50ea707d60fd3b10a09ec4061ba7` |
-| `PuyoPuyoTetris-DLC-patched.cia` | 111,889,472 | `f3b0ed6f24cbe9fb248edbc62d51078fcf2720bd46b40c9280570f4826523b46` |
-| `PuyoPuyoTetris-DLC-xdelta.zip` | 33,933,776 | `5f8ad25b7bdfb8f27a4a60d81fbdb8821f844f416a93835a736dd3ccc3f56251` |
-| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 9,040,101 | `dce8ab2c7664f096cab338f5c8936b1342dbb3bcdbb6703a7cb3cb91bc5b602e` |
-| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.1.zip` | 11,385,126 | `ac9e99d65e7162b9f423ac2ac3599d2697ef04ea29b2e7d05fb602b44da8b636` |
-| `PuyoPuyoTetris-LayeredFS.zip` | 171,589,082 | `b64440bca3b146a1c49cae42aa814407d2aa5abb1411e71a44efdf650d684a2a` |
-| `PuyoPuyoTetris-xdelta-patches-1.1.1.zip` | 202,219,824 | `d4c73ca0d5160058d319b855bce8649ec95339622f648e7e58c9fa6513df4fe8` |
+| `PuyoPuyoTetris-Base-xdelta.zip` | 168,153,129 | `3a9cee75d1bd369900f80bcc8fc7f1fe645991ace484d10f228210c9516b3825` |
+| `PuyoPuyoTetris-DLC-JP-voices-0.2.11.cia` | 116,165,696 | `200c41753fcd7f551b63c4f48868576d92e7e51a74872866674c1aa06d674b32` |
+| `PuyoPuyoTetris-DLC-patched.cia` | 111,885,376 | `b99410e2fb56471ce6fed691de8d3d264ef171a1d0117f51d0634e4f5fe58daa` |
+| `PuyoPuyoTetris-DLC-xdelta.zip` | 33,929,526 | `efb9e3c9fe9328be216ef44b5ee1536b0977db55afad1094c193aad379291b08` |
+| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 9,999,163 | `92df1f35fd0980fcf71b8fef202840d12b100c6edb23076475a01a43296b50be` |
+| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.2.zip` | 10,937,679 | `d7078f88382a7f571c6995075e8af99c06891515a35fb6f0b8d6a0acd902de57` |
+| `PuyoPuyoTetris-LayeredFS.zip` | 172,548,204 | `dc615346029f9bf9ca6d68cddcfcba87583662fd4e1db6f77863e962b7c4f3e9` |
+| `PuyoPuyoTetris-xdelta-patches-1.1.2.zip` | 202,239,617 | `a782a1f0b48ec158de56e50147e401e18410286e5cb5319abe9aa54c0bbc4e1e` |
 
-Every file changes this build, on both editions: this is the first build since the
-Japanese-voice edition was split off where its text and art move too, so none of its three
-files are carried over unchanged.
+Every file changes this build, on both editions: the redrawn pictures are in both, so none
+of the eight files is carried over unchanged from 1.1.1.
 
 ## How it works
 

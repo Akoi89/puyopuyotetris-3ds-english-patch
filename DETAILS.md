@@ -9,36 +9,43 @@ The full table of what changed and what stayed Japanese, by screen and system.
 
 | area | |
 |---|---|
-| Text | 1,411 base strings and 875 DLC strings. Sega's Steam text where it exists; 392 lines written for the 3DS-only screens (Chapter 0 prologue, Club, SpotPass, errors, shop). This build replaces 367 base lines that had still carried the earlier fan translation's wording, typos and wrong numbers included, with Sega's own text for the same lines, rewrapped for the 3DS bubble; 2 bubbles grew a line taller to hold the result. Booted in
+| Text | 1,411 base strings and 875 DLC strings. Sega's Steam text where it exists; 392 lines written for the 3DS-only screens (Chapter 0 prologue, Club, SpotPass, errors, shop). 1.1.1 replaced 367 base lines that had still carried the earlier fan translation's wording, typos and wrong numbers included, with Sega's own text for the same lines, rewrapped for the 3DS bubble; 2 bubbles grew a line taller to hold the result. Booted in
 Azahar on 28 September 2026: the opening story scene played with the new text, the first
 line confirmed against the game data and the screen captures showing the lines after it;
 the remaining rewritten lines have not been seen running yet. |
 | In-battle, select and title-call voices | 24 Japanese character banks replaced from Steam's English recordings, matched by the Japanese takes' durations (zero error); the other 13 banks, already English from the earlier fan translation, are re-imported from Steam too, so all 37 battle banks are this project's own encode at Sega's sample rate (`import_fan_banks.py`). Re-levelled for 1.1.0 by `voice_relevel3.py`, one encode per wave from Steam's recording: 1,626 of 1,641 waves re-levelled, 15 kept the 1.0.15 bytes; battle waves within 1 LU of the Japanese take went from 772 to 998 of 1,519, more than 2 LU under from 311 to 59. Unchanged this build. |
 | DLC story voices | 760 of 763 clips; the other three were re-recorded for 3DS and have no English take. Re-levelled for 1.1.0 by the same tool: 755 of 760 re-levelled, 5 kept the 0.2.8 bytes; within 1 LU of the Japanese take went from 479 to 538 of 760. Unchanged this build. |
-| Base game story (Adventure) voices | 2,320 of 2,321 MZV streams re-imported from Steam's recording for 1.1.0 (`import_story_voices.py` with `voice_relevel3.py`), each aimed at the Japanese stream's loudness; the English-only MZV_07_01_1_039 has no Japanese take or matching Steam row and keeps its shipped audio. This build re-levels the same 2,320 streams a second time, gentler: lines louder than the Japanese take come down to it, and lines quieter rise toward it only as far as a 2% limiting cap allows, so nothing squashes; 1,145 files changed from the 1.1.0 bytes, 1,175 stayed byte-identical; raised lines land at
+| Base game story (Adventure) voices | 2,320 of 2,321 MZV streams re-imported from Steam's recording for 1.1.0 (`import_story_voices.py` with `voice_relevel3.py`), each aimed at the Japanese stream's loudness; the English-only MZV_07_01_1_039 has no Japanese take or matching Steam row and keeps its shipped audio. 1.1.1 re-levels the same 2,320 streams a second time, gentler: lines louder than the Japanese take come down to it, and lines quieter rise toward it only as far as a 2% limiting cap allows, so nothing squashes; 1,145 files changed from the 1.1.0 bytes, 1,175 stayed byte-identical; raised lines land at
 or within 0.1 LU above the Japanese level, and no stream has a clipped run of samples. Not
 yet heard running. |
-| Online UI textures | 1,028 label boxes across the Club, Puzzle League, standby, replay and shop screens, 806 of them redrawn here and 222 using Sega's own sprites. This build adds Sega's official English for the Adventure mission screen's "New!" tag, the Broadcast Station badges (11) on both places that screen appears, and the DLC stage's shop sign and stage-select icon. Booted in Azahar on 28 September 2026:
+| Online UI textures | 1,028 label boxes across the Club, Puzzle League, standby, replay and shop screens, 806 of them redrawn here and 222 using Sega's own sprites. 1.1.1 added Sega's official English for the Adventure mission screen's "New!" tag, the Broadcast Station badges (11) on both places that screen appears, and the DLC stage's shop sign and stage-select icon. Booted in Azahar on 28 September 2026:
 the mission screen's tag and the DLC stage's shop sign showed correctly; the Broadcast
 Station screens are online-only and still checked only as rendered images, not confirmed
 running. |
-| DLC shop icons | 33 redrawn, plus this build's DLC stage shop sign and icon above. |
+| Redrawn pictures (1.1.2) | 111 pictures redrawn from Sega's original Japanese art: 105 in the base game (33 archives) and 6 on the DLC chapter title strips (6 archives). The earlier English lettering had problems, so plates, pills and icons that an earlier pass had erased are restored, the lettering follows the original's outline, shading and size, text in grids is one consistent size, and some Japanese leftovers are English now. Some textures were slightly washed out or see-through from a 4-bit colour rounding that came in with the earlier fan translation, and are exact again. Small wording changes: the wins counter (was "beaten"), "Chain FX" for the Chain Animations option, "chains+" and "colors+" in a rule tip, "RANK" on the club rank pill, "Interstellar Dream" (was "An Interstellar Dream") on a DLC chapter strip, the tournament card's "Wins" / "High Score:" / "Final Score:" (were "beaten" / "Best Record" / "This Run"), and "Big Bang Mode" (was "Bing Bang Mode"). Two main menu tile previews are among the pictures: the Online tile now reads "Must Watch!" and "Choose a replay", and the My Data Options tile shows "Tokyo" for Location. The "Ready" call (a picture shown before a match) was redrawn after an emulator pass showed its last letter cut off, and shows whole in the second pass. Checked on an emulator only (Azahar, English-voice edition): the "Ready" call in six solo modes (Endless Puyo, Endless Fever, Marathon, Sprint, Tiny Puyo, Ultra), the two tile previews and the Endless Puyo Puyo mode card; not in a versus match. |
+| DLC shop icons | 33 redrawn, plus 1.1.1's DLC stage shop sign and icon above. |
 | Font atlases | the game pre-renders only the glyphs each screen uses; every screen that gained English got a matching atlas, verified per section |
 | Character-select pick lines | all 24 (the fan patch had only 15), matched to Steam's English pick bank by duration |
 | Title-screen announcer | the boot call, matched to Steam's title_set_bank by duration across all four takes |
 | Boot notice and DLC map plates | re-wrapped/re-fitted into the Japanese texture's own ink window after a first pass cut them off |
-| Endless-mode record card | "Best Record", "This Run" and the "beaten" count redrawn with the gradient plates inpainted |
+| Endless-mode record card | 1.0.3 and later: "Best Record", "This Run" and the "beaten" count redrawn with the gradient plates inpainted. 1.1.2 redraws the same two pictures (the toko archive's num_tournament and pla_tournament entries, which the 1.1.1 image review lists with that "Best Record" / "This Run" / "beaten" lettering) in Sega's own wording and art: "Wins", "High Score:" and "Final Score:". Not yet seen on a live screen. |
 | Swap-mode call logos | Sega's official English "Puyo" / "Tetris" logo art, taken from the Steam release's English swap texture (the 3DS texture at 4x) and scaled down into place |
-| Official Steam sprites | 222 hand-redrawn labels replaced with Sega's official English sprites matched by text against the Steam release, including the Broadcast Station and Club mode pills with their proper two-tone outlines; plus the 11 Replay Report badge rows, the 15 Puzzle League rank pills, and the Broadcast Station TV logo (Sega's "World Broadcast" mark), none of which the label match had caught. This build adds the mission-screen "New!" tag, the second set of Broadcast Station badges, and the DLC shop sign and icon, all matched the same way. The mission tag and the DLC shop
+| Official Steam sprites | 222 hand-redrawn labels replaced with Sega's official English sprites matched by text against the Steam release, including the Broadcast Station and Club mode pills with their proper two-tone outlines; plus the 11 Replay Report badge rows, the 15 Puzzle League rank pills, and the Broadcast Station TV logo (Sega's "World Broadcast" mark), none of which the label match had caught. 1.1.1 added the mission-screen "New!" tag, the second set of Broadcast Station badges, and the DLC shop sign and icon, all matched the same way. The mission tag and the DLC shop
 sign and icon were confirmed on screen in Azahar on 28 September 2026; the Broadcast Station
 badges are still checked only as rendered images. |
 | HOME menu banner | Sega's official English "PuyoPuyo" logo swapped into the shared texture in place of the Japanese one, keeping Sega's TETRIS art untouched; this is in a locally built CIA only, since LayeredFS cannot change a banner |
 
-Still Japanese on purpose, added this build: a faint Puzzle League medal crest (Sega's
+Still not right in 1.1.2: a few labels are wider than the box the original art had for them,
+some of the small grids use condensed lettering to fit, four small rank-suffix pictures (the
+Japanese mark that follows a rank number) on two replay and league screens are still Japanese,
+and the right-hand column on the tournament screens is text the game builds itself and may
+read oddly. Eleven other pictures still show Japanese, mostly small tile previews I did not redraw: one picture holding six tile previews (league standings, stats, game settings, the EX chapter 8 tile, a replay tile and club info), three Solo Arcade tile pictures (their mode, level and counter labels), two rule-settings pictures (Classic, Wins, Margin Time and similar labels; I have not confirmed either is shown in the game), the vertical club sign-up label, the replay speed hint strip, the "this league's results" text at the top right of one result screen, and two Puzzle League emblem pictures (faint laurels, and a dark emblem I could not read).
+
+Still Japanese on purpose, added in 1.1.1: a faint Puzzle League medal crest (Sega's
 English version read worse once fitted here), the Slot rule's "N more Puyo" counter, and a
 handful of online menu preview cards; none of the three has a usable English source in
 Sega's PC release. What stays Japanese, and why, is in [TESTING.md](TESTING.md). The
-Japanese-voice edition carries this build's text and art fixes too, since neither touches a
+Japanese-voice edition carries 1.1.1's and 1.1.2's text and art fixes too, since neither touches a
 voice file; the voice work in this row and the two above it is not in that edition.
 
 ---
@@ -106,8 +113,10 @@ voice file; the voice work in this row and the two above it is not in that editi
 `translations/` holds the hand-written English (`tr_batch*.json`,
 `tr_extra.json`, `labels_en_p*.json`). Fix a line there and rebuild.
 
-This build's line-source fix and its story-voice re-level a second time used analysis
+1.1.1's line-source fix and its story-voice re-level a second time used analysis
 helpers that live in a private work repo rather than in `tools/`; the parts of the pipeline
 that ship here (the text and archive formats, the encoders and writers, the atlas rule) are
 the same ones used to build the result, but the specific scripts that picked which of the
 367 lines to replace and re-ran the loudness match are not published.
+
+The scripts that staged and checked 1.1.2's 111 redrawn pictures are working scripts; they are not in `tools/`.

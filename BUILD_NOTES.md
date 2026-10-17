@@ -4,20 +4,83 @@ This is the full technical record of every build. RELEASE_NOTES.md is now
 written for players and kept short; everything that used to live there,
 including every figure and measurement, stays here in full.
 
-The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.1.1** with DLC 0.2.10 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar; 1.0.13 fixes the EX chapter line breaks and the Party-mode Time Up graphic; 1.0.14 raises two base-game speech bubbles; 1.0.15 re-breaks the base-game Adventure dialogue so no line runs past the bubble edge; 1.1.0 re-levels quiet battle and DLC voices and re-imports the base game's story voices; 1.1.1 puts Sega's text on lines that still carried the earlier fan translation's wording, re-levels the story voices a second time, and adds Steam's art for the mission "New!" tag, the Broadcast Station screens and the DLC shop; booted in Azahar on 28 September 2026 with the DLC installed, where the title screen, the DLC stage's new shop sign, and the mission screen's "New!" tag and opening story text all showed correctly, but the re-levelled voices, the Broadcast Station art, the Japanese-voice edition and a real console are not yet confirmed). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
+The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.1.2** with DLC 0.2.11 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar; 1.0.13 fixes the EX chapter line breaks and the Party-mode Time Up graphic; 1.0.14 raises two base-game speech bubbles; 1.0.15 re-breaks the base-game Adventure dialogue so no line runs past the bubble edge; 1.1.0 re-levels quiet battle and DLC voices and re-imports the base game's story voices; 1.1.1 puts Sega's text on lines that still carried the earlier fan translation's wording, re-levels the story voices a second time, and adds Steam's art for the mission "New!" tag, the Broadcast Station screens and the DLC shop; 1.1.2 redraws 111 pictures from Sega's original Japanese art and has been checked on an emulator only (Azahar, English-voice edition; see the 1.1.2 section below); 1.1.1 was booted in Azahar on 28 September 2026 with the DLC installed, where the title screen, the DLC stage's new shop sign, and the mission screen's "New!" tag and opening story text all showed correctly, but the re-levelled voices, the Broadcast Station art, the Japanese-voice edition and a real console are not yet confirmed). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
 
-- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.1.1**; the built CIA reports 1.1.1.
-- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates, plus this build's shop sign and stage icon. TMD 0.2.10.
+- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.1.2**; the built CIA reports 1.1.2.
+- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates, plus the DLC stage's shop sign and stage icon (0.2.10) and six redrawn chapter title strip pictures (0.2.11). TMD 0.2.11.
 - **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 168,102,244 bytes) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). Dump the title as an encrypted CIA with GodMode9 and decrypt it on the PC; GodMode9's own decrypt gives a file of the right size that the patch refuses. It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
 - **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
 - Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
-- **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. A base xdelta zip, a LayeredFS zip and a DLC CIA. Same title ID as the English-voice build; from 1.1.1 it carries the same **ENG 1.1.1** stamp as the English-voice build again, since 1.1.1's fixes are text and art, not voice files, and this edition is rebuilt for them. Install one edition or the other, not both. Details in the section below.
+- **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. A base xdelta zip, a LayeredFS zip and a DLC CIA. Same title ID as the English-voice build; from 1.1.1 it carries the same ENG stamp as the English-voice build (**ENG 1.1.2** now), since 1.1.1's and 1.1.2's fixes are text and art, not voice files, and this edition is rebuilt for them. Install one edition or the other, not both. Details in the section below.
 
 **Withdrawn the same day: an "update title" CIA.** It packaged the English data inside Sega's v1.2.0 update. Puyo Puyo Tetris's code only ever opens the base game's RomFS (path type 0) and never asks for an update RomFS (type 5), so the console and Azahar keep reading Sega's Japanese files no matter what the update carries. It did nothing. If you downloaded it, delete it and install the official update instead.
 
-The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.1.1 (below) is the current build.
+The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.1.2 (below) is the current build.
 
 ---
+
+## 1.1.2 / DLC 0.2.11
+
+A pictures-only build. The earlier English lettering on a set of menu, Club, internet,
+replay and results pictures, two main menu tile previews, the "Ready" call, the tournament
+card, a banner and the DLC chapter title strips had problems, so 111 pictures were redrawn
+from Sega's original Japanese art, 105 in the base game and 6 in the DLC. Text, voices and the program file are the same as 1.1.1 / DLC
+0.2.10; the only other file that changes is the title screen stamp, now **ENG 1.1.2**.
+
+**What was wrong and what changed.** Plates, pills and icons that an earlier pass had erased
+are back. The lettering now follows the original's outline, shading and size instead of plain
+thin text, and text in grids is one consistent size. Japanese leftovers on a few screens are
+English now. Some textures looked slightly washed out or see-through, from a 4-bit colour
+rounding that came in with the earlier fan translation; they are exact again. Wording the
+player may notice: the wins counter (was "beaten"), "Chain FX" for the Chain Animations
+option, "chains+" and "colors+" in a rule tip, "RANK" on the club rank pill, "Interstellar
+Dream" (was "An Interstellar Dream") on a DLC chapter strip, the tournament card's "Wins" /
+"High Score:" / "Final Score:" (were "beaten" / "Best Record" / "This Run"), and "Big Bang
+Mode" (was "Bing Bang Mode"). The main menu's Online tile preview now reads "Must Watch!" and
+"Choose a replay", the My Data Options tile preview shows "Tokyo" for Location (it was a
+Japanese prefecture), and the "Ready" call (picture 73) was redrawn after the first emulator
+pass showed it clipped; the second pass shows it whole.
+
+**Counts, from `_img112\MANIFEST.json`.** 39 archives are touched (33 base, 6 DLC) and 111
+entries are replaced (105 base, 6 DLC); none were blocked. By format: 95 RGBA4, 7 ETC1A4,
+8 RGBA8 and 1 RGBA5551. The overlay is 58,850,507 bytes. 12 archives change size; of
+those, four grew (system 61,799 to 65,645 bytes, bottom_bg 157,507 to 175,379, party2p
+230,080 to 239,118, toko 616,124 to 622,123). The two newest overlay files are the main
+menu's and My Data's tile-preview archives (menu\main_menu.narc and mydata\mydata\mydata.narc,
+both taken from the earlier fan translation's tree, same size as before, spliced in place). In the DLC, the six pictures sit in contents
+0010, 0011 and 0012 (two archives each); content 00ca and every other content are
+byte-identical to 0.2.10.
+
+**Checks that were run.** Each of the 111 replaced entries was decoded back out of the
+patched archives and matched its source image (RGBA exact; ETC1A4 alpha exact with a
+maximum colour error of 0 on visible pixels), 221 untouched members and 490 untouched
+texture entries in the touched archives were byte-identical to 1.1.1, and the same decode
+was repeated on the built CIAs for both editions (105 base and 6 DLC pictures each, 0
+mismatches; 160 checks passed, 0 failed). The title stamp was read back out of the built base CIAs as an image. The
+earlier 1.1.1 art in the same archives (the "New!" tag, the Broadcast Station badges) is
+untouched except one overlap: the "New!" tag's texture entry is redrawn again, and of the
+1,043 pixels 1.1.1 had changed in it, the new version matches 1.1.1 on all 780 visible ones.
+
+**Checked on an emulator only.** Azahar on a PC, English-voice edition only, saves untouched. Pass 1 (an
+earlier 1.1.2 build): title stamp "ENG 1.1.2", Quick Play and all main menu tiles, Options (Chain
+FX, SpotPass Toggle, Location as a spinner), Solo Arcade tiles, Versus setup, rules panel and Handicap,
+pause menus, My Data (Stats, Theatre, Options, Shop), Adventure mission panel "Your Mission:" and the "New!"
+tag. Pass 2 (this final build, viewed at 2x): the "Ready" call whole in Endless Puyo, Endless Fever, Marathon,
+Sprint, Tiny Puyo and Ultra (letters shrink toward the end, as in the Japanese original); the Online tile
+preview ("Must Watch!", "Choose a replay"); the My Data Options tile preview (Location "Tokyo"); the Endless
+Puyo Puyo mode card; no crash, freeze or garbling. Pass 2 was cut short by a usage limit before the versus
+"Ready" burst, so "Ready" was not checked in a versus match. Not seen: a real console, the Japanese-voice
+edition booted, the DLC chapter title strips in game, the tournament card (Wins / High Score: / Final Score:)
+on a live screen. Captures: work\_rig112b. Not run on a real console.
+
+**Known problems added.** A few labels are wider than the box the original art had for them
+and some of the small grids use condensed lettering to fit; four small rank-suffix pictures
+(the Japanese mark that follows a rank number) on two replay and league screens are still
+Japanese; and the right-hand column on the tournament screens is text the game builds itself
+and may read oddly; and eleven other untouched pictures still show Japanese (work\_leftover112\CANDIDATES.md items 1 to 11; item 12 is the logo, a brand mark, left alone): the six tile previews in menu\nettop.narc (nettop08), the Solo Arcade tile pictures tokoton05_s, hitoride05 and minnade05_s (HUD labels), the two rule-settings pictures gamesetting01 and gamesetting02 in ingame_common.narc (use on screen unconfirmed), clubentry02 (vertical club sign-up label), the replay speed hint strip in replay.narc, result_04a (the "this league's results" text, top right), and standby_puzzleleague05 (faint laurel emblems) and standby_puzzleleague00 (a dark emblem, text not legible, not verified).
+
+**Both editions.** The Japanese-voice edition is rebuilt with the same picture overlay and
+stays at the same version number as the English-voice build: **ENG 1.1.2 / DLC 0.2.11**.
 
 ## 1.1.1 / DLC 0.2.10
 
@@ -101,7 +164,7 @@ the Broadcast Station badges (online-only, so far checked only as rendered image
 Japanese-voice edition (same files verified byte for byte identical, but not run), and a real
 console.
 
-## Japanese-voice edition (first released 11 September 2026 for 1.0.12, now 1.1.1 / DLC 0.2.10)
+## Japanese-voice edition (first released 11 September 2026 for 1.0.12, now 1.1.2 / DLC 0.2.11)
 
 Asked for in issue #2: the English text without the English voices. This is
 the 1.0.12 build taken apart and put back together with its `sound` folder
@@ -134,6 +197,9 @@ time since the split that both editions carry the same version stamp, **ENG
 since the title screen no longer does. This rebuild has not been booted; its
 files are verified byte for byte identical to the English-voice build's text
 and art overlay, but it has not been run.
+
+**1.1.2 rebuilds it again** with the same picture overlay as the English-voice build (the `sound` folder
+stays Sega's Japanese one), and both editions read **ENG 1.1.2 / DLC 0.2.11**.
 
 ## Current build before this one: 1.1.0 / DLC 0.2.9
 

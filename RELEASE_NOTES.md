@@ -2,15 +2,18 @@ This is a fan English patch for *Puyo Puyo Tetris* on 3DS, carrying Sega's own o
 
 ## What this build fixes
 
-- **Some story, tutorial and profile lines still read the earlier fan translation's wording, typos and all.** A mission target could read "10,00 pts" where it meant 10,000, and the opening story line read "This it not good!" Those lines, and others like them across the Adventure story, the lesson screens and the profile/records screens, now read Sega's official English instead, refitted to the 3DS speech bubbles. Sega's wording is kept as written, except that a few records lines spell out "percent" because the 3DS font has no % sign, and a couple of bubbles grew a line taller to hold the result.
-- **Story (Adventure) voices, re-leveled again.** 1.1.0 brought these up toward the Japanese volume and a few of the loudest lines ended up sounding squashed. They're re-leveled a second time to sit as close to the Japanese volume as they can without squashing, and they still don't crackle.
-- **The Adventure mission screen's red "New!" tag is now Sega's English art**, replacing a Japanese banner that had been sitting above "Versus" on that screen.
-- **The Broadcast Station's replay badges are now Sega's English art**, on both places that screen appears; they'd read as an untranslated grid of Japanese badges before.
-- **The DLC stage's shop sign and its stage-select icon now read "Ando Family FRESH PRODUCE"** in Sega's own lettering, where both had shown the Japanese sign before.
-- **Some graphics are still Japanese or clipped.** The Slot rule's "N more Puyo" counter and a handful of online menu preview cards are still Japanese because Sega's PC release has no English version of them. A faint Puzzle League medal crest stays Japanese on purpose: Sega's English one looked worse at the 3DS crest's size. The clipped HOLD/NEXT labels on the Tetris side, already reported in issue #1, are listed too.
+- **Over a hundred pictures were redrawn from Sega's original Japanese art.** They cover the menus (two of them tile previews on the main menu), the Club, the internet, replay and results screens, the "Ready" call, the tournament card, a banner and the DLC chapter strips. The English lettering from the earlier pass had problems, so I went back to the originals and did them again.
+- **Plates, pills and icons that an earlier pass had erased are back.** They're restored.
+- **The lettering now looks like the original's.** It has the same outline, shading and size, where before it was plain thin text. Text in grids is one consistent size.
+- **Japanese leftovers on a few screens are English now.** A handful of places the earlier pass missed have been done.
+- **Some textures looked slightly washed out or see-through, and they're exact again.** The cause was a 4-bit colour rounding that came in with the earlier fan translation.
+- **A typo in a mode name is fixed.** "Bing Bang Mode" is now "Big Bang Mode".
+- **A few labels read differently.** The wins counter (it said "beaten"), "Chain FX" for the Chain Animations option, "chains+" and "colors+" in a rule tip, "RANK" on the club rank pill, "Interstellar Dream" on a DLC chapter strip (it had an extra "An"), and the tournament card's "Wins", "High Score:" and "Final Score:" (they were "beaten", "Best Record" and "This Run").
+- **Some things are still not right.** A few labels are wider than the box the original art had for them, and some of the small grids use condensed lettering to fit. They're in the known problems below.
 
 ## Version history
 
+- **1.1.2 / DLC 0.2.11**: over a hundred pictures redrawn from Sega's original Japanese art (menus, two main menu tile previews, Club, internet, replay and results screens, the "Ready" call, the tournament card, a banner, the DLC chapter strips); erased plates, pills and icons restored; lettering matched to the original's style; washed-out textures made exact; a mode-name typo fixed. Both editions, and the title screen now reads ENG 1.1.2.
 - **1.1.1 / DLC 0.2.10**: Sega's official English on lines that had kept the earlier fan translation's wording; a second, gentler voice re-level for the base game's story voices; Steam's official art for the Adventure "New!" tag, the Broadcast Station badges, and the DLC stage's shop sign and icon. The Japanese-voice edition gets the text and art fixes too and now shares the same version number.
 - **1.1.0 / DLC 0.2.9**: re-leveled quiet battle and DLC voices, and re-imported crackly story voices in one clean pass; LayeredFS now includes the English story voices for the first time.
 - **1.0.15 / DLC 0.2.8**: re-broke the base game's Adventure dialogue so no line runs past its bubble.
@@ -31,6 +34,11 @@ This is a fan English patch for *Puyo Puyo Tetris* on 3DS, carrying Sega's own o
 
 ## Known problems
 
+- This build has been checked on an emulator only, not on a real console. In Azahar (English-voice edition) the menus and tiles, Options, Versus setup, My Data, the Adventure mission panel and the "Ready" call all showed English, with no crash, freeze or garbled screen. Not seen yet: "Ready" in a versus match, the DLC chapter strips, the tournament card, the Japanese-voice edition and a console.
+- Eleven other pictures, mostly small tile previews, still show Japanese. They're listed in DETAILS.md.
+- A few labels are wider than the box the original art had for them, and some of the small grids use condensed lettering to fit.
+- Four small rank-suffix pictures, the Japanese mark that follows a rank number, are still Japanese on two replay and league screens.
+- The right-hand column on the tournament screens is text the game builds itself, and it may read oddly.
 - A few dozen strings are Japanese on purpose: the character-entry keyboards (the hiragana/katakana/kanji inventories in name entry) and the developer tables define what can be typed and aren't translations waiting to happen.
 - Three DLC story lines stay Japanese (chapter 8 scene 5, chapter 9 scenes 4 and 7); those lines were re-recorded for the 3DS and have no English take.
 - Voices can sound a touch less crisp than on PC. Every English voice is re-encoded from Steam's recordings with a home-grown encoder that's a little weaker than Sega's. Pitch and timing are correct.
@@ -49,9 +57,9 @@ The full list, with what to report and how, is in TESTING.md.
 
 Install order is the Japanese base game, then the patched base, then the Japanese v1.2.0 update, then the patched DLC.
 
-- **Base game**: `PuyoPuyoTetris-xdelta-patches-1.1.1.zip` (the base and DLC xdelta3 patches together, with a readme carrying every hash; the file romhacking.net links to), or `PuyoPuyoTetris-Base-xdelta.zip` on its own (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or `PuyoPuyoTetris-LayeredFS.zip` for Luma3DS.
+- **Base game**: `PuyoPuyoTetris-xdelta-patches-1.1.2.zip` (the base and DLC xdelta3 patches together, with a readme carrying every hash; the file romhacking.net links to), or `PuyoPuyoTetris-Base-xdelta.zip` on its own (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or `PuyoPuyoTetris-LayeredFS.zip` for Luma3DS.
 - **DLC**: `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump.
-- **Japanese-voice edition**: `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.1.zip`, `PuyoPuyoTetris-JP-voices-LayeredFS.zip` and `PuyoPuyoTetris-DLC-JP-voices-0.2.10.cia`. Rebuilt this time along with the main release, since the text and art fixes aren't voice files; now at the same 1.1.1 / DLC 0.2.10 as the English-voice build. Install one edition or the other, not both.
+- **Japanese-voice edition**: `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.2.zip`, `PuyoPuyoTetris-JP-voices-LayeredFS.zip` and `PuyoPuyoTetris-DLC-JP-voices-0.2.11.cia`. Rebuilt along with the main release, since the picture redraws aren't voice files; at the same 1.1.2 / DLC 0.2.11 as the English-voice build. Install one edition or the other, not both.
 
 If you're using any of the xdelta zips, dump the title as an encrypted CIA with GodMode9 and decrypt it on the PC; GodMode9's own decrypt gives a file of the right size that the patch will refuse. Sizes and hashes for every file are in the README.
 
