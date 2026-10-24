@@ -29,12 +29,12 @@ Sega's. Uninstall it and install the official update instead.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.1.2** at its right
+- The title screen logo's pink subtitle strip reads **ENG 1.1.3** at its right
   end on both editions. The Japanese-voice edition carries the same version
   stamp as the English-voice one, since this build's redrawn pictures aren't
   voice files; the HOME menu jingle is the only way to tell which edition is
   running.
-- The console lists the base game as version **1.1.2** and the DLC as
+- The console lists the base game as version **1.1.3** and the DLC as
   **0.2.11**, on either edition (the fan build and the shipped DLC were
   0.0.0 / 0.1.0).
 - **Japanese-voice edition**: same title ID as the English-voice build, so
@@ -75,7 +75,12 @@ These are the ones I'd most like to hear about, because they're the ways this pa
   online screens I can't reach offline, so they haven't been seen running yet.
 - **1.1.1's new art on a console.** The mission screen's "New!" tag and
   the DLC stage's shop sign and icon were checked in Azahar, not yet on hardware.
-- **This build's redrawn pictures on a console.** The menus (two of them
+- **1.1.3's combo bar, replay hint and gate sign.** The Tetris combo bar ("COMBO") and the chain
+  notice ("CHAIN!" and "LINES") haven't come up in a match yet, so a photo of a
+  combo in a mixed match is useful. The replay speed hint needs a saved replay. The Magic School
+  gate sign was seen as a letter on both pillars in the Staff Roll; battles and cutscenes
+  on that stage haven't been seen.
+- **1.1.2's redrawn pictures on a console.** The menus (two of them
   tile previews on the main menu), the Club, the internet, replay and results
   screens, the "Ready" call, the tournament card and the DLC chapter strips have been looked at in an emulator only. A label that runs
   past its box, a grid that looks uneven, or a plate or icon that's missing
@@ -108,12 +113,11 @@ you're looking at something and you're not sure which side it falls on, just tel
   number, are still Japanese** on two replay and league screens.
 - **The right-hand column on the tournament screens is text the game builds
   itself, and it may read oddly.**
-- **Eleven other pictures still show Japanese.** Mostly small tile previews I did not redraw: one picture holding six tile previews (league standings, stats, game settings, the EX chapter 8 tile, a replay tile and club info), three Solo Arcade tile pictures (their mode, level and counter labels), two rule-settings pictures (Classic, Wins, Margin Time and similar labels; I have not confirmed either is shown in the game), the vertical club sign-up label, the replay speed hint strip, the "this league's results" text at the top right of one result screen, and two Puzzle League emblem pictures (faint laurels, and a dark emblem I could not read).
+- **Ten other pictures still show Japanese.** Mostly small tile previews I did not redraw: one picture holding six tile previews (league standings, stats, game settings, the EX chapter 8 tile, a replay tile and club info), three Solo Arcade tile pictures (their mode, level and counter labels), two rule-settings pictures (Classic, Wins, Margin Time and similar labels; I have not confirmed either is shown in the game), the vertical club sign-up label, the "this league's results" text at the top right of one result screen, and two Puzzle League emblem pictures (faint laurels, and a dark emblem I could not read).
 - **Score digits, 1P/2P/COM badges, You/New!/VS/ON/OFF** were already Latin.
 - **A few merged/rotated strings on the league result screen are Japanese**:
   the vertical "you lose"/"congratulations" art doesn't split cleanly from
   the artwork around it.
-- **The replay-speed hint strip stays Japanese.**
 - **Decorative screenshot thumbnails and the small "New Record" ornament are
   Japanese**, deliberately left as artwork.
 - **A faint Puzzle League medal crest stays Japanese.** Sega's own English
@@ -141,7 +145,7 @@ you're looking at something and you're not sure which side it falls on, just tel
 6. **DLC chapter 8**: text, atlases, voices and shop icons all at once.
 7. **The Adventure map's mission screen and both Broadcast Station screens**:
    1.1.1's new art.
-8. **Any screen with redrawn pictures** (this build): the menus (including
+8. **Any screen with redrawn pictures** (1.1.2): the menus (including
    the main menu's Online and My Data tile previews), Club, internet, replay
    and results screens, the "Ready" call before a match, the tournament card
    and the DLC chapter strips.
@@ -158,15 +162,16 @@ you're looking at something and you're not sure which side it falls on, just tel
 | Battle, DLC and story voices | decoded back and compared to source; never heard on hardware. All 37 battle banks are this project's own encode at Sega's 32000 Hz (1,517 waves, verified); the 13 re-imported for 1.0.4 fix a sample-rate mismatch the fan build had left in; 1.1.0 re-levels the quiet battle and DLC voices and re-imports the crackly base-game story voices; 1.1.1 re-levels the base-game story voices a second time, gentler, toward the Japanese level; each pass re-verified byte for byte, but not yet heard outside this project |
 | 1.1.1's art (mission "New!" tag, Broadcast Station badges, DLC shop sign and icon) | rendered and reviewed as images; the "New!" tag and the DLC shop sign (stage preview and a live match) seen in Azahar on 28 September 2026; the Broadcast Station badges only as images, since those screens are online |
 | Character-select pick lines and title-screen announcer | verified by duration against Steam and confirmed by the user by ear from the decoded clip |
+| 1.1.3's redrawn pictures (the combo bar and chain notice, the replay speed hint, the Magic School gate sign) | each one decoded back out of the built CIAs of both editions and compared with its source image, 46 of 46 checks passing, and the files that changed compared against 1.1.2's; checked in Azahar on 23 October 2026 (English-voice edition) only for the title stamp and for a letter on both gate pillars in the Staff Roll. Not seen: the combo bar and the CHAIN!/LINES notice (neither came up in a match), the replay speed hint (no saved replay), the gate in battles or cutscenes, or anything on a console |
 | 1.1.2's redrawn pictures (111) | each one decoded back out of the patched archives and out of the built CIAs and compared with its source image, 111 of 111 matching in both editions with 0 failures; the title stamp read back out of the built base CIAs as an image; checked on an emulator only (Azahar, English-voice edition). First pass, on an earlier 1.1.2 build: the title stamp, main menu tiles, Options, Solo Arcade tiles, Versus setup and rules panel, pause menus, My Data and the Adventure mission panel with its "New!" tag, all in English. Second pass, on the final build: the "Ready" call whole in Endless Puyo, Endless Fever, Marathon, Sprint, Tiny Puyo and Ultra, the main menu Online tile preview ("Must Watch!", "Choose a replay"), the My Data Options tile preview (Location "Tokyo") and the Endless Puyo Puyo mode card, with no crash, freeze or garbling. Not seen: "Ready" in a versus match (the pass was cut short), the DLC chapter strips, the tournament card, or anything on a console |
 | Online UI textures | rendered and reviewed as images; not yet confirmed in the engine beyond the screens above |
 | Boot notice and DLC plates | seen in the engine (Azahar); Endless-mode record card not yet checked |
-| Title version stamp | seen in Azahar and in the tester's console screenshots through 1.1.0; **ENG 1.1.1** seen in Azahar on 28 September 2026; **ENG 1.1.2** read back out of the built CIAs as an image and seen in Azahar on an earlier 1.1.2 build (English-voice edition), not yet on a console |
+| Title version stamp | seen in Azahar and in the tester's console screenshots through 1.1.0; **ENG 1.1.1** seen in Azahar on 28 September 2026; **ENG 1.1.2** read back out of the built CIAs as an image and seen in Azahar on an earlier 1.1.2 build (English-voice edition), not yet on a console; **ENG 1.1.3** read back out of both built CIAs and seen on the title screen in Azahar on 23 October 2026 (English-voice edition) |
 | Update-title packaging | structurally correct, booted in Azahar, **ignored by the game**: withdrawn |
 | Versus result screen | **confirmed in the engine by the user 2026-09-04**: no hang, winner dialogue in English after the atlas-compact fix |
 | Emulator | **booted 2026-09-04**: Options screen, Adventure map, DLC chapters, Versus result screen, all in English. Later emulator runs, before the first hardware boot, also showed the boot notice screen and the Swap-mode call banners in English |
-| Real hardware | **booted 2026-09-06 (New 3DS) and 2026-09-07 (New 3DS XL, original 3DS)**, a few games played; DLC Adventure chapters played on a New 3DS XL on 14 and 16 September 2026, and Chapter 1 through to its end on 17 September (issue #1); no full story playthrough yet; 1.1.0's re-leveled battle shouts heard in a Versus match in Azahar, not yet on a console; 1.1.1 was booted in Azahar on 28 September 2026 (title screen, a Versus match on the DLC stage, Adventure Act 1); 1.1.2 has been checked on an emulator only, not yet on a console |
-| Japanese-voice edition | booted in Azahar on 13 September 2026; **confirmed on a New 3DS XL on 14 September 2026** by the player who asked for it; rebuilt alongside every base update through 1.0.15 with the same line-break fix; 1.1.0 did not touch it, so it stayed at 1.0.15 / DLC 0.2.8; 1.1.1's text and art fixes aren't voice files, so it moved to 1.1.1 / DLC 0.2.10; 1.1.2's redrawn pictures aren't either, so it moves with the English-voice build to 1.1.2 / DLC 0.2.11; neither of those two builds of this edition has been booted, in Azahar or on a console (the 1.1.2 emulator passes were on the English-voice edition only) |
+| Real hardware | **booted 2026-09-06 (New 3DS) and 2026-09-07 (New 3DS XL, original 3DS)**, a few games played; DLC Adventure chapters played on a New 3DS XL on 14 and 16 September 2026, and Chapter 1 through to its end on 17 September (issue #1); no full story playthrough yet; 1.1.0's re-leveled battle shouts heard in a Versus match in Azahar, not yet on a console; 1.1.1 was booted in Azahar on 28 September 2026 (title screen, a Versus match on the DLC stage, Adventure Act 1); 1.1.2 and 1.1.3 have been checked on an emulator only, not yet on a console |
+| Japanese-voice edition | booted in Azahar on 13 September 2026; **confirmed on a New 3DS XL on 14 September 2026** by the player who asked for it; rebuilt alongside every base update through 1.0.15 with the same line-break fix; 1.1.0 did not touch it, so it stayed at 1.0.15 / DLC 0.2.8; 1.1.1's text and art fixes aren't voice files, so it moved to 1.1.1 / DLC 0.2.10; 1.1.2's redrawn pictures aren't either, so it moved with the English-voice build to 1.1.2 / DLC 0.2.11; 1.1.3's pictures aren't voice files either, so it moves to 1.1.3 / DLC 0.2.11; none of those three builds of this edition has been booted, in Azahar or on a console (the 1.1.2 and 1.1.3 emulator passes were on the English-voice edition only) |
 | File verification | every file is verified byte-for-byte on the way in and back out of the CIA, and all the writers reproduce the game's own files byte-identically |
 
 Full build-by-build history, including every measurement behind these updates, is kept in

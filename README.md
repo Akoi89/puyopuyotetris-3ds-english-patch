@@ -22,10 +22,10 @@ made while the work was going on and no shipped tool reproduces them, so treat t
 approximate; and the voice re-level tools used from 1.0.8 through 1.1.1 depend on local
 analysis helpers that live in a private work repo, not in `tools/`, so don't expect to
 rebuild that step yourself from what's published here. The same goes for the scripts
-that staged and checked 1.1.2's redrawn pictures, which aren't in `tools/` either. Where
+that staged and checked 1.1.2's and 1.1.3's redrawn pictures, which aren't in `tools/` either. Where
 something has not been verified, TESTING.md says so.
 
-**[Download the current build from Releases](../../releases/latest)** (build 1.1.2, DLC
+**[Download the current build from Releases](../../releases/latest)** (build 1.1.3, DLC
 0.2.11). What changed in each build is in [RELEASE_NOTES.md](RELEASE_NOTES.md). Also listed
 on [romhacking.net](https://www.romhacking.net/translations/7714/).
 
@@ -36,7 +36,11 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 > and the DLC install, the HOME menu tile shows the English logo, and the title screen and
 > main menu run. Since then the DLC Adventure chapters have been played on a console, and
 > Chapter 1 through to its end; later story chapters, the 1.0.15 bubble fix, and 1.1.0's and
-> 1.1.1's re-leveled voices are still worth reporting. 1.1.2 redraws 111 pictures and has
+> 1.1.1's re-leveled voices are still worth reporting. 1.1.3 fixes three more Japanese leftovers (the Tetris combo bar and chain notice, the replay speed hint
+> and the Magic School gate sign) and was checked in Azahar only as far as the title screen reading
+> ENG 1.1.3 and a letter showing on both gate pillars in the Staff Roll; the combo bar and chain
+> notice (neither has come up in a match yet), the replay hint and the gate in battles and cutscenes haven't been seen yet.
+> 1.1.2 redraws 111 pictures and has
 > been checked on an emulator only, not on a console. In Azahar (English-voice edition) the menus and tiles, Options, Versus setup, My Data, the Adventure mission panel and the "Ready" call all showed English, with no crash, freeze or garbled screen. Not seen yet: "Ready" in a versus match, the DLC chapter strips, the tournament card, the Japanese-voice edition and a console. 1.1.1 was checked
 > in Azahar on 28 September 2026: the title screen, the DLC stage's new shop sign, the
 > Adventure mission screen's new tag and its opening story text all showed correctly. The
@@ -63,10 +67,10 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 | **Patched base game** | `PuyoPuyoTetris-Base-xdelta.zip` (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or built from your dump with `tools/build_cia.py`, or `PuyoPuyoTetris-LayeredFS.zip` unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
 | The Japanese v1.2.0 update | code only; installs over the patched base safely |
 | **The DLC** | `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump, which produces the same file |
-| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: a base xdelta patch, a LayeredFS zip, and a DLC CIA, all at 1.1.2 / DLC 0.2.11 as of this build. Install one edition or the other, not both |
+| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: a base xdelta patch, a LayeredFS zip, and a DLC CIA, all at 1.1.3 / DLC 0.2.11 as of this build. Install one edition or the other, not both |
 
 Install order is base, then Japanese update, then DLC. The title screen reads **ENG
-1.1.2** on both editions, as it did at 1.1.1: this build's redrawn pictures aren't voice
+1.1.3** on both editions: this build's redrawn pictures aren't voice
 files, so the Japanese-voice edition carries the same version number as the English-voice
 build. The HOME menu jingle, not the version stamp, is what tells the two editions apart.
 
@@ -92,17 +96,16 @@ These are the current files on the v1.0.0 tag; the tag's files are replaced in p
 
 | File | Bytes | SHA-256 |
 |---|---|---|
-| `PuyoPuyoTetris-Base-xdelta.zip` | 168,153,129 | `3a9cee75d1bd369900f80bcc8fc7f1fe645991ace484d10f228210c9516b3825` |
+| `PuyoPuyoTetris-Base-xdelta.zip` | 168,209,259 | `d24f1dfeaad9e2a2267478d9dcc6a0b3172864aa5140e709c11788c7cd1096a8` |
 | `PuyoPuyoTetris-DLC-JP-voices-0.2.11.cia` | 116,165,696 | `200c41753fcd7f551b63c4f48868576d92e7e51a74872866674c1aa06d674b32` |
 | `PuyoPuyoTetris-DLC-patched.cia` | 111,885,376 | `b99410e2fb56471ce6fed691de8d3d264ef171a1d0117f51d0634e4f5fe58daa` |
 | `PuyoPuyoTetris-DLC-xdelta.zip` | 33,929,526 | `efb9e3c9fe9328be216ef44b5ee1536b0977db55afad1094c193aad379291b08` |
-| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 9,999,163 | `92df1f35fd0980fcf71b8fef202840d12b100c6edb23076475a01a43296b50be` |
-| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.2.zip` | 10,937,679 | `d7078f88382a7f571c6995075e8af99c06891515a35fb6f0b8d6a0acd902de57` |
-| `PuyoPuyoTetris-LayeredFS.zip` | 172,548,204 | `dc615346029f9bf9ca6d68cddcfcba87583662fd4e1db6f77863e962b7c4f3e9` |
-| `PuyoPuyoTetris-xdelta-patches-1.1.2.zip` | 202,239,617 | `a782a1f0b48ec158de56e50147e401e18410286e5cb5319abe9aa54c0bbc4e1e` |
+| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 10,283,834 | `2fd0eacc09a5c4ca97bf2c36cf4d00ebc5718781df3712f19d8d06973a83085c` |
+| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.3.zip` | 10,996,717 | `7071ffb11f8da6a5fa62931f16dadb286fa8fcddc48345aead2308ecb479d564` |
+| `PuyoPuyoTetris-LayeredFS.zip` | 172,832,866 | `20a944705d65a337b385d097e3fa8747c1c2c2214aa647ec90ff4b6b2f1990fe` |
+| `PuyoPuyoTetris-xdelta-patches-1.1.3.zip` | 202,295,916 | `97826816ef1ccc579ff8ce2ef140260196a27f28c4240bd81b5587e8a4608e48` |
 
-Every file changes this build, on both editions: the redrawn pictures are in both, so none
-of the eight files is carried over unchanged from 1.1.1.
+Five of the eight files change this build: the base game's xdelta zip, both LayeredFS zips and both patch bundles. The three DLC files carry over unchanged from 1.1.2.
 
 ## How it works
 

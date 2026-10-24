@@ -4,20 +4,60 @@ This is the full technical record of every build. RELEASE_NOTES.md is now
 written for players and kept short; everything that used to live there,
 including every figure and measurement, stays here in full.
 
-The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.1.2** with DLC 0.2.11 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar; 1.0.13 fixes the EX chapter line breaks and the Party-mode Time Up graphic; 1.0.14 raises two base-game speech bubbles; 1.0.15 re-breaks the base-game Adventure dialogue so no line runs past the bubble edge; 1.1.0 re-levels quiet battle and DLC voices and re-imports the base game's story voices; 1.1.1 puts Sega's text on lines that still carried the earlier fan translation's wording, re-levels the story voices a second time, and adds Steam's art for the mission "New!" tag, the Broadcast Station screens and the DLC shop; 1.1.2 redraws 111 pictures from Sega's original Japanese art and has been checked on an emulator only (Azahar, English-voice edition; see the 1.1.2 section below); 1.1.1 was booted in Azahar on 28 September 2026 with the DLC installed, where the title screen, the DLC stage's new shop sign, and the mission screen's "New!" tag and opening story text all showed correctly, but the re-levelled voices, the Broadcast Station art, the Japanese-voice edition and a real console are not yet confirmed). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
+The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.1.3** with DLC 0.2.11 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar; 1.0.13 fixes the EX chapter line breaks and the Party-mode Time Up graphic; 1.0.14 raises two base-game speech bubbles; 1.0.15 re-breaks the base-game Adventure dialogue so no line runs past the bubble edge; 1.1.0 re-levels quiet battle and DLC voices and re-imports the base game's story voices; 1.1.1 puts Sega's text on lines that still carried the earlier fan translation's wording, re-levels the story voices a second time, and adds Steam's art for the mission "New!" tag, the Broadcast Station screens and the DLC shop; 1.1.3 redraws the Tetris combo bar, the replay hint strip and the school gate sign; 1.1.2 redraws 111 pictures from Sega's original Japanese art and has been checked on an emulator only (Azahar, English-voice edition; see the 1.1.2 section below); 1.1.1 was booted in Azahar on 28 September 2026 with the DLC installed, where the title screen, the DLC stage's new shop sign, and the mission screen's "New!" tag and opening story text all showed correctly, but the re-levelled voices, the Broadcast Station art, the Japanese-voice edition and a real console are not yet confirmed). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
 
-- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.1.2**; the built CIA reports 1.1.2.
+- **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.1.3**; the built CIA reports 1.1.3.
 - **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates, plus the DLC stage's shop sign and stage icon (0.2.10) and six redrawn chapter title strip pictures (0.2.11). TMD 0.2.11.
-- **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 168,102,244 bytes) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). Dump the title as an encrypted CIA with GodMode9 and decrypt it on the PC; GodMode9's own decrypt gives a file of the right size that the patch refuses. It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
+- **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 168,209,259 bytes) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). Dump the title as an encrypted CIA with GodMode9 and decrypt it on the PC; GodMode9's own decrypt gives a file of the right size that the patch refuses. It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
 - **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
 - Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
-- **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. A base xdelta zip, a LayeredFS zip and a DLC CIA. Same title ID as the English-voice build; from 1.1.1 it carries the same ENG stamp as the English-voice build (**ENG 1.1.2** now), since 1.1.1's and 1.1.2's fixes are text and art, not voice files, and this edition is rebuilt for them. Install one edition or the other, not both. Details in the section below.
+- **Japanese-voice edition** (added 11 September 2026, asked for in [issue #2](../../issues/2)): the same English text and textures with every voice left as Sega's Japanese. A base xdelta zip, a LayeredFS zip and a DLC CIA. Same title ID as the English-voice build; from 1.1.1 it carries the same ENG stamp as the English-voice build (**ENG 1.1.3** now), since 1.1.1's, 1.1.2's and 1.1.3's fixes are text and art, not voice files, and this edition is rebuilt for them. Install one edition or the other, not both. Details in the section below.
 
 **Withdrawn the same day: an "update title" CIA.** It packaged the English data inside Sega's v1.2.0 update. Puyo Puyo Tetris's code only ever opens the base game's RomFS (path type 0) and never asks for an update RomFS (type 5), so the console and Azahar keep reading Sega's Japanese files no matter what the update carries. It did nothing. If you downloaded it, delete it and install the official update instead.
 
-The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.1.2 (below) is the current build.
+The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.1.3 (below) is the current build.
 
 ---
+
+## 1.1.3 / DLC 0.2.11
+
+A pictures-only build for the base game; the DLC is unchanged. Three Japanese leftovers were redrawn: the Tetris
+combo bar and the notice beside it, the replay speed hint strip, and the sign on the Magic School gate pillars. Six
+textures in five archives changed, in both editions. Text, voices and the program file are the same as 1.1.2; the
+only other file that changes is the title screen stamp, now **ENG 1.1.3**.
+
+**What changed.**
+- `tetris/tetris2p/tetris2p.narc`, member 7 (RGBA4): the combo bar reads "COMBO" where it said "REN" (the bar keeps
+  the 3DS version's navy colour, since every label on that side is navy; Sega's PC bar is grey), and the notice
+  that shows a chain of line clears reads "CHAIN!" and "LINES" where it had Japanese text and "LINE". The engine
+  draws these through fixed cells in the archive's layout data, so the lettering stays inside the original cells.
+- The Magic School gate: the Japanese "pu" character on both pillars is a Latin P in three textures,
+  `ingame_bg/bg_0030.narc` and `adventure_bg/bg_0030.narc` (ETC1A4, the sign is part of the brick picture, so the
+  surrounding brick was rebuilt with inpainting) and `ingame_bg/s_bg_0030.narc` (the small school scene). The credits
+  scene shows the gate too; which of the three pictures it draws was not pinned down, and all three are fixed.
+- `tenp/replay/replay.narc`: the replay speed hint strip reads "Press left/right to adjust playback speed!". That
+  is Sega's own wording; it is in the Steam data as `tenp/replay/replay_e` and an earlier note in this file saying
+  the strip was not found anywhere was wrong.
+- `title/title.narc`: the stamp.
+
+**How it was checked.** Both built CIAs were read back independently: the title version, contents 1 and 2, the program
+file and ExeFS identical to 1.1.2, the file system hash, and the file system compared with 1.1.2's, which differs in
+exactly six files (the five archives and title.narc) in each edition. Each replaced texture was decoded back out of the CIA and compared with its
+source picture: exact for the RGBA4 and compressed ones, and for the two ETC1A4 ones identical to the encoder's own
+preview with every pixel outside the block-aligned box unchanged from 1.1.2 (46 of 46 checks pass). ETC1A4 re-encodes
+whole 4x4 blocks, so pixels inside the edge blocks of the redrawn area can move slightly: at most 21 levels in the
+brick pillar blocks of the battle picture and one visible pixel (10 levels) in the adventure picture. The two
+compressed pictures got smaller than the shipped ones at the same decompressed size. The xdelta patches were built
+and proven as in 1.1.2.
+
+**Checked in a game.** In Azahar (English-voice edition only): the title stamp reads ENG 1.1.3, and the credits scene
+shows a Latin letter on both gate pillars (at that size it reads a little like a lowercase p). Not seen: the combo bar
+and the CHAIN!/LINES notice (they only show in a Tetris match that reaches a combo), the replay strip (needs a saved
+replay), the gate in the battle and small-scene pictures (no Versus stage uses it) and the adventure cutscenes, and
+nothing has been run on a console.
+
+LayeredFS: the five archives are new files in the zips (they were untouched Japanese originals in 1.1.2's), so the
+zips grow by those and the new title.narc.
 
 ## 1.1.2 / DLC 0.2.11
 
@@ -164,7 +204,7 @@ the Broadcast Station badges (online-only, so far checked only as rendered image
 Japanese-voice edition (same files verified byte for byte identical, but not run), and a real
 console.
 
-## Japanese-voice edition (first released 11 September 2026 for 1.0.12, now 1.1.2 / DLC 0.2.11)
+## Japanese-voice edition (first released 11 September 2026 for 1.0.12, now 1.1.3 / DLC 0.2.11)
 
 Asked for in issue #2: the English text without the English voices. This is
 the 1.0.12 build taken apart and put back together with its `sound` folder
@@ -200,6 +240,8 @@ and art overlay, but it has not been run.
 
 **1.1.2 rebuilds it again** with the same picture overlay as the English-voice build (the `sound` folder
 stays Sega's Japanese one), and both editions read **ENG 1.1.2 / DLC 0.2.11**.
+
+**1.1.3 rebuilds it again** with the same six replaced textures and the new stamp, and both editions read **ENG 1.1.3 / DLC 0.2.11**; this edition's 1.1.3 build has not been booted.
 
 ## Current build before this one: 1.1.0 / DLC 0.2.9
 

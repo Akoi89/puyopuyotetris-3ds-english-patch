@@ -22,6 +22,7 @@ yet heard running. |
 the mission screen's tag and the DLC stage's shop sign showed correctly; the Broadcast
 Station screens are online-only and still checked only as rendered images, not confirmed
 running. |
+| Redrawn pictures (1.1.3) | Three more Japanese leftovers redrawn in five archives, both editions. The Tetris combo bar says "COMBO" (it said "REN") and the chain notice beside it says "CHAIN!" and "LINES". The replay speed hint strip says "Press left/right to adjust playback speed!", in Sega's wording. The Magic School gate sign was the Japanese "pu" character on both pillars, in three background pictures (battles, the small school scene and cutscenes); it is a P now. Checked by reading the pictures back out of the built files, and in Azahar only the title stamp (ENG 1.1.3) and the gate letter in the Staff Roll; the combo bar and the CHAIN!/LINES notice (neither has come up in a match yet), the replay hint, and the gate in battles and cutscenes have not been seen. |
 | Redrawn pictures (1.1.2) | 111 pictures redrawn from Sega's original Japanese art: 105 in the base game (33 archives) and 6 on the DLC chapter title strips (6 archives). The earlier English lettering had problems, so plates, pills and icons that an earlier pass had erased are restored, the lettering follows the original's outline, shading and size, text in grids is one consistent size, and some Japanese leftovers are English now. Some textures were slightly washed out or see-through from a 4-bit colour rounding that came in with the earlier fan translation, and are exact again. Small wording changes: the wins counter (was "beaten"), "Chain FX" for the Chain Animations option, "chains+" and "colors+" in a rule tip, "RANK" on the club rank pill, "Interstellar Dream" (was "An Interstellar Dream") on a DLC chapter strip, the tournament card's "Wins" / "High Score:" / "Final Score:" (were "beaten" / "Best Record" / "This Run"), and "Big Bang Mode" (was "Bing Bang Mode"). Two main menu tile previews are among the pictures: the Online tile now reads "Must Watch!" and "Choose a replay", and the My Data Options tile shows "Tokyo" for Location. The "Ready" call (a picture shown before a match) was redrawn after an emulator pass showed its last letter cut off, and shows whole in the second pass. Checked on an emulator only (Azahar, English-voice edition): the "Ready" call in six solo modes (Endless Puyo, Endless Fever, Marathon, Sprint, Tiny Puyo, Ultra), the two tile previews and the Endless Puyo Puyo mode card; not in a versus match. |
 | DLC shop icons | 33 redrawn, plus 1.1.1's DLC stage shop sign and icon above. |
 | Font atlases | the game pre-renders only the glyphs each screen uses; every screen that gained English got a matching atlas, verified per section |
@@ -35,17 +36,17 @@ sign and icon were confirmed on screen in Azahar on 28 September 2026; the Broad
 badges are still checked only as rendered images. |
 | HOME menu banner | Sega's official English "PuyoPuyo" logo swapped into the shared texture in place of the Japanese one, keeping Sega's TETRIS art untouched; this is in a locally built CIA only, since LayeredFS cannot change a banner |
 
-Still not right in 1.1.2: a few labels are wider than the box the original art had for them,
+Still not right in 1.1.3: a few labels are wider than the box the original art had for them,
 some of the small grids use condensed lettering to fit, four small rank-suffix pictures (the
 Japanese mark that follows a rank number) on two replay and league screens are still Japanese,
 and the right-hand column on the tournament screens is text the game builds itself and may
-read oddly. Eleven other pictures still show Japanese, mostly small tile previews I did not redraw: one picture holding six tile previews (league standings, stats, game settings, the EX chapter 8 tile, a replay tile and club info), three Solo Arcade tile pictures (their mode, level and counter labels), two rule-settings pictures (Classic, Wins, Margin Time and similar labels; I have not confirmed either is shown in the game), the vertical club sign-up label, the replay speed hint strip, the "this league's results" text at the top right of one result screen, and two Puzzle League emblem pictures (faint laurels, and a dark emblem I could not read).
+read oddly. Ten other pictures still show Japanese, mostly small tile previews I did not redraw: one picture holding six tile previews (league standings, stats, game settings, the EX chapter 8 tile, a replay tile and club info), three Solo Arcade tile pictures (their mode, level and counter labels), two rule-settings pictures (Classic, Wins, Margin Time and similar labels; I have not confirmed either is shown in the game), the vertical club sign-up label, the "this league's results" text at the top right of one result screen, and two Puzzle League emblem pictures (faint laurels, and a dark emblem I could not read).
 
 Still Japanese on purpose, added in 1.1.1: a faint Puzzle League medal crest (Sega's
 English version read worse once fitted here), the Slot rule's "N more Puyo" counter, and a
 handful of online menu preview cards; none of the three has a usable English source in
 Sega's PC release. What stays Japanese, and why, is in [TESTING.md](TESTING.md). The
-Japanese-voice edition carries 1.1.1's and 1.1.2's text and art fixes too, since neither touches a
+Japanese-voice edition carries 1.1.1's, 1.1.2's and 1.1.3's text and art fixes too, since none of them touches a
 voice file; the voice work in this row and the two above it is not in that edition.
 
 ---
@@ -119,4 +120,4 @@ that ship here (the text and archive formats, the encoders and writers, the atla
 the same ones used to build the result, but the specific scripts that picked which of the
 367 lines to replace and re-ran the loudness match are not published.
 
-The scripts that staged and checked 1.1.2's 111 redrawn pictures are working scripts; they are not in `tools/`.
+The scripts that staged and checked 1.1.2's 111 and 1.1.3's redrawn pictures are working scripts; they are not in `tools/`.
