@@ -26,7 +26,7 @@ that staged and checked 1.1.2's and 1.1.3's redrawn pictures, which aren't in `t
 something has not been verified, TESTING.md says so.
 
 **[Download the current build from Releases](../../releases/latest)** (build 1.1.3, DLC
-0.2.11). What changed in each build is in [RELEASE_NOTES.md](RELEASE_NOTES.md). Also listed
+0.3.3). What changed in each build is in [RELEASE_NOTES.md](RELEASE_NOTES.md). Also listed
 on [romhacking.net](https://www.romhacking.net/translations/7714/).
 
 > ### Playtesters wanted
@@ -36,7 +36,11 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 > and the DLC install, the HOME menu tile shows the English logo, and the title screen and
 > main menu run. Since then the DLC Adventure chapters have been played on a console, and
 > Chapter 1 through to its end; later story chapters, the 1.0.15 bubble fix, and 1.1.0's and
-> 1.1.1's re-leveled voices are still worth reporting. 1.1.3 fixes three more Japanese leftovers (the Tetris combo bar and chain notice, the replay speed hint
+> 1.1.1's re-leveled voices are still worth reporting. DLC 0.3.3 is a smaller DLC file that holds only the
+> parts that carry anything, so it starts in about 12 seconds instead of about a minute and a half on one
+> console. A test build with the same contents was played through on that console (the DLC skins, stages
+> and EX chapter 8, no crashes). The 0.3.3 files themselves, the re-broken lines in EX chapters 8 to 10
+> and the Japanese-voice DLC haven't been run yet. 1.1.3 fixes three more Japanese leftovers (the Tetris combo bar and chain notice, the replay speed hint
 > and the Magic School gate sign) and was checked in Azahar only as far as the title screen reading
 > ENG 1.1.3 and a letter showing on both gate pillars in the Staff Roll; the combo bar and chain
 > notice (neither has come up in a match yet), the replay hint and the gate in battles and cutscenes haven't been seen yet.
@@ -66,8 +70,8 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 | Japanese *Puyo Puyo Tetris* (3DS) | your own copy |
 | **Patched base game** | `PuyoPuyoTetris-Base-xdelta.zip` (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or built from your dump with `tools/build_cia.py`, or `PuyoPuyoTetris-LayeredFS.zip` unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
 | The Japanese v1.2.0 update | code only; installs over the patched base safely |
-| **The DLC** | `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump, which produces the same file |
-| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: a base xdelta patch, a LayeredFS zip, and a DLC CIA, all at 1.1.3 / DLC 0.2.11 as of this build. Install one edition or the other, not both |
+| **The DLC** | `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump, which produces the same file. If an older DLC is installed, install this one over it. |
+| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: a base xdelta patch, a LayeredFS zip, and a DLC CIA, all at 1.1.3 / DLC 0.3.3 as of this build. Install one edition or the other, not both |
 
 Install order is base, then Japanese update, then DLC. The title screen reads **ENG
 1.1.3** on both editions: this build's redrawn pictures aren't voice
@@ -97,15 +101,15 @@ These are the current files on the v1.0.0 tag; the tag's files are replaced in p
 | File | Bytes | SHA-256 |
 |---|---|---|
 | `PuyoPuyoTetris-Base-xdelta.zip` | 168,209,259 | `d24f1dfeaad9e2a2267478d9dcc6a0b3172864aa5140e709c11788c7cd1096a8` |
-| `PuyoPuyoTetris-DLC-JP-voices-0.2.11.cia` | 116,165,696 | `200c41753fcd7f551b63c4f48868576d92e7e51a74872866674c1aa06d674b32` |
-| `PuyoPuyoTetris-DLC-patched.cia` | 111,885,376 | `b99410e2fb56471ce6fed691de8d3d264ef171a1d0117f51d0634e4f5fe58daa` |
-| `PuyoPuyoTetris-DLC-xdelta.zip` | 33,929,526 | `efb9e3c9fe9328be216ef44b5ee1536b0977db55afad1094c193aad379291b08` |
+| `PuyoPuyoTetris-DLC-JP-voices-0.3.3.cia` | 102,921,088 | `0ebda2b9af2d03ad42e01a0c24f2bd8636634a480f7f608d41db85a6f75e099b` |
+| `PuyoPuyoTetris-DLC-patched.cia` | 98,640,768 | `20699aa35a00b1af145f73a392449011d93b160cdf1b8596c06e4d88d7004a1b` |
+| `PuyoPuyoTetris-DLC-xdelta.zip` | 33,897,980 | `e8e50776e3b9dc73967c112e54932a54a8ddfe3f68c741ccffd7c8b33db3a2d3` |
 | `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 10,283,834 | `2fd0eacc09a5c4ca97bf2c36cf4d00ebc5718781df3712f19d8d06973a83085c` |
-| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.3.zip` | 10,996,717 | `7071ffb11f8da6a5fa62931f16dadb286fa8fcddc48345aead2308ecb479d564` |
+| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.3.zip` | 10,964,740 | `6bc697675d06496c2ab36488ffebcf470c41cb7e725fcc3186fa53415243b713` |
 | `PuyoPuyoTetris-LayeredFS.zip` | 172,832,866 | `20a944705d65a337b385d097e3fa8747c1c2c2214aa647ec90ff4b6b2f1990fe` |
-| `PuyoPuyoTetris-xdelta-patches-1.1.3.zip` | 202,295,916 | `97826816ef1ccc579ff8ce2ef140260196a27f28c4240bd81b5587e8a4608e48` |
+| `PuyoPuyoTetris-xdelta-patches-1.1.3.zip` | 202,264,368 | `a0c8cb5e4f1dc5c982e4f61161dd5c4bce1f7fb5494c68b100433e61f5bb3482` |
 
-Five of the eight files change this build: the base game's xdelta zip, both LayeredFS zips and both patch bundles. The three DLC files carry over unchanged from 1.1.2.
+Five of the eight files change this build: both DLC CIAs, the DLC xdelta zip and both patch bundles. The three base-game zips (the base xdelta zip and both LayeredFS zips) carry over unchanged from 1.1.3.
 
 ## How it works
 

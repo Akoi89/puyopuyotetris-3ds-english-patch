@@ -4,10 +4,10 @@ This is the full technical record of every build. RELEASE_NOTES.md is now
 written for players and kept short; everything that used to live there,
 including every figure and measurement, stays here in full.
 
-The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.1.3** with DLC 0.2.11 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar; 1.0.13 fixes the EX chapter line breaks and the Party-mode Time Up graphic; 1.0.14 raises two base-game speech bubbles; 1.0.15 re-breaks the base-game Adventure dialogue so no line runs past the bubble edge; 1.1.0 re-levels quiet battle and DLC voices and re-imports the base game's story voices; 1.1.1 puts Sega's text on lines that still carried the earlier fan translation's wording, re-levels the story voices a second time, and adds Steam's art for the mission "New!" tag, the Broadcast Station screens and the DLC shop; 1.1.3 redraws the Tetris combo bar, the replay hint strip and the school gate sign; 1.1.2 redraws 111 pictures from Sega's original Japanese art and has been checked on an emulator only (Azahar, English-voice edition; see the 1.1.2 section below); 1.1.1 was booted in Azahar on 28 September 2026 with the DLC installed, where the title screen, the DLC stage's new shop sign, and the mission screen's "New!" tag and opening story text all showed correctly, but the re-levelled voices, the Broadcast Station art, the Japanese-voice edition and a real console are not yet confirmed). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
+The completed English patch. This release tag is v1.0.0; the assets on it are replaced in place with each build, and the current one is **1.1.3** with DLC 0.3.3 (see below). **Booted on a New 3DS** on 6 September 2026 (install, HOME menu, title and main menu; 1.0.11 fixes the misaligned error dialogs that run found; 1.0.12 changes eight textures and was checked in Azahar; 1.0.13 fixes the EX chapter line breaks and the Party-mode Time Up graphic; 1.0.14 raises two base-game speech bubbles; 1.0.15 re-breaks the base-game Adventure dialogue so no line runs past the bubble edge; 1.1.0 re-levels quiet battle and DLC voices and re-imports the base game's story voices; 1.1.1 puts Sega's text on lines that still carried the earlier fan translation's wording, re-levels the story voices a second time, and adds Steam's art for the mission "New!" tag, the Broadcast Station screens and the DLC shop; 1.1.3 redraws the Tetris combo bar, the replay hint strip and the school gate sign; 1.1.2 redraws 111 pictures from Sega's original Japanese art and has been checked on an emulator only (Azahar, English-voice edition; see the 1.1.2 section below); 1.1.1 was booted in Azahar on 28 September 2026 with the DLC installed, where the title screen, the DLC stage's new shop sign, and the mission screen's "New!" tag and opening story text all showed correctly, but the re-levelled voices, the Broadcast Station art, the Japanese-voice edition and a real console are not yet confirmed). DLC 0.3.3 trims the DLC to the 57 contents that carry anything and re-breaks 27 lines in EX chapters 8 to 10; the 0.3.3 files have not been booted (see the DLC 0.3.3 section). Every file is verified byte-for-byte; base and DLC were tested in Azahar. See TESTING.md, and report problems in [issue #1](../../issues/1).
 
 - **Base game** (~99% of displayed text, all 37 characters' in-battle voices, the online UI textures, the HOME menu banner): build it from your own dump with `tools/build_cia.py`, or use **`PuyoPuyoTetris-LayeredFS.zip`** on Luma3DS. Title screen reads **ENG 1.1.3**; the built CIA reports 1.1.3.
-- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates, plus the DLC stage's shop sign and stage icon (0.2.10) and six redrawn chapter title strip pictures (0.2.11). TMD 0.2.11.
+- **`PuyoPuyoTetris-DLC-patched.cia`**: three story chapters, text and voices (760 of 763 clips), 33 shop icons and the three EX chapter plates, plus the DLC stage's shop sign and stage icon (0.2.10) and six redrawn chapter title strip pictures (0.2.11), then trimmed to the 57 contents that carry anything, with a smaller Suzuran Jr. High 4 name and 27 re-broken EX chapter lines (0.3.3, 98,640,768 bytes). TMD 0.3.3.
 - **`PuyoPuyoTetris-Base-xdelta.zip`**: the base game as an xdelta3 patch (about 168,209,259 bytes) for your own DECRYPTED dump (Batch CIA 3DS Decryptor turns a base game dump into a decrypted .cci; that .cci is the source). Dump the title as an encrypted CIA with GodMode9 and decrypt it on the PC; GodMode9's own decrypt gives a file of the right size that the patch refuses. It builds the full English CIA including the English HOME menu banner, which LayeredFS cannot change. The README inside has the hashes and the command.
 - **`PuyoPuyoTetris-DLC-xdelta.zip`**: the same DLC as an xdelta3 patch for people who would rather build it from their own dump. Apply it to your DECRYPTED Japanese DLC dump (Batch CIA 3DS Decryptor); the README inside has the hashes and the one-line command. The result is byte for byte the released DLC CIA.
 - Install order: Japanese base, patched base (or LayeredFS), Japanese v1.2.0 update (code only), this DLC.
@@ -15,9 +15,103 @@ The completed English patch. This release tag is v1.0.0; the assets on it are re
 
 **Withdrawn the same day: an "update title" CIA.** It packaged the English data inside Sega's v1.2.0 update. Puyo Puyo Tetris's code only ever opens the base game's RomFS (path type 0) and never asks for an update RomFS (type 5), so the console and Azahar keep reading Sega's Japanese files no matter what the update carries. It did nothing. If you downloaded it, delete it and install the official update instead.
 
-The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.1.3 (below) is the current build.
+The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion review of the hand-written text; 1.1.3 with DLC 0.3.3 (below) is the current build.
 
 ---
+
+## DLC 0.3.3
+
+The DLC file is smaller and starts much faster, and 27 text lines in EX chapters 8 to 10 break in new places so they
+fit. The base game is unchanged from 1.1.3 (the title screen still reads ENG 1.1.3), and both editions get all of it.
+DLC 0.2.12, which carried the Suzuran plate fix below, was built but never published on its own; it is folded into
+0.3.3, so the last published DLC before this one is 0.2.11.
+
+**Trimmed from 701 contents to 57.** Sega's DLC has 701 content slots. Only 57 carry anything. The other 644 are one
+identical 20,480-byte wrapper each (13,189,120 bytes together, 11.4% of the file), and each holds a single 1-byte file
+called `dlc_dummy.dat`. The 57 that stay, by content index in hex: 0000 (the content list and 44 item icons); 0010 to
+0012 (the three EX chapters, 8, 9 and 10, with their voice streams: 252, 252 and 319 files); 0065 to 0070 (12 music
+banks); 00c9 to 00cd (stage backgrounds); 012d to 0138 (12 character voice banks); 0190 to 0195, 019b and 01c3 (Puyo
+skins); 01f4 to 01f9, 01fe and 01ff (Tetrimino skins); 0259 to 0260 (8 greeting packs, each a 1-byte file). Every kept
+content keeps its id and its index, nothing is renumbered, and the CIA header's content-index bitmap has exactly
+those 57 bits. Sizes, 0.2.12 to 0.3.3: English-voice 111,860,800 to 98,640,768 bytes, Japanese-voice 116,141,120 to
+102,921,088 (the published 0.2.11 files were 111,885,376 and 116,165,696). The TMD version is 0.3.3 (value 51), above
+the 0.3.2 test build (50). Nothing is removed from the game: no art, voice, music or script is lost, only the empty
+slots.
+
+**Start times.** One console (a tester's, issue #1, 21 and 22 October 2026): no DLC installed 6.74 s, Sega's own
+untouched DLC 91.9 s (1 min 32 s), the trimmed 57-content build 11.84 s. That works out to about 0.1 s per content
+slot (about 0.12 s per slot over the 701, about 0.09 s per slot over the 57), whatever the slot's size.
+
+**Hardware test build.** A test build with the same 57 contents (version 0.3.2, built from 0.2.12 with the Suzuran
+fix) was installed and played through on that console on 22 October 2026: all DLC skins, stages and EX chapter 8, no
+crashes. The independent review also compared the Japanese-voice 0.3.3 ticket and TMD with that test build's and found
+them identical apart from the versions and the hashes of contents 0010 to 0012.
+
+**The Suzuran plate.** In 0.2.11 the selected "Suzuran Jr. High 4" stage name overran its plate (the reporter's
+screenshot). The name is now drawn a little smaller. That change came in with 0.2.12 and is part of the test build too;
+I have no report on whether it now sits inside the plate.
+
+**27 text re-breaks** in five tables: adv_menu08 (2 conditions), adv_menu09 (3 conditions), vs_adv_08 (4 result
+quotes), vs_adv_09 (8) and vs_adv_10 (10), so 22 result quotes and 5 level-select clear conditions. Only the break
+position moved: a line break replaces a space, the words of every string are identical to before (asserted string by
+string), section and entry counts match 0.2.12's, and each of the five tables is the same byte size as before. Limits
+used: result quotes 255 px and at most 3 lines; level-select conditions 185 px and at most 2 lines (the chapter 8-9
+condition at 198 px spilled past its box in the reporter's capture). Widths come from a width model through the Latin
+atlas, calibrated on the reporter's captures of 8-6, 8-7 and 8-9 to within a few pixels. Before, the widest quote
+line was 376 px (vs_adv_10 entry 9); after, the widest re-broken quote line is 227 px and the widest condition line
+149 px. Examples: "The more Puyos you pop at one time," / "the more points you rack up!" (279 and 216 px) now
+reads over three lines at 121, 154 and 216 px; "Score 50,000 pts before reaching" / "Level 10!" (197 and 52 px) now
+reads "Score 50,000 pts before" / "reaching Level 10!" (144 and 105 px). No quote or condition has had a word added or
+removed.
+
+**One quote needs four lines.** vs_adv_09 entry 3 (the Back-to-Back Tetris hint) does not fit in three lines under
+the limit, so it is set in four (163, 198, 219 and 226 px). No result quote in the game has used four lines before,
+and where the fourth line lands has not been seen.
+
+**The 255 px limit is soft.** The calibration records I have disagree about where a result quote clips: somewhere
+between 251 and 277 px. The 27 re-broken lines are at most 227 px, so they are safe either way. About ten unchanged
+quotes at 250 to 255 px might sit at the edge: vs_adv_09 entries 0, 2, 4, 8, 14 and 19; vs_adv_08 entries 3 and 17;
+vs_adv_10 entries 11 and 15. I left them alone.
+
+**Read-back.** Both CIAs were read back with a separate parser, not the build's own: 81 checks, 0 failures. They cover
+size and hash, the TMD content count (57, against 701 before), version fields, 57 unique ascending ids with id equal to
+index, every chunk hash, the info record and top hash, the TMD size field, the CIA header bitmap, certificates
+identical, the ticket identical except its version, the file lists of contents 0010, 0011 and 0012 (252, 252 and 319
+files), that exactly the five text tables differ from 0.2.12 (the other 250, 250 and 318 files are byte-identical),
+the section and entry counts, and that the two editions carry identical text. An independent review re-measured all 27
+strings and accepted the build.
+
+**Failure classes.** (A) Nothing grows: the three changed contents are exactly the byte size they had in 0.2.12
+(English-voice 11,403,264 / 9,367,552 / 13,099,008), and the largest kept content equals the largest in 0.2.12, which
+ran on a console as 0.2.11 and as the test build. (B) No index shifts, as above; I could not prove that no game code
+tests an empty slot by index, and the test build ran without that surfacing. (C) No new control codes; only the
+position of an existing line break moved. (D) The three contents were rebuilt with the same file-system tool as every
+earlier DLC build, and the TMD records and hashes were recomputed. (E) See the patches below. (F, H) Hardware and
+saves: see the next two paragraphs.
+
+**The ticket still licenses 1,024 indices.** The ticket's content-index table is unchanged from Sega's: one bitmap
+block licensing all 1,024 indices, while the TMD lists 57. The hardware-tested 0.3.2 test build had exactly the same
+property and installed and ran, so this adds no new risk, but no test has isolated it.
+
+**Installing over an older DLC, and saves.** Whether installing this over an older 701-content DLC, and a save made
+with the full DLC, load cleanly was not isolated by the one hardware test. The tester's report (the unlocks showed,
+skins and stages were usable, EX chapter 8 played) is the only evidence, and it does not say whether the save predated
+the install. Nothing a save stores is changed by the text edit.
+
+**Patches.** The two DLC xdelta patches (English-voice 33,886,347 bytes, Japanese-voice 2,558,230 bytes) were built
+with `-a -A` against a source whose whole header region (CIA header, certificates, ticket, TMD) is scrambled, so they
+carry neither the source's hash nor a local path. Each reproduced the target hash from the real source, from two
+copies with perturbed ticket bytes and from one copy with the whole header randomised. The three rebuilt zips (the
+DLC zip, 33,897,980 bytes, and the two patch bundles, 202,264,368 and 10,964,740 bytes) were extracted and applied
+with their own xdelta3.exe, and every output matched. A fresh Batch CIA 3DS Decryptor run on the encrypted DLC dump
+decrypted all 701 contents but produced no output file in my environment, so the "fresh decrypt" case rests on the
+decryptor output used for the build (it differs from the encrypted dump only in ticket bytes and the CIA-layer
+decrypt) plus the whole-header-randomised copy, which covers every byte the decryptor varies.
+
+**Not verified.** The 0.3.3 CIAs have not been installed or booted anywhere, in either edition; the only hardware
+evidence is the 0.3.2 test build with the same 57 contents. The 27 re-broken lines have not been seen in the game.
+The four-line quote, the unchanged quotes near the width limit, the Suzuran plate, installing over an older DLC and
+the ticket's 1,024 indices are all as described above.
 
 ## 1.1.3 / DLC 0.2.11
 
@@ -204,7 +298,7 @@ the Broadcast Station badges (online-only, so far checked only as rendered image
 Japanese-voice edition (same files verified byte for byte identical, but not run), and a real
 console.
 
-## Japanese-voice edition (first released 11 September 2026 for 1.0.12, now 1.1.3 / DLC 0.2.11)
+## Japanese-voice edition (first released 11 September 2026 for 1.0.12, now 1.1.3 / DLC 0.3.3)
 
 Asked for in issue #2: the English text without the English voices. This is
 the 1.0.12 build taken apart and put back together with its `sound` folder
@@ -242,6 +336,8 @@ and art overlay, but it has not been run.
 stays Sega's Japanese one), and both editions read **ENG 1.1.2 / DLC 0.2.11**.
 
 **1.1.3 rebuilds it again** with the same six replaced textures and the new stamp, and both editions read **ENG 1.1.3 / DLC 0.2.11**; this edition's 1.1.3 build has not been booted.
+
+**DLC 0.3.3 rebuilds its DLC** the same way as the English-voice one: 57 contents instead of 701 (102,921,088 bytes), the same five text tables re-broken, the Suzuran plate fix, and the same Japanese voice streams as before. The earlier remark that 676 of its 701 contents are the Japanese DLC byte for byte describes the old layout. This DLC 0.3.3 build has not been installed or booted.
 
 ## Current build before this one: 1.1.0 / DLC 0.2.9
 
