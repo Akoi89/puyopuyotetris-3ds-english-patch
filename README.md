@@ -104,12 +104,12 @@ These are the current files on the v1.0.0 tag; the tag's files are replaced in p
 | `PuyoPuyoTetris-DLC-JP-voices-0.3.3.cia` | 102,921,088 | `0ebda2b9af2d03ad42e01a0c24f2bd8636634a480f7f608d41db85a6f75e099b` |
 | `PuyoPuyoTetris-DLC-patched.cia` | 98,640,768 | `20699aa35a00b1af145f73a392449011d93b160cdf1b8596c06e4d88d7004a1b` |
 | `PuyoPuyoTetris-DLC-xdelta.zip` | 33,897,980 | `e8e50776e3b9dc73967c112e54932a54a8ddfe3f68c741ccffd7c8b33db3a2d3` |
-| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 10,283,834 | `2fd0eacc09a5c4ca97bf2c36cf4d00ebc5718781df3712f19d8d06973a83085c` |
+| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 20,043,525 | `9a20d3ca89710f724d831a598bb58f7bd1835d8ec6bdef70fe4869ff5b2f9555` |
 | `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.3.zip` | 10,964,740 | `6bc697675d06496c2ab36488ffebcf470c41cb7e725fcc3186fa53415243b713` |
-| `PuyoPuyoTetris-LayeredFS.zip` | 172,832,866 | `20a944705d65a337b385d097e3fa8747c1c2c2214aa647ec90ff4b6b2f1990fe` |
+| `PuyoPuyoTetris-LayeredFS.zip` | 182,613,184 | `d289a1c002a55af9e0472b3468aeacd52ae01bea81693869c0cd7673f5096def` |
 | `PuyoPuyoTetris-xdelta-patches-1.1.3.zip` | 202,264,368 | `a0c8cb5e4f1dc5c982e4f61161dd5c4bce1f7fb5494c68b100433e61f5bb3482` |
 
-Five of the eight files change this build: both DLC CIAs, the DLC xdelta zip and both patch bundles. The three base-game zips (the base xdelta zip and both LayeredFS zips) carry over unchanged from 1.1.3.
+The two LayeredFS zips were re-uploaded on 28 October 2026. Earlier copies were missing about 120 files (the character name plates, the save and replay screens and a lot of text), so a game running from them showed a mix of English and Japanese. If you used one before that date, download it again. The other six files are unchanged from the DLC 0.3.3 upload.
 
 ## How it works
 

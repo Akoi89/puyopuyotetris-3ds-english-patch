@@ -19,6 +19,24 @@ The Japanese base game is not distributed here. 1.0.1 folded in a second-opinion
 
 ---
 
+## LayeredFS zips re-uploaded, 28 October 2026
+
+A forum report (Japanese New 2DS XL, LayeredFS zip) showed scattered letters in the Online box, the VS name plates still
+Japanese and an empty save box. Cause: both LayeredFS zips were built from the files this project had overridden, not from
+everything the built romfs changes, so they left out files the CIAs carry. Measured by walking the English file tree the
+CIAs are built from, skipping sound/: 99 changed files were in the English zip and 120 were not (58 text files, 30 character
+name plates, the save, replay and dialog archives and a set of menus). Several of the missing text files are font-variant
+files, so a game running from the zip drew English strings with the Japanese font file and only a few letters showed.
+The same gap was noted at 1.1.2 and not fixed. The CIA and xdelta routes were never affected.
+
+The rebuilt zips keep every earlier entry byte for byte and add every file of the built romfs that differs from the Japanese
+original: the English zip goes from 2,465 to 2,586 entries (172,832,866 to 182,613,184 bytes), the Japanese-voice zip from
+144 to 264 (10,283,834 to 20,043,525 bytes). The romfs they were built from is byte-equal to the romfs inside the shipped
+1.1.3 CIAs (both editions). Laid over the Japanese original, the English zip reproduces the built romfs for all 3,911 files;
+the Japanese-voice zip reproduces 3,910, the exception being one story stream (`sound/stream/MZV_07_01_1_039.dspadpcm.bcstm`)
+that is absent from the Japanese original and that this edition's zip has never carried. Each zip's README says what changed.
+The build is still 1.1.3. Neither rebuilt zip has been run on a console or in an emulator.
+
 ## DLC 0.3.3
 
 The DLC file is smaller and starts much faster, and 27 text lines in EX chapters 8 to 10 break in new places so they
