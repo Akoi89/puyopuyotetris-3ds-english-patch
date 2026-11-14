@@ -41,7 +41,7 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 > console. A test build with the same contents was played through on that console (the DLC skins, stages
 > and EX chapter 8, no crashes). The 0.3.3 files themselves, the re-broken lines in EX chapters 8 to 10
 > and the Japanese-voice DLC haven't been run yet. 1.1.4 puts the Tetris combo bar back to Sega's original art, which reads "REN" (the "COMBO" I drew for 1.1.3 sat
-> under the game's combo number, so only "MBO" showed); it hasn't been booted yet. 1.1.3's other fixes (the chain notice, the
+> under the game's combo number, so only "MBO" showed); it boots in Azahar and the title screen reads ENG 1.1.4, but I haven't seen the bar next to a combo number yet. 1.1.3's other fixes (the chain notice, the
 > replay speed hint and the Magic School gate sign) were checked in Azahar only as far as the title screen and a letter
 > showing on both gate pillars in the Staff Roll; the chain notice (it hasn't come up in a match yet), the replay hint and
 > the gate in battles and cutscenes haven't been seen yet.
