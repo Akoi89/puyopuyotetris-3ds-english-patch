@@ -30,12 +30,12 @@ Sega's. Uninstall it and install the official update instead.
 
 ## How to tell which build you have
 
-- The title screen logo's pink subtitle strip reads **ENG 1.1.3** at its right
+- The title screen logo's pink subtitle strip reads **ENG 1.1.4** at its right
   end on both editions. The Japanese-voice edition carries the same version
   stamp as the English-voice one, since this build's redrawn pictures aren't
   voice files; the HOME menu jingle is the only way to tell which edition is
   running.
-- The console lists the base game as version **1.1.3** and the DLC as
+- The console lists the base game as version **1.1.4** and the DLC as
   **0.3.3**, on either edition (the fan build and the shipped DLC were
   0.0.0 / 0.1.0).
 - **Japanese-voice edition**: same title ID as the English-voice build, so
@@ -79,11 +79,11 @@ These are the ones I'd most like to hear about, because they're the ways this pa
 - **DLC 0.3.3 on a console.** The smaller DLC file, EX chapters 8 to 10 (the result quotes after a match and
   the clear conditions on the level-select screen, which now break in new places), the "Suzuran Jr. High 4"
   name plate, and installing it over an older DLC. A photo of any line that runs off its box is useful.
-- **1.1.3's combo bar, replay hint and gate sign.** The Tetris combo bar ("COMBO") and the chain
-  notice ("CHAIN!" and "LINES") haven't come up in a match yet, so a photo of a
-  combo in a mixed match is useful. The replay speed hint needs a saved replay. The Magic School
-  gate sign was seen as a letter on both pillars in the Staff Roll; battles and cutscenes
-  on that stage haven't been seen.
+- **1.1.4's combo bar, 1.1.3's chain notice, replay hint and gate sign.** The Tetris combo bar ("REN", the original
+  picture) next to a two-digit combo number, and the chain notice ("CHAIN!" and "LINES"), haven't come up in a
+  match yet, so a photo of a combo in a mixed match is useful. The replay speed hint needs a saved replay. The
+  Magic School gate sign was seen as a letter on both pillars in the Staff Roll; battles and cutscenes on that
+  stage haven't been seen.
 - **1.1.2's redrawn pictures on a console.** The menus (two of them
   tile previews on the main menu), the Club, the internet, replay and results
   screens, the "Ready" call, the tournament card and the DLC chapter strips have been looked at in an emulator only. A label that runs
@@ -168,6 +168,7 @@ you're looking at something and you're not sure which side it falls on, just tel
 | Character-select pick lines and title-screen announcer | verified by duration against Steam and confirmed by the user by ear from the decoded clip |
 | DLC 0.3.3's trim (701 contents down to 57) | Sega's DLC has 701 content slots and only 57 carry anything; the other 644 are identical empty placeholders, and each slot costs about 0.1 s at start. Measured on one tester's console (issue #1, 21 and 22 October 2026): no DLC installed 6.74 s, Sega's untouched DLC 91.9 s (1 min 32 s), the trimmed 57-content build 11.84 s. A test build with the same 57 contents (version 0.3.2) was played through on that console on 22 October 2026: all DLC skins, stages and EX chapter 8, no crashes. Both 0.3.3 CIAs were read back with a separate parser, 81 of 81 checks passing, and differ from the previous build only in five text tables. Not covered: the 0.3.3 CIAs themselves have not been installed or booted anywhere; the Japanese-voice DLC 0.3.3 has not run; installing over an older 701-content DLC, and a save made with the full DLC, were not isolated by the one hardware test (the tester's report is the only evidence); the ticket still lists all 1,024 content indices while the file lists 57 (the test build had the same); the xdelta "fresh decrypt" proof rests on the decryptor output used for the build plus a whole-header-randomised copy, since a fresh Batch CIA 3DS Decryptor run produced no output file in my environment |
 | DLC 0.3.3's re-broken lines (27 in EX chapters 8 to 10) and the Suzuran plate | only the line-break positions moved, the words are the same; widths came from a width model matched to a tester's captures to within a few pixels, and the lines have not been seen in the game. The 27 are at most 227 px wide against the 255 px limit I used for result quotes, but that limit rests on calibration records that disagree (the clip point lies somewhere between 251 and 277 px), so about ten unchanged long quotes at 250 to 255 px (chapter 9 quotes 0, 2, 4, 8, 14 and 19, chapter 8 quotes 3 and 17, chapter 10 quotes 11 and 15) might sit at the edge of their box. One chapter 9 result quote (the Back-to-Back Tetris hint, entry 3) needs four lines; no result quote has used four before, and where the fourth line lands has not been seen. I have no report yet on whether the smaller Suzuran name now sits inside its plate |
+| 1.1.4's combo bar | both built CIAs read back against the shipped 1.1.3 CIAs: 26 of 26 checks passing, exactly two files differ (the combo bar archive and the title screen stamp), the combo bar picture equals the Japanese original byte for byte and the chain notice equals 1.1.3's; an independent reviewer with its own parsers got the same result. Not booted in an emulator or on a console, and the bar not seen next to a number |
 | 1.1.3's redrawn pictures (the combo bar and chain notice, the replay speed hint, the Magic School gate sign) | each one decoded back out of the built CIAs of both editions and compared with its source image, 46 of 46 checks passing, and the files that changed compared against 1.1.2's; checked in Azahar on 23 October 2026 (English-voice edition) only for the title stamp and for a letter on both gate pillars in the Staff Roll. Not seen: the combo bar and the CHAIN!/LINES notice (neither came up in a match), the replay speed hint (no saved replay), the gate in battles or cutscenes, or anything on a console |
 | 1.1.2's redrawn pictures (111) | each one decoded back out of the patched archives and out of the built CIAs and compared with its source image, 111 of 111 matching in both editions with 0 failures; the title stamp read back out of the built base CIAs as an image; checked on an emulator only (Azahar, English-voice edition). First pass, on an earlier 1.1.2 build: the title stamp, main menu tiles, Options, Solo Arcade tiles, Versus setup and rules panel, pause menus, My Data and the Adventure mission panel with its "New!" tag, all in English. Second pass, on the final build: the "Ready" call whole in Endless Puyo, Endless Fever, Marathon, Sprint, Tiny Puyo and Ultra, the main menu Online tile preview ("Must Watch!", "Choose a replay"), the My Data Options tile preview (Location "Tokyo") and the Endless Puyo Puyo mode card, with no crash, freeze or garbling. Not seen: "Ready" in a versus match (the pass was cut short), the DLC chapter strips, the tournament card, or anything on a console |
 | Online UI textures | rendered and reviewed as images; not yet confirmed in the engine beyond the screens above |
