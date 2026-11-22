@@ -25,7 +25,7 @@ rebuild that step yourself from what's published here. The same goes for the scr
 that staged and checked 1.1.2's and 1.1.3's redrawn pictures, which aren't in `tools/` either. Where
 something has not been verified, TESTING.md says so.
 
-**[Download the current build from Releases](../../releases/latest)** (build 1.1.5, DLC
+**[Download the current build from Releases](../../releases/latest)** (build 1.1.6, DLC
 0.3.3). What changed in each build is in [RELEASE_NOTES.md](RELEASE_NOTES.md). Also listed
 on [romhacking.net](https://www.romhacking.net/translations/7714/).
 
@@ -40,7 +40,7 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 > parts that carry anything, so it starts in about 12 seconds instead of about a minute and a half on one
 > console. A test build with the same contents was played through on that console (the DLC skins, stages
 > and EX chapter 8, no crashes). The 0.3.3 files themselves, the re-broken lines in EX chapters 8 to 10
-> and the Japanese-voice DLC haven't been run yet. 1.1.5 re-breaks three pieces of text that ran past the edge of their box (Tee's profile on the Select Character screen, the Puzzle League caption on the Online menu, and nine Versus winner quotes); I've seen the caption and five of the quotes in an emulator, the rest not yet. 1.1.4 puts the Tetris combo bar back to Sega's original art, which reads "REN" (the "COMBO" I drew for 1.1.3 sat
+> and the Japanese-voice DLC haven't been run yet. 1.1.6 fixes Adventure text that ran into the page arrow of its speech bubble or past the edge of a mission panel (the stage 3-4 bubble and the Big Bang panel from issue #1, and others like them found by checking every bubble and panel); I've seen the new text in an emulator in bubbles and panels of the same kind, but not stage 3-4 itself. 1.1.5 re-breaks three pieces of text that ran past the edge of their box (Tee's profile on the Select Character screen, the Puzzle League caption on the Online menu, and nine Versus winner quotes); I've seen the caption and five of the quotes in an emulator, the rest not yet. 1.1.4 puts the Tetris combo bar back to Sega's original art, which reads "REN" (the "COMBO" I drew for 1.1.3 sat
 > under the game's combo number, so only "MBO" showed); it boots in Azahar and the title screen reads ENG 1.1.4, but I haven't seen the bar next to a combo number yet. 1.1.3's other fixes (the chain notice, the
 > replay speed hint and the Magic School gate sign) were checked in Azahar only as far as the title screen and a letter
 > showing on both gate pillars in the Staff Roll; the chain notice (it hasn't come up in a match yet), the replay hint and
@@ -72,10 +72,10 @@ on [romhacking.net](https://www.romhacking.net/translations/7714/).
 | **Patched base game** | `PuyoPuyoTetris-Base-xdelta.zip` (xdelta3 patch for your own decrypted dump; the only route to the English HOME menu banner), or built from your dump with `tools/build_cia.py`, or `PuyoPuyoTetris-LayeredFS.zip` unpacked to `luma/titles/0004000000101200/romfs/` on a Luma3DS card |
 | The Japanese v1.2.0 update | code only; installs over the patched base safely |
 | **The DLC** | `PuyoPuyoTetris-DLC-patched.cia`, or `PuyoPuyoTetris-DLC-xdelta.zip` for your own decrypted DLC dump, which produces the same file. If an older DLC is installed, install this one over it. |
-| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: a base xdelta patch, a LayeredFS zip, and a DLC CIA, all at 1.1.5 / DLC 0.3.3 as of this build. Install one edition or the other, not both |
+| **Japanese-voice edition** (optional) | the same English text with every voice left as Sega's Japanese: a base xdelta patch, a LayeredFS zip, and a DLC CIA, all at 1.1.6 / DLC 0.3.3 as of this build. Install one edition or the other, not both |
 
 Install order is base, then Japanese update, then DLC. The title screen reads **ENG
-1.1.5** on both editions: this build's redrawn pictures aren't voice
+1.1.6** on both editions: this build's redrawn pictures aren't voice
 files, so the Japanese-voice edition carries the same version number as the English-voice
 build. The HOME menu jingle, not the version stamp, is what tells the two editions apart.
 
@@ -101,14 +101,14 @@ These are the current files on the v1.0.0 tag; the tag's files are replaced in p
 
 | File | Bytes | SHA-256 |
 |---|---|---|
-| `PuyoPuyoTetris-Base-xdelta.zip` | 168,209,698 | `284c99f78edea910ab5656c324bfa449a9df47e7309838ab73514423f6109d3e` |
+| `PuyoPuyoTetris-Base-xdelta.zip` | 168,210,077 | `2c471c38885edcccb64a36c5c524fa8599c5b9e97d6eb48fec3217861df0b28e` |
 | `PuyoPuyoTetris-DLC-JP-voices-0.3.3.cia` | 102,921,088 | `0ebda2b9af2d03ad42e01a0c24f2bd8636634a480f7f608d41db85a6f75e099b` |
 | `PuyoPuyoTetris-DLC-patched.cia` | 98,640,768 | `20699aa35a00b1af145f73a392449011d93b160cdf1b8596c06e4d88d7004a1b` |
 | `PuyoPuyoTetris-DLC-xdelta.zip` | 33,897,980 | `e8e50776e3b9dc73967c112e54932a54a8ddfe3f68c741ccffd7c8b33db3a2d3` |
-| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 20,043,827 | `79af1ade9fc65f47a0db64dcd7c786342a449e0e344dda92ea0fc6333b763f51` |
-| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.5.zip` | 10,965,436 | `cca3781002903f7c66ece552affae4c972275bf7874bacd8e5168413b01bc7b6` |
-| `PuyoPuyoTetris-LayeredFS.zip` | 182,613,491 | `e18e7be4d1f73c06d22b38cba01e597deb5f41909bc3b4a0d95ede59afa494f4` |
-| `PuyoPuyoTetris-xdelta-patches-1.1.5.zip` | 202,265,053 | `9208c268dd89373c247e7e225d356ca7aef73c20d38bfeae94b71abf3533e654` |
+| `PuyoPuyoTetris-JP-voices-LayeredFS.zip` | 20,048,102 | `b3169e4d74ea3ee981e307d8f3cdd0392f1ac611808559ac4968fe377e18b692` |
+| `PuyoPuyoTetris-JP-voices-xdelta-patches-1.1.6.zip` | 10,966,003 | `aeb680375d0fdb4683270cdd61d350979ee389af3238b2b46e2d8cab6e7e71d8` |
+| `PuyoPuyoTetris-LayeredFS.zip` | 182,617,763 | `b7fa4abc265ef664f65692f81b5281d5c481b80fd770c23b77408ad270eb06c9` |
+| `PuyoPuyoTetris-xdelta-patches-1.1.6.zip` | 202,265,551 | `dfba4cdfd145ad92ebf7ee6bfecfd24cee1cd45bd7b6bc79109658683cd2e41d` |
 
 The two LayeredFS zips were re-uploaded on 28 October 2026. Earlier copies were missing about 120 files (the character name plates, the save and replay screens and a lot of text), so a game running from them showed a mix of English and Japanese. If you used one before that date, download it again. The two DLC CIAs and the DLC zip are unchanged from the DLC 0.3.3 upload.
 
